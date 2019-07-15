@@ -1,0 +1,55 @@
+<!-- <button wx:if="{{moreShow}}" bindtap='toWebView' data-id='https://jbxqalipay.nanjingdata.cn/m/test.html'>测试</button> -->
+
+<view class="recommend-service-container">
+  <view class="title">
+    <view class="left-title">最近使用</view>
+    <!-- <view wx:if="{{moreShow}}" class="right-title" bindtap='toApply'>更多</view> -->
+  </view>
+  <view class="service-list">
+    <view wx:for="{{items}}" wx:key="*this" bindtap='toWebView' class="service-item" data-id="{{item.dataId}}">
+      <image class="service-icon" mode="aspectFit" src="{{item.src}}" />
+      <view class="service-name">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="recommend-service-container2">
+  <view wx:for="{{itemList}}"  wx:if="{{dataId==item.bOrC}}"class="service-list2">
+    <view class='service-title2'>{{item.title}}</view>
+    <view wx:for="{{item.items}}" wx:key="*this" bindtap='toWebView' class="service-item2" data-id="{{item.dataId}}">
+      <image class="service-icon2" mode="aspectFit" src="{{item.src}}" />
+      <view>
+        <view class="service-name2">{{item.name}}</view>
+        <view class="service-detail2">{{item.detail}}</view>
+      </view>
+      <image class="service-arrow2" mode="aspectFit" src="https://jbxqalipay.nanjingdata.cn/m/image/arrow.png" />
+    </view>
+  </view>
+</view> -->
+
+
+
+<!-- <view class='recommend-service-container3'>
+  <view class='title3'>
+    <view data-id='0' class='{{dataId==0?"isChosen":""}}' bindtap='choose'>特色服务</view>
+    <view data-id='1' class='{{dataId==1?"isChosen":""}}' bindtap='choose'>专区</view>
+  </view>
+  <view wx:if="{{dataId==0}}" class='service-list3' wx:for="{{newItemList}}">
+    <view class='service-title3' bindtap='toWebView' data-id="{{item.dataId}}">
+      <view class='service-title3-left3'>
+        <image class="service-icon3" src='{{item.src}}'></image>
+        <view class='left3'>{{item.listTitle}}</view>
+      </view>
+      <view class='service-title3-right3'>
+        <view class='right3'>{{item.num}}</view>
+      </view>
+    </view>
+    <view class='service-item3'>
+      <view class='service-content3' wx:for="{{item.list}}">{{item.title}}</view>
+    </view>
+    <view class='service-detail3'>江北新区行政审批局</view>
+  </view>
+<view class='imageContainer3'>
+  <image wx:for="{{specificZone}}" bindtap='toWebView' data-id="{{item.dataId}}" wx:if="{{dataId==1}}" class='goTo3' mode="widthFix" src='{{item.src}}'></image>
+</view>
+</view> -->

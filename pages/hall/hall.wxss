@@ -1,0 +1,41 @@
+/* pages/hall/hall.wxss */
+.hallWrap{
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+.hallImg{
+  width:100%;
+}
+.temporaryNo{
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  top:20%;
+}
+.temporaryNoWrap{
+  text-align: center;
+}
+.temporaryNoImg{
+  width:150rpx;
+}
+.temporaryNoWords{
+  margin-top:20rpx;
+  color:#bfbfbf;
+  font-size: 42rpx;
+}
+.introInfo{
+  padding:0 30rpx;
+}
+.windowAdd{
+  text-align: center;
+  font-size: 60rpx;
+  color:#3dccb4;
+}
+.windowIntro{
+  font-size: 36rpx;
+}
+.overstriking{
+  font-weight: 600;
+  font-size: 36rpx !important; 
+}

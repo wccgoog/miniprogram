@@ -1,0 +1,49 @@
+<view>
+  <view class="head">
+    <view class="headTitle">{{detailList.name}}</view>
+    <view class="greenLine"></view>
+  </view>
+  <view class="partOne">
+    <view class="partOneSingle">
+      <view>类别：</view>
+      <view>{{detailList.category}}</view>
+    </view>
+    <view class="partOneSingle">
+      <view>权利基本编码：</view>
+      <view>{{detailList.no}}</view>
+    </view>
+    <view class="partOneSingle">
+      <view>实施主体：</view>
+      <view>{{detailList.im_sub}}</view>
+    </view>
+    <view class="partOneSingle">
+      <view>行使层级：</view>
+      <view>{{detailList.level}}</view>
+    </view>
+    <view class="partOneSingle" wx:if="{{detailList.remarks}}">
+      <view>备注：</view>
+      <view>{{detailList.remarks}}</view>
+    </view>
+    <view class="partOneSingleLookAll" bindtap="down">
+      <view>实施依据：</view>
+      <view class="lookAll">查看全部
+        <text decode="{{true}}">&nbsp;&nbsp;</text>
+        <image src="../../images/rotateArrow.png" mode="widthFix" class="rotateArrow"></image>
+      </view>
+    </view>
+    <view animation="{{animation}}" class="doDetail {{isFold?'flod':'extend'}}">{{detailList.im_bas}}</view>
+  </view>
+  <view class="partTwo">
+    <view class="partOneSingle">
+      <view class="partOneSingleView">办事指南列表</view>
+    </view>
+    <view class="listTwo">
+      <view class="listTwoSingle" wx:for="{{detailListTwo}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="goContDetail">
+        <view class="leftWords"><view class="greenPoint"></view>{{item.name}}</view>
+        <view class="rightArrow">
+          <image src="../../images/rotateArrow.png" mode="widthFix" class="listTwoRightArrow"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

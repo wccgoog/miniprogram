@@ -1,0 +1,146 @@
+/* pages/numSearch/numSearch.wxss */
+
+page {
+  background: white;
+}
+
+.searchWrap {
+  margin-top: 20%;
+}
+
+.searchTip {
+  color: #333;
+  text-align: center;
+  padding: 50rpx 0;
+  font-size: 35rpx;
+}
+
+.inputWrap {
+  background-color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20rpx 100rpx 20rpx 20rpx;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.magnifier {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  width: 60rpx;
+}
+
+/* 开发中 */
+
+.develop {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.develop image {
+  width: 170rpx;
+}
+
+.develop view {
+  margin-top: 50rpx;
+  font-size: 40rpx;
+  color: #777;
+}
+
+.recommend-service-container {
+  padding: 20rpx 32rpx 10rpx;
+  background: white;
+}
+
+.recommend-service-container .title {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.recommend-service-container .title .left-title {
+  font-size: 36rpx;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.recommend-service-container .title .right-title {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.recommend-service-container .service-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.recommend-service-container .service-list .service-item {
+  margin-bottom: 20px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommend-service-container .service-list .service-item .service-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 14rpx;
+}
+
+.recommend-service-container .service-list .service-item .service-name {
+  color: #333;
+  font-size: 24rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  margin: 20px 0 5px 0;
+  border-radius: 50%;
+}
+
+.user {
+  text-align: center;
+}
+
+.nickName {
+  margin-bottom: 10px;
+}
+
+.header {
+  border-bottom: 1px solid #eee;
+}
+
+.logout {
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  font-size: 40rpx;
+  font-weight: 300;
+}

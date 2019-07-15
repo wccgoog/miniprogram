@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/homePage/homePage",
+    "pages/navigation/navigation",
+    "pages/listOfItems/listOfItems",
+    "pages/more/more",
+    "pages/hall/hall",
+    "pages/contentDetail2/contentDetail2",
+    "pages/contentDetail/contentDetail",
+    "pages/scan/scan",
+    "pages/numSearch/numSearch",
+    "pages/office/office",
+    "pages/searchAndList/searchAndList",
+    "pages/addSearch/addSearch",
+    "pages/officeDetail/officeDetail",
+    "pages/officeList/officeList",
+    "pages/guide/guide",
+    "pages/listDetail/listDetail",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/onePic/onePic",
+    "pages/test/test",
+    "pages/apply/apply",
+    "pages/webview/webview",
+    "pages/auth/auth",
+    "pages/recommend/recommend",
+    "pages/home2/home2",
+    "pages/homePage2/homePage2",
+    "pages/numSearch2/numSearch2",
+    "pages/suggestion/suggestion",
+    "pages/showPic/showPic",
+    "pages/picList/picList"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于展示小程序天气信息"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3dccb4",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/homePage/homePage",
+        "text": "首页",
+        "iconPath": "images/ScanNavigation.png",
+        "selectedIconPath": "images/ScanNavigation-selected.png"
+      },
+      {
+        "pagePath": "pages/home2/home2",
+        "text": "办事指南",
+        "iconPath": "images/material.png",
+        "selectedIconPath": "images/material-selected.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "扫码导航",
+        "iconPath": "images/scan.png",
+        "selectedIconPath": "images/scan-selected.png"
+      },
+      {
+        "pagePath": "pages/numSearch/numSearch",
+        "text": "我的",
+        "iconPath": "images/office.png",
+        "selectedIconPath": "images/office-selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

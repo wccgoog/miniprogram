@@ -1,0 +1,100 @@
+.head{
+  background-color: #fff;
+}
+.headTitle{
+  text-align: center;
+  padding: 30rpx 20rpx;
+}
+.greenLine{
+  width:60rpx;
+  height:2px;
+  background-color: #19a14d;
+  margin:0 auto;
+}
+.partOne{
+  background-color: #fff;
+}
+.partOneSingle{
+  display: flex;
+  padding:30rpx 20rpx;
+  justify-content: space-between;
+  border-bottom:1px solid #eee;
+}
+.partOneSingleView{
+  color: #19a14d;
+  padding-left:20rpx;
+}
+.partOneSingleLookAll{
+  display: flex;
+  padding:30rpx 20rpx 0 20rpx;
+  justify-content: space-between;
+}
+.lookAll{
+  font-size: 30rpx;
+  color:#666;
+  display: flex;
+  align-items: center;
+}
+.rotateArrow{
+  width:15rpx;
+  transform: rotateZ(90deg);
+}
+.doDetail{
+  padding:20rpx 25rpx;
+  line-height: 55rpx;
+  overflow: hidden;
+  border-bottom:1px solid #eee;
+  font-size: 35rpx;
+  color:#666;
+}
+.remarks{
+  padding:20rpx;
+  font-size: 14px;
+  color:#666;
+  text-align: center;
+}
+/* 第二部分 */
+.partTwo{
+  background-color: #fff;
+  margin-top:30rpx;
+}
+.listTwo{
+  padding:0rpx 0 20rpx 0;
+}
+.listTwoSingle{
+  padding:20rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #eee;
+}
+.leftWords{
+  padding:0 20rpx 0 40rpx;
+  position: relative;
+  color:#666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 35rpx;
+
+}
+.greenPoint{
+  position: absolute;
+  top:50%;
+  left:0%;
+  transform: translateY(-50%);
+  width:8px;
+  height:8px;
+  background-color: #19a14d;
+  border-radius: 50%;
+}
+.listTwoRightArrow{
+  width:15rpx;
+}
+/* 控制展开折叠 */
+.flod{
+  height:100rpx;
+}
+.extend{
+  height:auto;
+}

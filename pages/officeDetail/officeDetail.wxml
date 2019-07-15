@@ -1,0 +1,43 @@
+<view class="officeNum">我的办件号：23142</view>
+<view class="officeList">
+  <view class="officeSingle">
+    <view class="key">事项名称</view>
+    <view class="value">专职律师执业证书审核</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">业务名称</view>
+    <view class="value">专职律师执业证书审核</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">办件名称</view>
+    <view class="value">徐承夏-律师执业证核发</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">申请单位/申请人</view>
+    <view class="value">徐承夏</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">收件单位</view>
+    <view class="value">江苏省司法厅</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">经办人</view>
+    <view class="value">专职律师执业证书审核</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">受理时间</view>
+    <view class="value">2018-05-28</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">承诺办结时间</view>
+    <view class="value">18工作日</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">法定办结时间</view>
+    <view class="value">20工作日</view>
+  </view>
+  <view class="officeSingle">
+    <view class="key">当前办结状态</view>
+    <view class="value">办理中</view>
+  </view>
+</view>

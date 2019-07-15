@@ -1,0 +1,40 @@
+<view class="searchWrap">
+  <view class="inputWrap">
+    <input type="number"></input>
+    <image src="../../images/navigation.png" mode="widthFix" class="magnifier"></image>
+  </view>
+</view>
+<view class="hotListTitle">热门办件柜台</view>
+<view class="hotList">
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+  <view class="hotSingle">省教育厅</view>
+</view>
+<view class="more">
+  <view class="right">
+    <text>更多 </text>
+  <image src="../../images/rightArrow.png" mode="widthFix" class="rightArrow"></image>
+  </view>
+</view>
+

@@ -1,0 +1,19 @@
+<!--pages/recommend/recommend.wxml-->
+<view class='title'>推荐服务</view>
+<view class='service-container'>
+  <view class='title-container'>
+    <image class='icon' src='https://jbxqalipay.nanjingdata.cn/image/icon1.png'></image>
+    <view class='title-title'>城环办事项</view>
+    <image class='more' src='https://jbxqalipay.nanjingdata.cn/image/toList.png'></image>
+  </view>
+  <view class='context-container'>
+    <view class='context'>从事城市生活垃圾经营性清扫、收集、运输、处理服务审批</view>
+    <view class='context'>占用、挖掘城市道路审批（属门坡、道口工程）</view>
+    <view class='context'>临时占用城市绿地审批（属开门坡、道口）</view>
+    <view class='context'>环境卫生设施拆迁方案的批准</view>
+  </view>
+  <view class='foot-container'>
+    <view class='foot-title'>服务提供:</view>
+    <view class='foot-item'>南京江北新区行政审批局</view>
+  </view>
+</view>

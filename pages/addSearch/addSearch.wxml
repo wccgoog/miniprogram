@@ -1,0 +1,7 @@
+<view class="searchWrap">
+  <view class="searchTip">请输入办件地点</view>
+  <view class="inputWrap">
+    <input type="number"></input>
+    <image src="../../images/navigation.png" mode="widthFix" class="magnifier"></image>
+  </view>
+</view>

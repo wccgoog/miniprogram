@@ -1,0 +1,1 @@
+<view wx:for="{{itemList}}" class="title" data-id="{{item.path}}" bindtap='navTo'>{{item.title}}</view>

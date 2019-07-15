@@ -1,0 +1,21 @@
+<view wx:for="{{itemList}}" class="recommend-service-container">
+  <view class="title">
+    <view class="left-title">{{item.title}}</view>
+  </view>
+  <view class="service-list">
+    <view wx:for="{{item.items}}" wx:key="{{index}}" bindtap="{{item.bindType}}" class="service-item" data-id="{{item.dataId}}">
+      <view class="service-name">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+
+<view wx:for="{{itemListWebView}}" class="recommend-service-container2">
+  <view class="title">
+    <view class="left-title">{{item.title}}</view>
+  </view>
+  <view class="service-list">
+    <view wx:for="{{item.items}}" wx:key="{{index}}" bindtap="{{item.bindType}}" class="service-item" data-id="{{item.dataId}}">
+      <view class="service-name">{{item.name}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="wrap">
+  <view class="header">
+    <image src="../../images/square.png" mode="widthFix" class="square"></image>
+    {{headInfo.name}}窗口
+  </view>
+  <view class="bodyList">
+    <view class="intro {{isFold ?'flod':'extend' }}" wx:if="{{headInfo.intro}}">
+      <view>{{headInfo.intro}}</view>
+    </view>
+    <view class="bottomButton" bindtap="down">
+      <button wx:if="{{isFold}}">展开</button>
+      <button wx:else>收起</button>
+    </view>
+    <view class="singleList" bindtap='gotoContentDetail' wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}">{{index+1}}、{{item.name}}</view>
+  </view>
+  <view class="tabbar">
+    <view class="tabbarSingle" bindtap="go" data-id="1">
+      <image src="../../images/ScanNavigation.png" mode="widthFix"></image>
+      <view>事项查询</view>
+    </view>
+    <view class="tabbarSingle" bindtap="go" data-id="2">
+      <image src="../../images/scan.png" mode="widthFix"></image>
+      <view>扫码导航</view>
+    </view>
+    <view class="tabbarSingle" bindtap="go" data-id="3">
+      <image src="../../images/office.png" mode="widthFix"></image>
+      <view>我的办件</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,120 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.98",
+	"appid": "wxf0f0298a0ad564f6",
+	"projectname": "%E6%9C%80%E6%96%B0%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "navigation",
+					"pathName": "pages/navigation/navigation",
+					"query": "q=1",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "hall",
+					"pathName": "pages/hall/hall",
+					"query": "id=29",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "webview",
+					"pathName": "pages/webview/webview",
+					"query": "url",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "auth",
+					"pathName": "pages/auth/auth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "apply",
+					"pathName": "pages/apply/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "recommend",
+					"pathName": "pages/recommend/recommend",
+					"query": "url",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "numSearch",
+					"pathName": "pages/numSearch/numSearch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "home2",
+					"pathName": "pages/home2/home2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "homePage2",
+					"pathName": "pages/homePage2/homePage2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "suggestion",
+					"pathName": "pages/suggestion/suggestion",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

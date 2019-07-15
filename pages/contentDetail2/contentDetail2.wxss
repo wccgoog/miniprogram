@@ -1,0 +1,141 @@
+/* pages/contentDetail/contentDetail.wxss */
+.headWrap{
+  width:100%; 
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 9;
+}
+.bodyWrap{
+  margin-top:90rpx;
+  height:1100rpx;
+}
+.head{
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  width:100%;
+  height:90rpx;
+  line-height: 85rpx;
+  background-color: #fff;
+}
+.headSingle{
+  text-align: center;
+  display: inline-block;
+  padding: 0 20rpx;
+}
+.textStyle{
+  display: inline-block;
+}
+.on{ 
+  color: #079a3f;  
+  border-bottom: 5rpx solid #079a3f;
+}
+.basicInfo,.flowChart,.material,.depend,.condition{
+  border-radius: 20px;
+  margin:20rpx;
+  background-color: #fff;
+}
+.bodyHeader{
+  padding:35rpx 30rpx;
+  border-bottom:1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+.headerImg{
+  width:40rpx;
+  margin-right: 20rpx;
+}
+.headerText{
+  color:#079a3f;
+}
+.bodyList{
+  height:115rpx;
+  overflow: hidden;
+  padding:20rpx 30rpx;
+  font-size: 32rpx;
+}
+.bodyListSingle{
+  line-height: 60rpx;
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+}
+.bodyListSingleKey{
+  color:#666;
+}
+.bodyListSingleValue{
+  white-space:normal;
+}
+/* 流程图 */
+.flowTree{
+  margin-top:50rpx;
+  text-align: center;
+}
+.flowTree view{
+  margin:20rpx 0;
+  color:#666;
+  font-size: 35rpx;
+}
+.flowTreeImg{
+  width:500rpx;
+}
+/* 办理材料 */
+.materialList{
+  color:#666;
+  padding:5rpx 0;
+}
+/* 设定依据 */
+.dependWords{
+  color:#666;
+}
+/* 办理条件 */
+.conditionWords{
+  color:#666;
+}
+/* 控制展开折叠 */
+.flod{
+  height:110rpx;
+}
+.extend{
+  height:auto;
+}
+/* 新增下载按钮 */
+.download{
+  height:90%;
+  /* line-height: 50rpx; */
+  /* border:1px solid #079a3f; */
+  color:#fff;
+  width:80rpx;
+  background-color: #079a3f;
+  font-size: 35rpx;
+  text-align: center;
+  position: absolute;
+  right:0;
+  top:0%;
+  writing-mode:tb-rl;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.downloadRight{
+  margin-right:80rpx;
+}
+/* 导航按钮 */
+.navigation{
+  position:fixed;
+  top:160rpx;
+  right:50rpx;
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+  background-color: #35d7b2;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  font-size: 40rpx;
+}

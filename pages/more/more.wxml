@@ -1,0 +1,12 @@
+<view class="moreWrap">
+  <view class="head">
+    <view class="slice"></view>
+    <view class="title2">{{typeDepart}}</view>
+  </view>
+  <view class="body">
+    <view class="single" wx:for="{{list}}" wx:key="{{item.index}}" data-id="{{item.id}}" bindtap="goListDetail">
+      <image src="{{'https://jbzwnew.qimixi.net'+item.logo}}" class="right" mode="widthFix" wx:if="{{item.logo}}"></image>
+      <view class="inner left">{{item.name}}</view>
+    </view>
+  </view>
+</view>

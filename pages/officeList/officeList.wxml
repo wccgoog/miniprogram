@@ -1,0 +1,24 @@
+<view class="officeSingle" bindtap="goOfficeDetails">
+  <view class="lineSingle">办件号：<text>124521</text></view>
+  <view class="lineSingle">申请事项：<text>律师事务所分所变更登记</text></view>
+  <view class="lineSingle">办件部门：<text>江苏省司法厅</text></view>
+  <view class="lineSingle">申请人：<text>梁佳丽</text></view>
+  <view class="lineSingle">申请时间：<text>2018-05-28</text></view>
+  <view class="state1">办理中</view>
+</view>
+<view class="officeSingle" bindtap="goOfficeDetails">
+  <view class="lineSingle">办件号：<text>124521</text></view>
+  <view class="lineSingle">申请事项：<text>律师事务所分所变更登记</text></view>
+  <view class="lineSingle">办件部门：<text>江苏省司法厅</text></view>
+  <view class="lineSingle">申请人：<text>梁佳丽</text></view>
+  <view class="lineSingle">申请时间：<text>2018-05-28</text></view>
+  <view class="state1">办理中</view>
+</view>
+<view class="officeSingle" bindtap="goOfficeDetails">
+  <view class="lineSingle">办件号：<text>124521</text></view>
+  <view class="lineSingle">申请事项：<text>律师事务所分所变更登记</text></view>
+  <view class="lineSingle">办件部门：<text>江苏省司法厅</text></view>
+  <view class="lineSingle">申请人：<text>梁佳丽</text></view>
+  <view class="lineSingle">申请时间：<text>2018-05-28</text></view>
+  <view class="state2">已完结</view>
+</view>

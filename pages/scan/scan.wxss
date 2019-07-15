@@ -1,0 +1,15 @@
+.scanWrap{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.scanImg{
+  width:200rpx;
+}
+.scanWrap view{
+  margin-top:50rpx;
+  font-size: 40rpx;
+  color:#777;
+}

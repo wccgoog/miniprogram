@@ -1,0 +1,87 @@
+.wrap{
+  width:95%;
+  background-color: #fff;
+  margin: 10rpx auto;
+  border-radius: 15rpx;
+}
+.header{
+  padding:30rpx 0;
+  font-size: 35rpx;
+  border-bottom:1px solid #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#e75c17;
+}
+.bodyList{
+  padding:30rpx 0rpx;
+  font-size: 35rpx;
+  padding-bottom:100rpx;
+}
+.singleList{
+  padding:20rpx 15rpx;
+  border-bottom:1px solid #eee;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.singleList:last-child{
+  border-bottom:none;
+}
+.square{
+  width:38rpx;
+  margin-right:20rpx;
+}
+/* tabbar */
+.tabbar{
+  position: fixed;
+  bottom:0;
+  left:0;
+  height:100rpx;
+  width:100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top:1px solid #ddd;
+}
+.tabbarSingle{
+  text-align: center;
+  margin-top:10rpx;
+}
+.tabbarSingle image{
+  width:50rpx;
+}
+.tabbarSingle view{
+  font-size: 23rpx;
+  color:#7b7b7b;
+}
+.intro{
+  text-align: center;
+  padding:10rpx 0;
+  font-size: 35rpx;
+  overflow: hidden; 
+}
+/* 底部按钮 */
+.bottomButton{
+  padding:10rpx 0 20rpx 0;
+  border-bottom:12px solid #eee;
+}
+.bottomButton button{
+  width:200rpx;
+  border:1px solid #079a3f;
+  border-radius: 55rpx;
+  background-color: #fff;
+  color:#079a3f;
+  font-size: 30rpx;
+  height:70rpx;
+  line-height: 70rpx;
+}
+/* 控制展开折叠 */
+.flod{
+  height:110rpx;
+}
+.extend{
+  height:auto;
+}

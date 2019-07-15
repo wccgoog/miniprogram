@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "apply":"../apply/apply"
+  },
+  "navigationBarTitleText": "新区e办事"
+}

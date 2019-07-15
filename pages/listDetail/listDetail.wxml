@@ -1,0 +1,14 @@
+<view>
+  <view class="themeTitle">
+    <text class="themeTitleWords">{{title}}</text>
+  </view>
+  <view class="variousList" wx:if="{{imgHide}}">
+    <view class="listSingle" wx:for="{{list}}" wx:key="index" data-id="{{item.id}}" bindtap="goListDetail">{{item.name}}</view>
+  </view>
+  <view class="temporaryNo" wx:else>
+    <view class="temporaryNoWrap">
+      <image src="../../images/temporaryNo.png" class="temporaryNoImg" mode="widthFix"></image>
+      <view class="temporaryNoWords">暂无相关数据</view>
+    </view>
+  </view>
+</view>

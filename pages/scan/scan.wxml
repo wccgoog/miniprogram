@@ -1,0 +1,4 @@
+<view class="scanWrap" bindtap="scan">
+  <image src="../../images/scanewm.png" mode="widthFix" class="scanImg"></image>
+  <view>请在大厅入口处扫描二维码进行窗口导航</view>
+</view>

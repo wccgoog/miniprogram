@@ -1,0 +1,4 @@
+/* pages/showPic/showPic.wxss */
+image{
+  width: 100%
+}

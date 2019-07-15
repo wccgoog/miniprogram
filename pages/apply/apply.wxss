@@ -1,0 +1,250 @@
+page {
+  background: white;
+}
+
+.recommend-service-container {
+  padding: 20rpx 32rpx 10rpx;
+  background: white;
+  border-bottom: 10px solid #eee;
+}
+
+.recommend-service-container .title {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.recommend-service-container .title .left-title {
+  font-size: 30rpx;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  color: #666;
+}
+
+.recommend-service-container .title .right-title {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.recommend-service-container .service-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.recommend-service-container .service-list .service-item {
+  margin-bottom: 5px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recommend-service-container .service-list .service-item .service-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 14rpx;
+}
+
+.recommend-service-container .service-list .service-item .service-name {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.recommend-service-container2 {
+  padding: 20rpx 32rpx 10rpx;
+  background: white;
+}
+
+.title2 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.title-item2 {
+  width: 50%;
+  text-align: center;
+}
+
+.recommend-service-container2 .title2 .left-title2 {
+  font-size: 36rpx;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  color: #666;
+}
+
+.recommend-service-container2 .title2 .right-title2 {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.service-icon2 {
+  padding: 20px 20px 20px 0;
+  width: 30px;
+  height: 30px;
+}
+
+.service-name2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.service-title2 {
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  font-size: 14px;
+  /* font-weight: 600; */
+  color: #aaa;
+}
+
+.service-item2 {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  /* padding: 10px 0; */
+  border-bottom: 1px solid rgb(245, 245, 245);
+}
+
+.title-item-detail2 {
+  display: inline-block;
+  font-size: 10px;
+}
+
+.service-item2:last-of-type {
+  border: none;
+}
+
+.service-arrow2 {
+  height: 14px;
+  width: 14px;
+  margin-left: auto;
+}
+
+.service-list2 {
+  border: 1px solid #eee;
+  /* margin: 10px 10px; */
+  margin-bottom: 20px;
+}
+
+.service-detail2 {
+  font-size: 12px;
+  color: #999;
+  padding-top: 5px;
+}
+
+.recommend-service-container3 {
+  margin: 0px;
+}
+
+.title3 {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 20px 10px 0 20px;
+}
+.unChosen{
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+.isChosen {
+  font-weight: 900;
+  font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid green;
+}
+
+.title3 view {
+  margin-right: 10px;
+}
+
+.service-list3 {
+  border: 1px solid #eee;
+  margin: 10px 10px;
+}
+
+.service-title3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-title3 .service-title3-left3 {
+  display: flex;
+  align-items: center;
+}
+
+.service-icon3 {
+  padding: 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.service-title3-right3 {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.service-arrow3 {
+  padding-top: 4px;
+  height: 14px;
+  width: 14px;
+}
+
+.service-item3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left3 {
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.right3 {
+  font-size: 15px;
+  color: #999;
+}
+
+.service-content3 {
+  width: 40%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 10px;
+  font-size: 12px;
+}
+
+.service-content3:nth-of-type(2n) {
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+}
+
+.service-detail3 {
+  color: #aaa;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.goTo3 {
+  display: block;
+  width: 90%;
+  margin: 20px auto 20px auto;
+}
+
+.imageContainer{
+}

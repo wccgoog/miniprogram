@@ -1,0 +1,77 @@
+<view class="navigationWrap">
+  <view class="headSearch">
+    <input type="text" bindinput="showDownList" bindfocus='onInputFocus' bindblur='onInputBlur' placeholder='输入关键字查询'>
+    </input>
+    <image src="../../images/navigation.png" mode="widthFix"></image>
+    <view class="downList" wx:if="{{isShowNullList && searchList.length}}">
+      <view class="listSingleWrap">
+        <view class="downListSingle" wx:for="{{searchList}}" wx:key="{{item.index}}" data-id="{{item.id}}" bindtap="goContentDetail">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="downList" wx:if="{{isShowNullList && !searchList.length}}">
+      <view class="temporary">
+        暂无相关事项
+      </view>
+    </view>
+  </view>
+  <view class="swiper-tab">
+    <view class="swiper-tab-list" data-current="0" bindtap="swichNav">
+      <view class="short_border {{currentTab==0 ? 'on' : ''}}">个人服务</view>
+    </view>
+    <view class="swiper-tab-list" data-current="1" bindtap="swichNav">
+      <view class="short_border {{currentTab==1 ? 'on' : ''}}">企业服务</view>
+    </view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight-50}}px" bindchange="bindChange">
+    <swiper-item class="bodyWrap">
+      <scroll-view scroll-y="true" style="height:80%">
+        <view class="head_title">主题</view>
+        <view class="list">
+          <view class="single" wx:for="{{topic}}" wx:key="{{item.index}}" data-id="{{item.sid}}" bindtap="goListDetail">
+            <image src="{{'https://jbzwnew.qimixi.net'+item.logo}}" class="right" mode="widthFix" wx:if="{{item.logo}}"></image>
+            <view class="inner left">{{item.name}}</view>
+          </view>
+        </view>
+        <view class="head_title">部门</view>
+        <view class="list">
+          <view class="single" wx:for="{{department}}" wx:key="{{item.index}}" data-id="{{item.sid}}" bindtap="goListDetail">
+            <image src="{{item.logo}}" class="right" mode="widthFix" wx:if="{{item.logo}}"></image>
+            <view class="inner left">{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item class="bodyWrap">
+      <scroll-view scroll-y="true" style="height:80%">
+        <view class="head_title">主题</view>
+        <view class="list">
+          <view class="single" wx:for="{{topic}}" wx:key="{{item.index}}" data-id="{{item.sid}}" bindtap="goListDetail">
+            <image src="{{'https://jbzwnew.qimixi.net'+item.logo}}" class="right" mode="widthFix" wx:if="{{item.logo}}"></image>
+            <view class="inner left">{{item.name}}</view>
+          </view>
+        </view>
+        <view class="head_title">部门</view>
+        <view class="list">
+          <view class="single" wx:for="{{department}}" wx:key="{{item.index}}" data-id="{{item.sid}}" bindtap="goListDetail">
+            <image src="{{item.logo}}" class="right" mode="widthFix" wx:if="{{item.logo}}"></image>
+            <view class="inner left">{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <view class="tabbar">
+    <view class="tabbarSingle" bindtap="go" data-id="1">
+      <image src="../../images/ScanNavigation.png" mode="widthFix"></image>
+      <view>事项查询</view>
+    </view>
+    <view class="tabbarSingle" bindtap="go" data-id="2">
+      <image src="../../images/scan.png" mode="widthFix"></image>
+      <view>扫码导航</view>
+    </view>
+    <view class="tabbarSingle" bindtap="go" data-id="3">
+      <image src="../../images/office.png" mode="widthFix"></image>
+      <view>我的办件</view>
+    </view>
+  </view>
+</view>

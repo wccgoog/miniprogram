@@ -1,0 +1,231 @@
+.navigationWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.headSearch {
+  position: relative;
+}
+
+.headSearch input {
+  background-color: #fff;
+  width: 92%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+  padding-left: 20rpx;
+  position: relative;
+}
+
+.headSearch image {
+  width: 60rpx;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: 9;
+}
+
+/* 实现切换 */
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: #777;
+  border: 1px solid #eee;
+}
+
+.on {
+  color: #149575;
+  border-bottom: 4rpx solid #149575;
+}
+
+.swiper-box {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.short_border {
+  width: 50rpx;
+  white-space: nowrap;
+  margin: 0 auto;
+  text-indent: -10%;
+}
+
+.swiper-box view {
+  /* text-align: center; */
+}
+
+.bodyWrap {
+  box-sizing: border-box;
+}
+
+/* 主题部分 */
+
+.head_title {
+  position: relative;
+  font-size: 42rpx;
+  font-weight: 600;
+  font-family: serif;
+  color: #666;
+  padding: 0 60rpx;
+  margin: 30rpx 0;
+}
+
+.head_title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #149575;
+  border-radius: 50%;
+}
+
+.list {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  font-size: 35rpx;
+  color: #666;
+  border-top: 1px solid #ccc;
+}
+
+.listSingle {
+  width: 33.33%;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.listSingle:nth-of-type(3n+0) {
+  border-right: none;
+}
+
+.downListSingle {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* 搜索框下拉列表 */
+
+.downList {
+  position: absolute;
+  left: 0;
+  top: 95%;
+  transform: translateX(2.8%);
+  width: 92%;
+  padding-left: 20rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99;
+  border-top: 1px solid #e3e3e3;
+}
+
+.listSingleWrap {
+}
+
+.listSingle {
+  height: 110rpx;
+  line-height: 110rpx;
+  color: #828282;
+}
+
+/* 暂无相关事项 */
+
+.temporary {
+  padding: 20rpx 0;
+  color: #333;
+}
+
+.right {
+  flex: 1;
+  width: 30rpx;
+  padding-left: 30rpx;
+}
+
+.left {
+  flex: 4;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.single {
+  text-align: center;
+  font-size: 28rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.33%;
+  color: #666;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.single:nth-of-type(3n+0) {
+  border-right: none;
+}
+
+.wholeHeight {
+  height: 100%;
+}
+
+/* tabbar栏 */
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.tabbarSingle {
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.tabbarSingle image {
+  width: 50rpx;
+}
+
+.tabbarSingle view {
+  font-size: 23rpx;
+  color: #7b7b7b;
+}
+
+.cancel {
+  width: 40rpx !important;
+  height: 40rpx !important;
+}

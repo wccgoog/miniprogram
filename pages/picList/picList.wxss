@@ -1,0 +1,14 @@
+/* pages/picList/picList.wxss */
+
+page {
+  background: #eee;
+}
+
+.title {
+  /* background: linear-gradient(to right, #0093d9, #90c421); */
+  color: #333;
+  margin-bottom: 20rpx;
+  padding: 10px;
+  background: white;
+  font-size: 34rpx;
+}

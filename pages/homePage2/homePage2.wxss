@@ -1,0 +1,245 @@
+/* pages/homePage/homePage.wxss */
+@import "../apply/apply.wxss";
+
+movable-area {
+  /* height: 100vh; */
+  height: 100%;
+  width: 100%;
+}
+
+movable-view {
+  height: 52px;
+  width: 52px;
+  background: url("https://jbxqalipay.nanjingdata.cn/image/picBackground.jpg");
+  background-size: cover;
+  z-index: 2;
+  border-radius: 30px;
+}
+
+.movable-view {
+  height: 52px;
+  width: 52px;
+  background: url("https://jbxqalipay.nanjingdata.cn/image/picBackground.jpg");
+  background-size: cover;
+  z-index: 2;
+  border-radius: 30px;
+}
+
+.pic {
+  margin-top: 2.5px;
+  text-align: center;
+  text-shadow: 1px 3px 5px #000;
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.homepageWrap {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.headerImg {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #fff;
+  border-bottom: 5px solid #eee;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 50%;
+  color: #666;
+}
+
+.on {
+  color: #333;
+  border-bottom: 5rpx solid #079a41;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box {
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+
+.b-border {
+  display: inline-block;
+  height: 80rpx;
+}
+
+/* 主题部分 */
+
+.themeWrap {
+}
+
+.themeTitle {
+  color: #666;
+  font-size: 32rpx;
+  padding: 20rpx 0 20rpx 20rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+
+.themeTitleWords {
+  flex: 5;
+  padding-left: 20rpx;
+  border-left: 4px solid #079a41;
+}
+
+.more {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rightArrow {
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+/* 主题分类 */
+
+.themeClassify {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.themeSingle {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.themeSingle:nth-of-type(odd) {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.themeSingle:nth-of-type(even) {
+  border-bottom: 1px solid #eee;
+}
+
+.left {
+  flex: 4;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.leftTitle {
+}
+
+.leftDetail {
+  font-size: 20rpx;
+}
+
+.right {
+  flex: 1;
+  width: 30rpx;
+}
+
+/* 部门 */
+
+.departmentWrap {
+  border-top: 10rpx solid #eee;
+}
+
+.departmentTitle {
+  color: #666;
+  font-size: 32rpx;
+  padding: 20rpx 0 20rpx 20rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+
+.departmentTitleWords {
+  flex: 5;
+  padding-left: 20rpx;
+  border-left: 4px solid #079a41;
+}
+
+.departmentClassify {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.departmentSingle {
+  text-align: center;
+  font-size: 28rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 25%;
+  color: #666;
+  box-sizing: border-box;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+
+.departmentSingle:nth-of-type(4n+0) {
+  border-right: none;
+}
+
+.scrollItemHeight {
+  height: 60%;
+}
+
+/* 轮播图 */
+
+.page-section {
+  width: 100%;
+}
+
+.page-section-spacing {
+  box-sizing: border-box;
+}
+
+.swiper-item {
+  display: block;
+  height: 150px;
+}
+
+.swiperHeight {
+  height: 375rpx;
+}
+
+.apply {
+  margin-bottom: 10px;
+}
+
+.x {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  background: white;
+  padding-bottom: 10px;
+}
+
+.iWanna {
+  background: white;
+  /* border-bottom: 1px solid #eee; */
+  border-left: 4px solid #079a41;
+  padding: 5px;
+  font-size: 24px;
+  color: #444;
+}

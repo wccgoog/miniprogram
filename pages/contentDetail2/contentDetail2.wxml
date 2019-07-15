@@ -1,0 +1,150 @@
+<!-- <import src="../../component/contentDetailPart.wxml"/> -->
+<view class="headWrap">
+  <scroll-view class="head" scroll-x>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{data}}">
+      <text class="textStyle {{currentTab==0?'on':''}}" data-current="0">基本信息</text>
+    </view>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{data.place_time}}">
+      <text class="textStyle {{currentTab==1?'on':''}}" data-current="1">办理地点、时间</text>
+    </view>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{treeImg}}">
+      <text class="textStyle {{currentTab==2?'on':''}}" data-current="2">流程图</text>
+    </view>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{data.affair_material_list}}">
+      <text class="textStyle {{currentTab==3?'on':''}}" data-current="3">办理材料</text>
+    </view>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{data.setting}}">
+      <text class="textStyle {{currentTab==4?'on':''}}" data-current="4">设定依据</text>
+    </view>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{data.condition}}">
+      <text class="textStyle {{currentTab==5?'on':''}}" data-current="5">办理条件</text>
+    </view>
+    <view class="headSingle" bindtap="swichNav" wx:if="{{data.outlay_criterion}}">
+      <text class="textStyle {{currentTab==6?'on':''}}" data-current="6">收费标准</text>
+    </view>
+  </scroll-view>
+</view>
+<scroll-view scroll-y="true" scroll-into-view="nav-{{toView}}" class="bodyWrap">
+<!-- 导航按钮 -->
+<view class="navigation" bindtap="goMapImg">导 航</view>
+  <view class="basicInfo" id="nav-0">
+    <view class="bodyHeader">
+      <image src="../../images/basicInfo.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">基本信息</text>
+    </view>
+    <view class="bodyList {{isFold0 ?'flod':'extend' }}">
+      <view class="bodyListSingle" wx:if="{{data.name}}">
+        <view class="bodyListSingleKey">事项名称：</view>
+        <view class="bodyListSingleValue">{{data.name}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.level}}">
+        <view class="bodyListSingleKey">行使层级：</view>
+        <view class="bodyListSingleValue">{{data.level}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.num_limit}}">
+        <view class="bodyListSingleKey">数量限制：</view>
+        <view class="bodyListSingleValue">{{data.num_limit}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.transact_type}}">
+        <view class="bodyListSingleKey">办件类型：</view>
+        <view class="bodyListSingleValue">{{data.transact_type}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.dec_org}}">
+        <view class="bodyListSingleKey">决定机构：</view>
+        <view class="bodyListSingleValue">{{data.dec_org}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.res_send_way}}">
+        <view class="bodyListSingleKey">办理结果送达方式：</view>
+        <view class="bodyListSingleValue">{{data.res_send_way}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.rule_do_day}}">
+        <view class="bodyListSingleKey">法定办结时限：</view>
+        <view class="bodyListSingleValue">{{data.rule_do_day}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.agree_do_day}}">
+        <view class="bodyListSingleKey">承诺办结时限：</view>
+        <view class="bodyListSingleValue">{{data.agree_do_day}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.contact_way}}">
+        <view class="bodyListSingleKey">咨询方式：</view>
+        <view class="bodyListSingleValue">{{data.contact_way}}</view>
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.table_down_server_file_name}}">
+        <view class="bodyListSingleKey">表格下载：</view>
+        <view class="bodyListSingleValue downloadRight">{{data.table_down_server_file_name}}</view>
+        <!-- <view class="download" bindtap="download" data-id="1">查 看</view> -->
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.entrust_letter_file_name}}">
+        <view class="bodyListSingleKey">委托书：</view>
+        <view class="bodyListSingleValue downloadRight">{{data.entrust_letter_file_name}}</view>
+        <!-- <view class="download" bindtap="download" data-id="2">查 看</view> -->
+      </view>
+      <view class="bodyListSingle" wx:if="{{data.result_type_file_name}}">
+        <view class="bodyListSingleKey">结果返回形式：</view>
+        <view class="bodyListSingleValue downloadRight">{{data.result_type_file_name}}</view>
+        <!-- <view class="download" bindtap="download" data-id="3">查 看</view> -->
+      </view>
+    </view>
+  </view>
+  <view class="flowChart" id="nav-1" wx:if="{{data.place_time}}">
+    <view class="bodyHeader">
+      <image src="../../images/flow.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">办理地点、时间</text>
+    </view>
+    <view class="bodyList {{isFold1 ?'flod':'extend' }}" bindtap="priviewImg">
+      <view><rich-text nodes="{{data.place_time}}"></rich-text></view>
+    </view>
+  </view>
+  <view class="flowChart" id="nav-2" wx:if="{{treeImg}}">
+    <view class="bodyHeader">
+      <image src="../../images/flow.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">流程图</text>
+    </view>
+    <view class="bodyList flowTree {{isFold2 ?'flod':'extend' }}" bindtap="priviewImg">
+      <image src="{{treeImg.file_path}}" class="flowTreeImg" mode="widthFix"></image>
+      <view>流程图详情</view>
+    </view>
+  </view>
+  <!-- 因为没有解决HTML转义，暂时先隐藏  wx:if="{{data.material}}"-->
+  <view class="material" id="nav-3" wx:if="{{data.material}}">
+    <view class="bodyHeader">
+      <image src="../../images/material.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">办理材料</text>
+    </view>
+    <view class="bodyList dependWords {{isFold3 ?'flod':'extend' }}">
+    <scroll-view scroll-x>
+      <rich-text nodes="{{data.material}}"></rich-text>
+    </scroll-view>
+    </view>
+  </view>
+  <view class="depend" id="nav-4" wx:if="{{data.setting}}">
+    <view class="bodyHeader">
+      <image src="../../images/depend.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">设定依据</text>
+    </view>
+    <view class="bodyList dependWords {{isFold4 ?'flod':'extend' }}">{{data.setting}}</view>
+  </view>
+  <view class="condition" id="nav-5" wx:if="{{data.condition}}">
+
+    <view class="bodyHeader">
+      <image src="../../images/condition.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">办理条件</text>
+    </view>
+    <view class="bodyList conditionWords {{isFold5 ?'flod':'extend' }}">
+      {{data.condition}}
+    </view>
+  </view>
+    <view class="condition" id="nav-6" wx:if="{{data.outlay_criterion}}">
+    <view class="bodyHeader">
+      <image src="../../images/condition.png" mode="widthFix" class="headerImg"></image>
+      <text class="headerText">收费标准</text>
+    </view>
+    <view class="bodyList conditionWords {{isFold6 ?'flod':'extend' }}">
+      {{data.outlay_criterion}}
+    </view>
+    <view class="bottomButton" data-id="6" bindtap="down">
+      <button wx:if="{{isFold6}}">展开</button>
+      <button wx:else>收起</button>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,27 @@
+/* pages/auth/auth.wxss */
+page{
+  background: white no-repeat;
+  background-position-x: center;
+  background-position-y: 20%;
+  background-image: url("https://jbxqalipay.nanjingdata.cn/image/auth.png");
+  background-size: 40%;
+}
+button{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.userInfo{
+  z-index: 2;
+}
+.auth{
+  margin: 300px 10px 0;
+  color: #666;
+  font-size: 16px;
+}
+.title{
+  color: black;
+  text-align: center;
+  margin: 20px;
+  font-size: 22px;
+}

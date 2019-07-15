@@ -1,0 +1,27 @@
+/* pages/officeList/officeList.wxss */
+.officeSingle{
+  background-color: #fff;
+  padding:10rpx;
+  margin-top:30rpx;
+  font-size: 30rpx;
+  position:relative;
+}
+.lineSingle{
+  padding:10rpx 10rpx 10rpx 20rpx;
+  color: #666;
+}
+.lineSingle text{
+  color:#333;
+}
+.state1,.state2{
+  position: absolute;
+  top:4%;
+  right:2%;
+  background-color: #3ad5b6;
+  border-radius: 10rpx;
+  padding:5rpx 10rpx;
+  font-size: 25rpx;
+}
+.state2{
+  background-color: #dade01;
+}

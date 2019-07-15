@@ -1,0 +1,2 @@
+<!--pages/showPic/showPic.wxml-->
+<image src="{{path}}" mode='widthFix' bindtap='previewPic'></image>

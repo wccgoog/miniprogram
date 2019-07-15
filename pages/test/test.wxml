@@ -1,0 +1,9 @@
+
+<!-- 
+<view class="bottomButton" bindtap="down" data-id="0">
+  <button open-type="getRealnameAuthInfo">授权</button>
+</view> -->
+
+<view>
+  <button open-type="getRealnameAuthInfo" bindgetrealnameauthinfo="authinfo" category-id="{{[52, 770]}}">实名授权</button>
+</view>

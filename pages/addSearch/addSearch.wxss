@@ -1,0 +1,27 @@
+/* pages/addSearch/addSearch.wxss */
+.searchWrap{
+  margin-top:20%;
+}
+.searchTip{
+  color:#333;
+  text-align: center;
+  padding:50rpx 0;
+  font-size: 35rpx;
+}
+.inputWrap{
+  background-color: #fff;
+  width:90%;
+  margin:0 auto;
+  padding:20rpx 100rpx 20rpx 20rpx;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 10px #ccc;
+}
+.magnifier{
+  position: absolute;
+  top:50%;
+  right:4%;
+  transform: translateY(-50%);
+  width:60rpx;
+}

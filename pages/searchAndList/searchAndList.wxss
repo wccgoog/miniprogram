@@ -1,0 +1,55 @@
+/* pages/searchAndList/searchAndList.wxss */
+.searchWrap{
+  margin-top:5%;
+}
+.inputWrap{
+  background-color: #fff;
+  width:90%;
+  margin:0 auto;
+  padding:20rpx 100rpx 20rpx 20rpx;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 10px #ccc;
+}
+.magnifier{
+  position: absolute;
+  top:50%;
+  right:4%;
+  transform: translateY(-50%);
+  width:60rpx;
+}
+.hotListTitle{
+  padding:30rpx 40rpx;
+  font-size: 30rpx;
+  color:#666;
+}
+.hotList{
+  padding:0rpx 40rpx 0 20rpx;
+  display: flex;
+  flex-flow:row; 
+  flex-wrap: wrap;
+}
+.hotSingle{
+  width:25%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  text-align: center;
+  padding:35rpx 10rpx;
+  color:#4d4d4d;
+}
+.more{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30rpx;
+  color:#4d4d4d;
+  padding:80rpx 30rpx 0 0;
+}
+.right{
+  display: flex;
+  align-items: center;
+}
+.rightArrow{
+  width:30rpx;
+   vertical-align: middle; 
+}
