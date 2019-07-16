@@ -1,0 +1,11 @@
+<view class="my-card-container" >
+  <block 
+    a:for="{{$global.cardList}}"
+    a:for-index="index"
+    a:for-item="item"
+  >
+    <credential-card 
+      card="{{item}}" 
+    />
+  </block>
+</view>

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents":{
+    "credentials": "../../module/credentials/index",
+    "service-market": "../../module/service-market/index",
+    "service-card": "../../module/service-card/index"
+  }
+}

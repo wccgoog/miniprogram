@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "我的证件",
+  "usingComponents":{
+    "credential-card": "../../module/credential-card/index"
+  }
+}

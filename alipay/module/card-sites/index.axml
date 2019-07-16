@@ -1,0 +1,40 @@
+<view class="card-sites card-container">
+  <header title="{{sitesInfo.title}}" />
+  <view class="card">
+    <view class="main">
+      <view class="content">
+        <image
+          class="icon"
+          mode="aspectFit"
+          src="https://gw.alipayobjects.com/zos/rmsportal/ocJzfTKOFRGfBDnwmXKV.png"
+        />
+        <view class="text">
+          <text class="title">{{sitesInfo.curSite.title}}</text>
+          <text class="description">{{sitesInfo.curSite.addr}}</text>
+          <text class="description">{{sitesInfo.curSite.time}}</text>
+        </view>
+      </view>
+      <view class="button">
+        <image
+          class="icon"
+          mode="aspectFit"
+          src="https://gw.alipayobjects.com/zos/rmsportal/ocJzfTKOFRGfBDnwmXKV.png"
+        />
+        <image
+          class="icon"
+          mode="aspectFit"
+          src="https://gw.alipayobjects.com/zos/rmsportal/ocJzfTKOFRGfBDnwmXKV.png"
+        />
+      </view>
+    </view>
+    <map 
+      id="map"
+      style="width: 100%; height: 300px;" 
+      scale="{{scale}}"
+      longitude="{{sitesInfo.curSite.longitude}}"
+      latitude="{{sitesInfo.curSite.latitude}}"
+      markers="{{sitesInfo.markers}}"
+      onMarkerTap="onMarkerTap"
+    />
+  </view>
+</view>

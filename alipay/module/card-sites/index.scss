@@ -1,0 +1,46 @@
+.card-sites .card {
+    padding: 32rpx;
+    display: flex;
+    flex-direction: column;
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .content {
+            display: flex;
+            margin-bottom: 32rpx;
+            .icon {
+                width: 32rpx;
+                height: 44rpx;
+            }
+            .text {
+                display: flex;
+                flex-direction: column;
+                margin-left: 16rpx;
+                .title {
+                    color: #333333;
+                    line-height: 48rpx;
+                    font-size: 34rpx;
+                    margin-bottom: 12rpx;
+                }
+                .description {
+                    color: #999999;
+                    font-size: 28rpx;
+                    font-weight: 300;
+                    line-height: 40rpx;
+                }
+            }
+        }
+        .button {
+            display: flex;
+            flex-direction: row;
+            .icon {
+                width: 56rpx;
+                height: 56rpx;
+                :last-child {
+                    margin-left: 32rpx;
+                }
+            }
+        }
+    }
+}

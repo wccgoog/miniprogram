@@ -1,0 +1,4 @@
+<view class="page-container market">
+  <market-home />
+  <market-other />
+</view>

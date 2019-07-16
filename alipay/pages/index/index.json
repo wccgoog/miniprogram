@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "新区e办事",
+  "usingComponents":{
+    "header": "../../module/header/index",
+    "user": "../../module/user/index",
+    "layout": "../../layout/indexLayout/index",
+    "footer": "../../module/footer/index"
+  }
+}

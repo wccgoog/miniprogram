@@ -1,0 +1,26 @@
+<view class="user-container">
+  <view class="left">
+    <view a:if="{{stateInfo.isLogin}}" class="userinfo">
+      <image class="avarta" mode="aspectFit" src="{{stateInfo.userInfo.avatar}}" />
+      <view class="name">{{stateInfo.userInfo.name}}</view>
+    </view>
+    <view a:else onTap="onLogin" class="userinfo">
+      <image class="avarta" mode="aspectFit" src="https://gw.alipayobjects.com/zos/rmsportal/OEpRddJBTljCwxpcwDXQ.png" />
+      <view class="name">请登录</view>
+    </view>
+
+  </view>
+  <view class="right">
+    <view 
+      class="user-center"
+      onTap="onGoToUserCenter"
+    >
+      {{ title }}
+    </view>
+    <image 
+      class="right-arrow"
+      mode="aspectFit"
+      src="https://gw.alipayobjects.com/zos/rmsportal/hKKCYGauqidEgTvkSVkL.png"
+    />
+  </view>
+</view>

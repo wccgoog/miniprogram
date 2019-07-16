@@ -1,0 +1,7 @@
+<view class="page-box">
+  <list-item imgSrc="/images/icon_mobile.png" itemValue="{{userInfo.phone}}" name="手机号码" isEditable="{{false}}" />
+  <list-item imgSrc="/images/icon_user.png" itemValue="{{userInfo.accountName}}" name="用户名" isEditable="{{false}}" />
+  <list-item imgSrc="/images/icon_avadar.png" itemValue="{{userInfo.nickName}}" name="昵称" isEditable="{{false}}" />
+  <list-item imgSrc="/images/icon_email.png" itemValue="{{userInfo.email}}" name="邮箱" navigateType="email" isEditable="{{true}}" />
+  <list-item imgSrc="/images/icon_location.png" itemValue="{{userInfo.address}}" name="地址" navigateType="address" isEditable="{{true}}" />
+</view>

@@ -1,0 +1,37 @@
+<view class="page-box">
+  <scroll-view 
+    scroll-y="{{true}}" 
+    class="class-left"
+  >
+    <view a:for={{cityTabs}} key="{{item.code}}">
+      <view 
+        data-item="{{item}}" 
+        data-index="{{index}}"
+        class="cate-list {{ index === currentCityIndex ? 'on':''}}" 
+        onTap="onChangeCity"
+      >
+        {{item.tabsName}}
+      </view>
+    </view>
+  </scroll-view>
+  <scroll-view 
+    class="class-right" 
+    scroll-y="{{true}}"
+    scroll-with-animation="{{true}}"
+  >
+    <view 
+      a:for={{currentCity.childList}} 
+      key="{{item.code}}"
+    >
+      <view 
+        data-item="{{item}}" 
+        data-index="{{index}}"
+        class="cate-list" 
+        onTap="onChangeArea"
+      >
+        {{item.tabsName}}
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

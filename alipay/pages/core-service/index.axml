@@ -1,0 +1,6 @@
+<view class="page-container">
+  <card-hello userInfo="{{userInfo}}" />
+  <card-service serviceInfo="{{serviceInfo}}" />
+  <card-special-service spectialServiceInfo="{{spectialServiceInfo}}" />
+  <card-sites sitesInfo="{{sitesInfo}}" /> 
+</view>

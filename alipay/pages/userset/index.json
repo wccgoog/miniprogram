@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "个人信息设置",
+  "usingComponents": {
+    "info": "../../module/userinfo-setting/index"
+  }
+}

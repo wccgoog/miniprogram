@@ -1,0 +1,43 @@
+.service-market-container {
+  padding: 20rpx 32rpx 30rpx;
+}
+
+.service-market-container .title {
+  font-size: 36rpx;
+}
+
+.service-market-container .service-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.service-market-container .service-list .service-item {
+  margin-top: 40rpx;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-market-container .service-list .service-item .service-icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 14rpx;
+}
+
+.service-market-container .service-list .service-item .service-name {
+  color: #333333;
+  font-size: 24rpx;
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-family: "Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+.service-market-container .service-list:last-child {
+  margin-bottom: 0;
+}

@@ -1,0 +1,19 @@
+<!-- <view class="header-container" class="displayNone">
+  <view 
+    class="city"
+    onTap="onCityTap"
+  >
+    <image
+      class="map-icon"
+      mode="aspectFit"
+      src="https://jbxqalipay.nanjingdata.cn/image/map.png" 
+    />
+    <view 
+      class="city-text"
+    >
+      {{currentArea.name}} 
+    </view>
+
+  </view>
+
+</view> -->

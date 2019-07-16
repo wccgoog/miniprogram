@@ -1,0 +1,40 @@
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 162rpx;
+  height: 120rpx;
+  margin: 16rpx 0rpx 0rpx 18rpx;
+  border-radius: 5rpx;
+  position: relative;
+  transition: all 0.5s;
+
+}
+
+.service-item .service-item_icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 14rpx;
+}
+
+.service-item .service-item_name {
+  color: #333333;
+  font-size: 24rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.service-item .service-item_edit {
+  position: absolute;
+  width: 30rpx;
+  height:30rpx;
+  top: 4rpx;
+  right: 4rpx;
+}
+
+.service-item.edit {
+  background-color: #F6F6F6;
+}

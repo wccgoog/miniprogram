@@ -1,0 +1,15 @@
+<view class="information-container">
+  <view class="image-wrap">
+    <image
+      src="https://gw.alipayobjects.com/zos/rmsportal/NznxJWjTIPrpWFAvAVSh.png"
+      mode="aspectFit"
+      class="info-icon"
+    />
+  </view>
+  <view 
+    class="info-content"
+    onTap="onNoticeClick"
+  >
+    {{noticeInfo.desc}}
+  </view>
+</view>

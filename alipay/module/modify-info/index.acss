@@ -1,0 +1,42 @@
+.page-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #f5f5f5;
+}
+
+.page-box .wrapper {
+  height: 94rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  background: #fff;
+  color: #333;
+  margin: 15rpx 0;
+}
+
+.page-box .mail-item {
+  margin-left: 15rpx;
+  font-size: 26rpx;
+  margin-right: 30rpx;
+}
+
+.page-box .mail {
+  font-size: 30rpx;
+  min-width: 70%;
+}
+
+.page-box .submit-btn {
+  border: none;
+  outline: none;
+  font-size: 30rpx;
+  padding: 0 15rpx;
+}

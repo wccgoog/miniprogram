@@ -1,0 +1,26 @@
+.information-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .info-content {
+    color: #333333;
+    font-size: 24rpx;
+    flex: 1;
+    overflow: hidden;
+    padding-right: 50rpx;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .image-wrap {
+    padding: 24rpx;
+    .info-icon {
+      width: 64rpx;
+      height: 64rpx;
+    }
+  }
+  
+}

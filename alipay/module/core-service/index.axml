@@ -1,0 +1,7 @@
+<view class="core-service-container">
+  <view>
+    <image src="" />
+    <text>社保</text>
+    <image src="" />
+  </view>
+</view>

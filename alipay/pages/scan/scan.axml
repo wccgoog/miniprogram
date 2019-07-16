@@ -1,0 +1,4 @@
+<view class="scanWrap" onTap="scan">
+  <image src="https://jbxqalipay.nanjingdata.cn/m/image/scanewm.png" mode="widthFix" class="scanImg"></image>
+  <view>请在大厅入口处扫描二维码进行窗口导航</view>
+</view>

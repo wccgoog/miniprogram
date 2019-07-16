@@ -1,0 +1,50 @@
+.card-special-service {
+  font-size: 28rpx;
+}
+
+.card-special-service .card {
+  padding: 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-special-service .card .content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-special-service .card .content .icon {
+  width: 132rpx;
+  height: 96rpx;
+}
+
+.card-special-service .card .content .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 32rpx;
+}
+
+.card-special-service .card .content .text .title {
+  color: #333333;
+  font-size: 34rpx;
+  line-height: 48rpx;
+  margin-bottom: 4rpx;
+}
+
+.card-special-service .card .content .text .description {
+  color: #999999;
+  line-height: 38rpx;
+  font-weight: 300;
+}
+
+.card-special-service .card .button {
+  width: 88rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  text-align: center;
+  border: 1px solid #108EE9;
+  border-radius: 2rpx;
+  color: #108EE9;
+}

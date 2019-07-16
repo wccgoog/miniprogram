@@ -1,0 +1,38 @@
+.service-market-container {
+  padding: 20rpx 32rpx 80rpx;
+}
+
+.service-market-container .title {
+  font-size: 36rpx;
+}
+
+.service-market-container .service-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.service-market-container .service-list .service-item {
+  margin-top: 82rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.service-market-container .service-list .service-item .service-icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 14rpx;
+}
+
+.service-market-container .service-list .service-item .service-name {
+  color: #333333;
+  font-size: 24rpx;
+}
+
+.service-market-container .service-list:last-child {
+  margin-bottom: 0;
+}

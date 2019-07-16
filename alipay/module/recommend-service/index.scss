@@ -1,0 +1,47 @@
+.recommend-service-container {
+  padding: 20rpx 32rpx 80rpx;
+  .title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80rpx;
+    .left {
+      font-size: 36rpx;
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+   
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 28rpx;
+      color: #999;
+    }
+  }
+
+  .service-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .service-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .service-icon {
+        width: 56rpx;
+        height: 56rpx;
+        margin-bottom: 14rpx;
+      }
+      .service-name {
+        color: #333333;
+        font-size: 24rpx;
+      }
+    }
+  }
+}

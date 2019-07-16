@@ -1,0 +1,65 @@
+.page-box .wrapper {
+  height: 94rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  font-size: 34rpx;
+}
+
+.page-box .wrapper:first-child {
+  margin-top: 15rpx;
+}
+
+.page-box .left, .page-box .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.page-box .left {
+  margin-left: 30rpx;
+  width: 250rpx;
+  white-space: nowrap;
+}
+
+.page-box .right {
+  margin-right: 32rpx;
+  width: 50%;
+}
+
+.page-box .wrapper-name {
+  margin-left: 30rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.page-box .name {
+  width: 100%;
+  text-align: right;
+  margin-right: 35rpx;
+  font-size: 32rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-box .left-icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.page-box .right-arrow {
+  width: 15rpx;
+  height: 27rpx;
+  background-size: 100%;
+  position: absolute;
+  top: 35rpx;
+  right: 30rpx;
+}

@@ -1,0 +1,21 @@
+<view class="service-item {{isEdit ? 'edit' : ''}}">
+    <image
+        class="service-item_icon"
+        mode="aspectFit"
+        src="{{item.logoUrl}}"
+        data-url="{{item.accessUrl}}"
+        data-type="{{item.type}}"
+        data-appId="{{item.appId}}"
+        onTap="onItemClick"
+    />
+    <view class="service-item_name">{{item.name}}</view>
+    <image
+        class="service-item_edit"
+        mode="aspectFit"
+        src="{{item.status === 1 ? '/images/icon_disabledservice.png' : 'https://gw.alipayobjects.com/zos/rmsportal/qBffqHHiZuHQqlyMwBkx.png'}}"
+        data-id="{{item.id}}"
+        data-status="{{item.status}}"
+        onTap="addServiceItem"
+        a:if="{{isEdit}}"
+    />
+</view>

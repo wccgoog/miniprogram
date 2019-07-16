@@ -1,0 +1,14 @@
+<view class="card-container card-hello">
+    <view class="content">
+        <text class="name">{{userInfo.name ? userInfo.name + ',' : ''}}下午好!</text>
+        <text class="description">欢迎办理社保业务</text>
+    </view>
+    <view class="login" a:if="{{!userInfo.name}}">
+        <text class="name">登陆</text>
+        <image
+            class="icon"
+            mode="aspectFit"
+            src="https://gw.alipayobjects.com/zos/rmsportal/hKKCYGauqidEgTvkSVkL.png"
+        />
+    </view>
+</view>

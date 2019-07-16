@@ -1,0 +1,12 @@
+.footer-container {
+  padding: 120rpx 0;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5;
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.footer-container .phone {
+  color: #108EE9;
+}

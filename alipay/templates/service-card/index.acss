@@ -1,0 +1,62 @@
+.service-card-container .title {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 32rpx;
+}
+
+.service-card-container .title .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-size: 36rpx;
+  justify-content: flex-start;
+}
+
+.service-card-container .title .left .icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 24rpx;
+}
+
+.service-card-container .title .right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.service-card-container .title .right .right-arrow {
+  width: 15rpx;
+  height: 27rpx;
+}
+
+.service-card-container .service-content {
+  padding: 32rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-card-container .service-content .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.service-card-container .service-content .row .col {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.service-card-container .service-content .row-item {
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 49%;
+}
+
+.service-card-container .bottom-desc {
+  color: #999999;
+  font-size: 24rpx;
+  line-height: 64rpx;
+  height: 64rpx;
+  padding-left: 32rpx;
+}

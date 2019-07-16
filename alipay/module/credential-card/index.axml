@@ -1,0 +1,16 @@
+<view 
+  class="credential-card" 
+  style="background-color: {{card.bgColor}}"
+  onTap="onGoToSpecialCard"
+>
+  <image 
+    class="cr-icon" 
+    mode="aspectFit"
+    src="{{card.image}}"
+  />
+  <view class="cr-content">
+    <view class="cr-title">{{card.title}}</view>
+    <view class="cr-subtitle">{{card.subtitle}}</view>
+    <view class="cr-desc">{{card.desc}}</view>
+  </view>
+</view>

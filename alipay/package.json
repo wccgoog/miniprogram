@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "ainstall": "npm install --registry=https://registry.npm.taobao.org"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "herculex": "^0.2.10",
+    "mini-antui": "^0.3.5",
+    "moment": "^2.22.2"
+  }
+}

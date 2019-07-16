@@ -1,0 +1,23 @@
+<template name="tpl-recommendservice">
+<view class="service-market-container">
+  <view class="title">
+  {{ item.title }}
+</view>
+<view class="service-content">
+  <view class="service-list">
+    <view class="service-item"
+     a:for="{{item.list}}" 
+     a:if="{{index<8}}" 
+     data-url="{{item.accessUrl}}" 
+     data-type="{{item.type}}" 
+     data-appId="{{item.appId}}" 
+     onTap="goToNavigateUrl"
+     >
+      <image class="service-icon" mode="aspectFit" src="{{item.logoUrl}}" />
+      <view class="service-name">{{item.name}}                           
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+</template>

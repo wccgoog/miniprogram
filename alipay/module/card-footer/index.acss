@@ -1,0 +1,9 @@
+.card-footer-container {
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+  color: #999999;
+  font-size: 24rpx;
+  height: 80rpx;
+  border-top: 1rpx solid #ccc;
+}

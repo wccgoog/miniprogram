@@ -1,0 +1,22 @@
+<form onSubmit="addNewValue" id="modifyInfo-form" report-submit="true">
+<view class="page-box">
+  <view class="wrapper">
+    <view class="mail-item">{{ placeName.name  }}        
+    </view>
+    <input 
+    placeholder="{{ placeName.ph }}" 
+    onInput="onInput" 
+    class="mail" 
+    value="{{ modifyType ==='email'? userInfo.email: userInfo.address}}"/>
+  </view>
+  <view class="submit-wrapper">
+    <button
+    class="submit-btn" 
+    type="primary"
+    disabled="{{isConfirmSubmit}}"
+    formType="submit" 
+    >保存 
+    </button>
+  </view>
+</view>
+</form>

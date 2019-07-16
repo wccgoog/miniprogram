@@ -1,0 +1,22 @@
+  <slot onTap="onLoginSetUserInfo" name="tpl-recommendservice">
+  </slot>
+  <service-market />
+<!-- <view a:if="{{isLogin}}">
+  <slot name="tpl-information">
+  </slot>
+  <slot name="tpl-recommendservice">
+  </slot>
+  <slot name="tpl-credentials">
+  </slot>
+  <slot name="tpl-servicecenter">
+  </slot>
+  <slot name="tpl-servicecard">
+  </slot>
+   <service-market />
+</view>
+<view a:else>
+  <view class="loginButton">点我登录</view>
+   <credentials />
+  <service-market />
+  <service-card />
+</view> -->

@@ -1,0 +1,20 @@
+<view class="service-card card-container">
+    <header title="{{serviceInfo.title}}" />
+    <view class="list">
+        <view 
+            class="item" 
+            a:for="{{serviceInfo.list}}" 
+            a:for-index="i" 
+            a:for-item="item"
+        >
+            <image
+                class="icon"
+                mode="aspectFit"
+                src="{{item.icon}}"
+                data-link="{{item.url}}"
+                onTap="onItemClick"
+            />
+            <view class="name">{{item.txt}}</view>
+        </view>
+    </view>
+</view>

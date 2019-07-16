@@ -1,0 +1,22 @@
+<view class="title">
+  我的服务
+</view>
+<view class="service-content">
+  <view class="service-list">
+    <view class="service-item"
+     a:for="{{myService}}" 
+     a:if="{{index<7}}" 
+     data-url="{{item.accessUrl}}" 
+     onTap="goToNavigateUrl"
+     >
+      <image class="service-icon" mode="aspectFit" src="{{item.logoUrl}}" />
+      <view class="service-name">{{item.name}}                           
+      </view>
+    </view>
+    <view class="service-item" data-url="../market/index" onTap="goToNavigateUrl">
+      <image class="service-icon" mode="aspectFit" src="https://gw.alipayobjects.com/zos/rmsportal/KAcsudEtZqUEXWIdErmN.png" />
+      <view class="service-name">更多服务                              
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "修改信息",
+  "usingComponents": {
+    "modifyinfo": "../../module/modify-info/index"
+  }
+}

@@ -1,0 +1,4 @@
+<view class="footer-container">
+  <view class="title">江北新区政务服务中心</view>
+  <view class="label">咨询电话: <text class="phone">58856073</text></view>
+</view>

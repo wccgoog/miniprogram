@@ -1,0 +1,31 @@
+<view>
+  <view a:for="{{messageList}}" key="{{index}}" data-showurl="{{item.showUrl}}" class="msg-item-outer" data-url="{{ item.extendParams }}" onTap="msgDetail">
+    <view class='flex-between'>
+      <text class='title'>{{ item.msgTitle }}
+      </text>
+      <view>
+        <text class='font-small mar-right'>{{ item.gmtCreate[0] }}
+        </text>
+        <text class='font-small'>{{ item.gmtCreate[1] }}
+        </text>
+      </view>
+    </view>
+    <view class='desc'>
+      <text>{{ item.msgContent }}
+      </text>
+    </view>
+    <view class="message-jumpurl" a:if="{{item.showUrl}}">
+      <text>查看详情
+      </text>
+      <image class="right-arrow" src="https://gw.alipayobjects.com/zos/rmsportal/hKKCYGauqidEgTvkSVkL.png" mode="aspectFit" />
+    </view>
+  </view>
+  <view class='msg-bottom' a:if="{{ messageList.length }}">{{ bottomMsg ? "已显示全部" : "加载中..." }}
+  </view>
+  <page-result a:if="{{asyncOver && !messageList.length}}" type="empty" title="什么都没有" brief="前不见古人，后不见来者">
+    <view class="am-page-result-btns">
+      <view onTap="refresh">刷新      
+      </view>
+    </view>
+  </page-result>
+</view>

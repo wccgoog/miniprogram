@@ -1,0 +1,22 @@
+<view class="market-other card-container">
+    <view 
+        class="item"
+        a:for="{{content}}"
+        a:for-index="index"
+        a:for-item="item"
+    >
+        <view class="title">
+            <view class="icon"></view>
+            <text class="txt">{{item.title}}</text>
+        </view>
+        <view class="content">
+            <service-item
+                a:for="{{item.list}}"
+                a:for-item="cItem" 
+                item="{{cItem}}"
+                type="{{item.type}}"
+                isEdit="{{isEdit}}"
+            />
+        </view>
+    </view>
+</view>

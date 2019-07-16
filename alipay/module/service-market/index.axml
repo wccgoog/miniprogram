@@ -1,0 +1,53 @@
+<view class="service-market-container"  a:if="{{!isLogin}}">
+  <view class="title">推荐服务               
+  </view>
+  <view class="service-content">
+    <view class="service-list">
+      <view class="service-item" a:for="{{items}}" onTap="onLoginSetUserInfo">
+        <image class="service-icon" mode="aspectFit" src="{{item.src}}" />
+        <view class="service-name">{{item.name}}                                                      
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="themeWrap">
+  <view class="themeTitle">
+    <text class="themeTitleWords">主题        
+    </text>
+    <view class="more" onTap="goMore" data-type="0" data-first="1">
+      <text>更多            
+      </text>
+      <image src="../../images/rightArrow.png" class="rightArrow">
+      </image>
+    </view>
+  </view>
+  <view class="themeClassify">
+    <view class="themeSingle" a:for="{{personal_topic}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">
+      <view class="left">
+        <view class="leftTitle">{{item.name}}                      
+        </view>
+        <view class="leftDetail">{{item.intro}}                      
+        </view>
+      </view>
+      <image src="{{item.logo}}" class="right" mode="aspectFit">
+      </image>
+    </view>
+  </view>
+</view>
+<view class="departmentWrap">
+  <view class="departmentTitle">
+    <text class="departmentTitleWords">部门
+    </text>
+    <view class="more" onTap="goDepartment" data-type="1" data-first="1">
+      <text>更多
+      </text>
+      <image src="../../images/rightArrow.png" class="rightArrow">
+      </image>
+    </view>
+  </view>
+  <view class="departmentClassify">
+    <view class="departmentSingle" a:for="{{personal_department}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">{{item.name}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="service-item {{isEdit ? 'edit' : ''}}">
+    <image
+        class="service-item_icon"
+        mode="aspectFit"
+        src="{{item.logoUrl}}"
+        data-link="{{item.url}}"
+        onTap="onItemClick"
+    />
+    <view class="service-item_name">{{item.name}}</view>
+    <image
+        class="service-item_edit"
+        mode="aspectFit"
+        src="https://gw.alipayobjects.com/zos/rmsportal/gMVvLjmoRvvmjqlsjztb.png"
+        data-type="{{item.type}}"
+        data-id="{{item.id}}"
+        onTap="removeSingleService"
+        a:if="{{isEdit}}"
+    />
+</view>

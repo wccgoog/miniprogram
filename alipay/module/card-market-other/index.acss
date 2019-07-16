@@ -1,0 +1,34 @@
+.market-other .item {
+  border-bottom: 1rpx solid #DDDDDD;
+  font-size: 24rpx;
+  padding-bottom: 23rpx;
+}
+
+.market-other .item .title {
+  padding: 32rpx 0 0 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+.market-other .item .title .icon {
+  width: 8rpx;
+  height: 24rpx;
+  background-color: #1D8FE1;
+  border-radius: 2rpx;
+}
+
+.market-other .item .title .txt {
+  color: #969696;
+  font-size: 32rpx;
+  font-weight: 300;
+  margin-left: 8rpx;
+}
+
+.market-other .item .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 24rpx 10rpx 6rpx;
+}

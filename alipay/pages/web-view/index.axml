@@ -1,0 +1,7 @@
+<view class="content">
+  <web-view 
+    a:if="{{ requestUrl }}"
+    src="{{requestUrl}}">
+
+  </web-view>
+</view>

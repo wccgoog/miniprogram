@@ -1,0 +1,68 @@
+.page-box {
+    .wrapper {
+    height: 94rpx;
+    width: 100%;
+    border-bottom: 1rpx solid #eee;
+    display:flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #fff;
+  }
+
+  .wrapper:first-child {
+    margin-top: 15rpx;
+    
+  }
+
+  .left,.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .left {
+    margin-left: 30rpx;
+    width: 250rpx;
+    white-space: nowrap;
+  }
+
+  .right {
+    margin-right: 30rpx;
+    width:50%;
+  }
+
+  .wrapper-name {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    color:#333;
+  }
+
+  .name {
+    width: 100%;
+    text-align: right;
+    margin-right: 30rpx;
+    font-size: 26rpx;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .left-icon {
+    width: 40rpx;
+    height: 40rpx;
+
+  }
+
+  .right-arrow {
+    width: 15rpx;
+    height: 27rpx;
+    background-size:100%;
+    position: absolute;
+    top: 35rpx;
+    right: 30rpx;
+  }
+
+}

@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "头部模块",
+  "usingComponents":{
+    "header":"../index"
+  }
+}

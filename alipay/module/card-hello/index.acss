@@ -1,0 +1,43 @@
+.card-hello {
+  padding: 40rpx 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.card-hello .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-hello .content .name {
+  color: #333333;
+  font-size: 48rpx;
+  font-weight: 500;
+  line-height: 67rpx;
+  margin-bottom: 8rpx;
+}
+
+.card-hello .content .description {
+  font-weight: 300;
+  line-height: 40rpx;
+  color: #999999;
+}
+
+.card-hello .login {
+  display: flex;
+  align-items: center;
+}
+
+.card-hello .login .name {
+  color: #108EE9;
+  line-height: 40rpx;
+  margin-right: 26rpx;
+  font-weight: 300;
+}
+
+.card-hello .login .icon {
+  width: 15rpx;
+  height: 27rpx;
+}

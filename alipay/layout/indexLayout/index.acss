@@ -1,0 +1,7 @@
+.loginButton{
+  padding-top: 100rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 60rpx;
+  border: 1rpx solid black;
+}

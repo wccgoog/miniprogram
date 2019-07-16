@@ -1,0 +1,5 @@
+<!-- <view onTap="faceVerify" class="text">
+  人脸识别,点我
+</view> -->
+<view class="face">{{showText}}</view>
+

@@ -1,0 +1,31 @@
+<view class="wrap">
+  <view class="header">
+    <image src="../../images/more.png" mode="widthFix" class="square"></image>
+    {{headInfo.name}}窗口
+  </view>
+  <view class="bodyList">
+    <view class="intro {{isFold ?'flod':'extend' }}" a:if="{{headInfo.intro}}">
+      <view>{{headInfo.intro}}</view>
+    </view>
+    <view class="bottomButton" onTap="down">
+      <button a:if="{{isFold}}">展开</button>
+      <button a:else>收起</button>
+    </view>
+    <view class="singleList" onTap='gotoContentDetail' a:for="{{list}}" a:key="{{index}}" data-id="{{item.id}}">{{index+1}}、{{item.name}}</view>
+  </view>
+
+  <view class="tabbar">
+    <view class="tabbarSingle" bindtap="go" data-id="1">
+      <image src="../../images/1-n.png" mode="widthFix"></image>
+      <view>首页</view>
+    </view>
+    <view class="tabbarSingle" bindtap="go" data-id="2">
+      <image src="../../images/2-n.png" mode="widthFix"></image>
+      <view>扫码导航</view>
+    </view>
+    <view class="tabbarSingle" bindtap="go" data-id="3">
+      <image src="../../images/3-n.png" mode="widthFix"></image>
+      <view>我的</view>
+    </view>
+  </view>
+</view>

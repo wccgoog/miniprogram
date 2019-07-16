@@ -1,0 +1,48 @@
+<view class="market-home_normal card-container" a:if="{{!isEdit}}" onTap="onEditTap">
+    <text class="title">首页应用</text>
+    <view class="iconlist">
+        <image
+            class="icon"
+            mode="aspectFit"
+            a:for="{{myService}}"
+            a:for-item="item"
+            a:for-index="index"
+            src="{{item.logoUrl}}"
+            data-link="{{item.url}}"
+            onTap="onItemClick"
+            a:if="{{index < 6}}"
+        />
+        <image 
+        class="iconmore" 
+        mode="aspectFit" 
+        src="https://gw.alipayobjects.com/zos/rmsportal/OtJsIHSzrgLaKLcvRWWV.png"
+        a:if="{{ index >= 6 }}"
+         />
+    </view>
+    <text class="edit">编辑</text>
+</view>
+<view class="market-home_edit card-container" a:else>
+    <view class="header">
+        <text class="cancel" onTap="onCancelTap">取消</text>
+        <text class="done" onTap="onCompleteTap">完成</text>
+    </view>
+    <text class="title">首页应用</text>
+    <view class="content">
+        <service-item
+            a:for="{{myService}}"
+            item="{{item}}"
+            type="{{0}}"
+            isEdit="{{isEdit}}"
+            a:if="{{ !isEdit }}"
+        />
+
+        <service-item
+            a:for="{{myServiceEdit}}"
+            item="{{item}}"
+            type="{{0}}"
+            isEdit="{{isEdit}}"
+            a:if="{{ isEdit }}"
+        />
+
+    </view>
+</view>

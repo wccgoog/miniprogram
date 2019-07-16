@@ -1,0 +1,26 @@
+  
+<view class='header'>
+  <view class='user'  onTap='login'>
+    <image class='avatar' src="{{avatar}}">
+    </image>
+    <view class='nickName'>{{nickName}}        
+    </view>
+  </view>
+  <view class='login'>
+  </view>
+</view>
+<view a:for="{{itemList}}" class="recommend-service-container">
+  <view class="title">
+    <view class="left-title">{{item.title}}        
+    </view>
+  </view>
+  <view class="service-list">
+    <view a:for="{{item.items}}" onTap="{{item.bindType}}" class="service-item" data-id="{{item.dataId}}">
+      <image class="service-icon" mode="aspectFit" src="{{item.src}}" />
+      <view class="service-name">{{item.name}}            
+      </view>
+    </view>
+  </view>
+</view>
+<view a:if="{{isLogin}}" class='logout' onTap='logout'>退出登录
+</view>

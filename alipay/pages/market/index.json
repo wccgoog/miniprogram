@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "服务市场",
+  "usingComponents":{
+    "market-home": "../../module/card-market-home/index",
+    "market-other": "../../module/card-market-other/index"
+  }
+}

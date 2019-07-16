@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "社保",
+  "usingComponents":{
+      "card-service": "../../module/card-service/index",
+      "card-hello": "../../module/card-hello/index",
+      "card-sites": "../../module/card-sites/index",
+      "card-special-service": "../../module/card-special-service/index"
+  }
+}

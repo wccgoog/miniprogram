@@ -1,0 +1,13 @@
+<template name="tpl-information">
+  <view class="information-container">
+    <view class="image-wrap">
+      <image src="{{item.image}}" mode="aspectFit" class="info-icon" />
+    </view>
+    <view class="info-content" data-url="{{item.url}}" data-appId="{{item.appId}}" data-type="{{item.type}}" onTap="onNoticeClick">
+      {{item.desc}}
+    </view>
+    <!-- <view>
+      {{item.blockName}}
+    </view> -->
+  </view>
+</template>

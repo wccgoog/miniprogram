@@ -1,0 +1,24 @@
+<view class="card-container card-special-service">
+    <header title="{{spectialServiceInfo.title}}" />
+    <view class="card" a:for="{{spectialServiceInfo.list}}" a:for-index="i" a:for-item="item">
+        <view class="content">
+            <image
+                class="icon"
+                mode="aspectFit"
+                src="{{item.icon}}"
+            />
+            <view class="text">
+                <text class="title">{{item.title}}</text>
+                <text class="description">{{item.desc}}</text>
+            </view>
+        </view>
+        <view 
+            class="button" 
+            a:if="{{item.button && item.button.txt}}"
+            onTap="onItemClick"
+            data-link="{{item.button.url}}"
+        >
+            <text>{{item.button.txt}}</text>
+        </view>
+    </view>
+</view>

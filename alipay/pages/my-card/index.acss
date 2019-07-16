@@ -1,0 +1,4 @@
+.my-card-container {
+  flex: 1;
+  padding: 30rpx;
+}

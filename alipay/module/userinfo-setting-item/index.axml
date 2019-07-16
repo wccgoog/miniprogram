@@ -1,0 +1,21 @@
+
+ 
+  <view class="wrapper" onTap="navigateTonewUrl">
+    <view class="left">
+      <image src="{{ imgSrc }}" class="left-icon" mode="aspectFit"/>
+      <view class="wrapper-name">
+        {{name}}
+      </view>
+    </view>
+    <view class="right">
+      <view class="name">
+        {{ itemValue ? itemValue: '' }}
+      </view>
+    </view>
+    <image a:if="{{isEditable}}"
+    class="right-arrow" 
+    src="https://gw.alipayobjects.com/zos/rmsportal/hKKCYGauqidEgTvkSVkL.png" 
+    mode="aspectFit" />
+  </view>
+  
+

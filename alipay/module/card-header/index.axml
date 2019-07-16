@@ -1,0 +1,19 @@
+<view class="card-header-container">
+    <view class="left">
+        <image
+            class="icon"
+            mode="aspectFit"
+            src="{{title.logoUrl}}"
+            a:if="{{title.logoUrl}}"
+        />
+        <text class="txt">{{title.txt}}</text>
+    </view>
+    <text 
+        class="right" 
+        a:if="{{title.more && title.more.txt}}" 
+        onTap="onRightClick" 
+        data-link="{{title.more.url}}"
+    >
+        {{title.more.txt || '全部'}}
+    </text>
+</view>

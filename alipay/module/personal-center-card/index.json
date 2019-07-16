@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "header": "../card-header/index",
+        "footer": "../card-footer/index"
+    }
+}

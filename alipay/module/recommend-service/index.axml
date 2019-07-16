@@ -1,0 +1,22 @@
+<view class="recommend-service-container">
+  <view class="title">
+    <view class="left">推荐服务</view>
+    <!-- <view 
+      class="right" 
+      onTap="onGoMarket"
+    >更多</view> -->
+  </view>
+  <view class="service-list">
+    <view 
+      a:for="{{recommendServices}}"
+      class="service-item"
+    >
+      <image
+        class="service-icon"
+        mode="aspectFit"
+        src="{{item.icon}}"
+      />
+      <view class="service-name">{{item.name}}</view>
+    </view>
+  </view>
+</view>

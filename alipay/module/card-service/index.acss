@@ -1,0 +1,27 @@
+.service-card .list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 42rpx;
+}
+
+.service-card .list .item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 28rpx 0;
+}
+
+.service-card .list .item .icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 14rpx;
+}
+
+.service-card .list .item .name {
+  color: #333333;
+  font-size: 26rpx;
+}

@@ -1,0 +1,32 @@
+<template name="tpl-servicecard">
+<view class="service-card-container">
+  <view class="title" onTap="onGoToInnerService" data-url="{{item.url}}" data-appId="{{ item.appId }}" data-type="{{ item.type }}">
+    <view class="left">
+      <image
+        class="icon"
+        src="{{item.icon}}"
+        mode="aspectFit"
+        a:if="{{item.icon}}"
+      />
+      <text>{{item.title}}</text>
+    </view>
+    <view a:if="{{ item.url }}" class="right">
+      <image
+        class="right-arrow"
+        mode="aspectFit"
+        src="https://gw.alipayobjects.com/zos/rmsportal/hKKCYGauqidEgTvkSVkL.png"
+      />
+    </view>
+  </view>
+  <view class="service-content ">
+    <view a:for="{{item.list}}" class="row-item" onTap="onGoToCoreService" data-appId="{{ item.appId }}" data-type="{{ item.type }}" data-url="{{ item.accessUrl }}">
+      <!-- <view a:for="{{serviceRow}}" a:for-item="service" class="col"> -->
+        {{item.name}}
+      <!-- </view> -->
+    </view>
+  </view>
+  <view class="bottom-desc">
+    {{item.desc}}
+  </view>
+</view>
+</template>

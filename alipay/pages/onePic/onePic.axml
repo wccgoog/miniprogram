@@ -1,0 +1,5 @@
+<!-- 原图加载缓慢,故页面展示小图,点击后预览原图 -->
+<view a:for="{{smallPic}}" a:key="*this">
+  <image mode="widthFix" src="{{item}}" onTap='previewPic' id="{{index}}">
+  </image>
+</view>

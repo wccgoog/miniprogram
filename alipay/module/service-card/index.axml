@@ -1,0 +1,27 @@
+<view class="service-card-container" a:for="{{specialServices}}">
+  <view class="title">
+    <view class="left">
+      <image
+        class="icon"
+        src="{{item.icon}}"
+        mode="aspectFit"
+      />
+      <text>{{item.title}}</text>
+    </view>
+    <view class="right">
+      <image
+        class="right-arrow"
+        mode="aspectFit"
+        src="https://gw.alipayobjects.com/zos/rmsportal/hKKCYGauqidEgTvkSVkL.png"
+      />
+    </view>
+  </view>
+  <view class="service-content ">
+    <view a:for="{{item.list}}" a:for-item="list" class="row-item">    
+        {{list.name}}
+    </view>
+  </view>
+  <view class="bottom-desc">
+    {{item.desc}}
+  </view>
+</view>

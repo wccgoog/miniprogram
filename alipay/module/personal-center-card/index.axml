@@ -1,0 +1,16 @@
+<view class="card-container personal-center">
+  <header title="{{cardInfo.title}}" size="32" />
+  <view a:if="{{cardInfo.content && (cardInfo.content.status || cardInfo.content.desc.length)}}" class="list">
+    <text class="title{{cardInfo.id === 1 ? ' pay' : ''}}">{{cardInfo.content.title}}
+    </text>
+    <text class="desc" a:for="{{cardInfo.content.desc}}" a:for-index="i" a:for-item="item">{{item}}        
+    </text>
+    <text class="status" onTap="onTradePayCall">{{cardInfo.content.status}}
+    </text>
+  </view>
+  <view class="single" a:else>
+    <text>{{cardInfo.content.title}}
+    </text>
+  </view>
+  <footer txt="{{cardInfo.footer}}" />
+</view>

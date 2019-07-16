@@ -1,0 +1,52 @@
+.service-card-container {
+  .title {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 32rpx;
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      color: #333333;
+      font-size: 36rpx;
+      .icon {
+        width: 48rpx;
+        height: 48rpx;
+        margin-right: 24rpx;
+      }
+      justify-content: flex-start;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      .right-arrow {
+        width: 15rpx;
+        height: 27rpx;
+      }
+
+    }
+   
+  }
+  .service-content {
+    padding: 32rpx;
+    .row {
+      display: flex;
+      flex-direction: row;
+      .col {
+        flex: 1;
+        height: 90rpx;
+        line-height: 90rpx;
+      }
+    }
+  }
+
+  .bottom-desc {
+    color: #999999;
+    font-size: 24rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+    padding-left: 32rpx;
+  }
+
+}

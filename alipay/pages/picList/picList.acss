@@ -1,0 +1,6 @@
+.title {
+  /* background: linear-gradient(to right, #0093d9, #90c421); */
+  color: #666;
+  border-bottom: #eee 1px dashed;
+  padding: 10px;
+}
