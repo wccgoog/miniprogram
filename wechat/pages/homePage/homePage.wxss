@@ -415,6 +415,7 @@ movable-view {
 
 .swiperHeight2 {
   height: 175rpx;
+  margin: 20px;
 }
 
 .apply {
