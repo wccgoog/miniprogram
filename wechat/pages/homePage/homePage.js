@@ -129,26 +129,29 @@ Page({
       },
 
     ],
-    specificZone: [
-      {
+    specificZone: [{
         title: '残联',
         dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/handicapped/index.html',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png'
+        src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png',
+        bindType: 'toWebView'
       },
       {
         title: '低保',
         dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/lowSecurity/templates/index.html',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/live.png'
+        src: 'https://jbxqalipay.nanjingdata.cn/image/live.png',
+        bindType: 'toWebView'
       },
       {
-        title: '低保',
+        title: '信用申领',
         dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/creditApply/templates/index.html',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/credit.png'
+        src: 'https://jbxqalipay.nanjingdata.cn/image/credit.png',
+        bindType: 'toWebView'
       },
       {
-        title: '低保',
+        title: '水务',
         dataId: 'https://www.jlwater.com/bizHandInfo',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg'
+        src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg',
+        bindType: 'toWebViewUnlogin'
       }
     ]
   },
@@ -160,11 +163,22 @@ Page({
       url: 'https://jbzwnew.qimixi.net/api/banner/bannerList',
       data: "",
       method: 'POST',
-      success: function (res) {
-        let images=[];
-        let callback=function(element){
-          if(element.name.indexOf('/') > -1){
-            element.name = '/pages' + element.name + element.name
+      success: function(res) {
+        let images = [];
+        let callback = function(element) {
+          if (element.name.indexOf('/') > -1) {
+            if (element.name[0] == 1) {
+              element.bindType = 'navigateTo';
+              element.name = '/pages' + element.name.slice(1) + element.name.slice(1);
+            } else if (element.name[0] == 2) {
+              //历史反馈
+              element.bindType = 'toWebView';
+              element.name = "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/historyRecord.html";
+            } else if (element.name[0] == 3) {
+              //我要反馈
+              element.bindType = 'toWebView';
+              element.name = "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/feedback.html";
+            }
             images.push(element)
           }
         }
@@ -301,6 +315,13 @@ Page({
   navigateTo(e) {
     wx.navigateTo({
       url: e.target.dataset.id,
+    })
+  },
+  toWebViewUnlogin(e) {
+    let toUrl = e.currentTarget.dataset.id;
+    toUrl = escape(toUrl);
+    wx.navigateTo({
+      url: '/pages/webview/webview?url=' + toUrl,
     })
   }
 })

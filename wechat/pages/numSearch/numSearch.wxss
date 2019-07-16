@@ -55,7 +55,7 @@ page {
 }
 
 .recommend-service-container {
-  padding: 20rpx 32rpx 10rpx;
+  padding: 0 20rpx;
   background: white;
 }
 

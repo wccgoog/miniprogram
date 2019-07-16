@@ -65,7 +65,8 @@ Page({
     itemListWebView: [
       {
       title: '意见反馈',
-      items: [{
+      items: [
+        {
           dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/historyRecord.html",
           src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
           name: "反馈列表",
@@ -136,7 +137,6 @@ Page({
 
   },
   navTo(e) {
-    // navTo(e,false);
     wx.navigateTo({
       url: e.currentTarget.dataset.id,
     })

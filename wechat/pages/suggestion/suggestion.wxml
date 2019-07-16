@@ -8,7 +8,7 @@
     </view>
   </view>
 </view>
-
+<!-- 
 <view wx:for="{{itemListWebView}}" class="recommend-service-container2">
   <view class="title">
     <view class="left-title">{{item.title}}</view>
@@ -18,4 +18,4 @@
       <view class="service-name">{{item.name}}</view>
     </view>
   </view>
-</view>
+</view> -->

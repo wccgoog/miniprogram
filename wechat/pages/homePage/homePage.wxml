@@ -39,7 +39,7 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight2">
   <block wx:for="{{background}}" wx:key="*this">
     <swiper-item>
-      <image  mode="widthFix" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" bindtap='navigateTo'></image>
+      <image  mode="scaleToFill" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" bindtap='{{item.bindType}}'></image>
     </swiper-item>
   </block>
 </swiper>
@@ -63,7 +63,7 @@
   </view>
 </view>
 <view class='imageContainer3'>
-  <image wx:for="{{specificZone}}" wx:key="{{index}}" bindtap='toWebView' data-id="{{item.dataId}}" wx:if="{{dataId==1}}" class='goTo3' mode="widthFix" src='{{item.src}}'></image>
+  <image wx:for="{{specificZone}}" wx:key="{{index}}" bindtap='{{item.bindType}}' data-id="{{item.dataId}}" wx:if="{{dataId==1}}" class='goTo3' mode="scaleToFill" src='{{item.src}}'></image>
 </view>
 
 <!-- 底部文字 -->
