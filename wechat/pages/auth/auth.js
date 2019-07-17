@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfoShow: true,
+    userInfoShow: false,
     authShow: true,
     mobileShow: true,
     url: ''
@@ -16,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let _this = this;
     //消耗掉isJump状态
     app.globalData.isJump = 0;
     if (options) {
@@ -24,6 +25,62 @@ Page({
         url: unescape(options.url)
       });
     }
+    wx.getSetting({
+      success(res) {
+        console.log(res)
+        if (!res.authSetting['scope.userInfo']) {
+          _this.setData({
+            userInfoShow: true
+          })
+        } else {
+          wx.getUserInfo({
+            success: (resuserinfo) => {
+              wx.login({
+                success: (res) => {
+                  wx.request({
+                    url: 'https://' + app.globalData.thirdDomain + '/api/wechat',
+                    method: 'GET',
+                    data: {
+                      code: res.code,
+                      encryptedData: resuserinfo.encryptedData,
+                      rawData: resuserinfo.rawData,
+                      iv: resuserinfo.iv,
+                      signature: resuserinfo.signature,
+                    },
+                    success: function(result) {
+                      var res = result.data;
+                      console.log(res);
+                      wx.setStorage({
+                        key: 'session3rd',
+                        data: res.data.session3rd,
+                      })
+                      _this.setData({
+                        userInfoShow: false
+                      })
+                    }
+                  })
+                },
+                fail: (e) => {
+                  _this.setData({
+                    userInfoShow: true
+                  })
+                }
+              })
+            },
+            fail: (e) => {
+              _this.setData({
+                userInfoShow: true
+              })
+            }
+          })
+        }
+      },
+      fail: (e) => {
+        _this.setData({
+          userInfoShow: true
+        })
+      }
+    })
   },
 
   /**
@@ -74,12 +131,11 @@ Page({
   onShareAppMessage: function() {
 
   },
+
+  //获取用户手机号码
   getPhoneNumber(res) {
     var that = this;
     console.log("getPhoneNumber:", res);
-    //记录encryptedData,iv 现在暂时用不到了2019/5/19
-    // app.globalData.encryptedData = res.detail.encryptedData;
-    // app.globalData.iv = res.detail.iv;
     wx.getStorage({
       key: 'session3rd',
       success: function(storageres) {
@@ -130,10 +186,12 @@ Page({
       },
     })
   },
+
+  //用户微信支付实名认证
   authinfo(res) {
     console.log("支付密码", res)
     if (res.detail.errMsg == "openRealnameAuth:cancel") {
-    // 取消输入支付密码
+      // 取消输入支付密码
       app.globalData.isLogin = false;
       app.globalData.nickName = app.globalData.constNickName;
       app.globalData.avatar = app.globalData.constAvatar;
@@ -159,6 +217,25 @@ Page({
             that.setData({
               authShow: false
             })
+            if (result.data.data.mobile.length > 10) {
+              app.globalData.mobile = result.data.data.mobile;
+              wx.getUserInfo({
+                success(resuserinfo) {
+                  let userInfo = JSON.parse(resuserinfo.rawData)
+                  // 获取用户昵称和头像,如果
+                  app.globalData.nickName = userInfo.nickName;
+                  app.globalData.avatar = userInfo.avatarUrl;
+                  if (app.globalData.nickName == app.globalData.constNickName && app.globalData.avatar == app.globalData.constAvatar) {
+                    app.globalData.isLogin = false;
+                  } else {
+                    app.globalData.isLogin = true;
+                  }
+                  wx.navigateBack({
+                    delta: 1
+                  });
+                }
+              })
+            }
           }
         })
       },
@@ -167,6 +244,8 @@ Page({
       }
     })
   },
+
+  //用户授权
   userInfo(resuserinfo) {
     var that = this;
     console.log(resuserinfo.detail.userInfo);
