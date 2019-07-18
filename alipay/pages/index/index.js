@@ -136,11 +136,11 @@ Page(store.register({
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/lowSecurity/templates/index.html',
       src: 'https://jbxqalipay.nanjingdata.cn/image/live.png'
     },
-    // {
-    //   title: '婚姻',
-    //   dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
-    //   src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png'
-    // },
+    {
+      title: '婚姻',
+      dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
+      src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png'
+    },
     ]
   },
   onShow() {
@@ -172,7 +172,18 @@ Page(store.register({
         let images = [];
         let callback = function (element) {
           if (element.name.indexOf('/') > -1) {
-            element.name = '/pages' + element.name + element.name
+            if (element.name[0] == 1) {
+              element.bindType = 'navigateTo';
+              element.name = '/pages' + element.name.slice(1) + element.name.slice(1);
+            } else if (element.name[0] == 2) {
+              //历史反馈
+              element.bindType = 'toWebView';
+              element.name = "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/historyRecord.html";
+            } else if (element.name[0] == 3) {
+              //我要反馈
+              element.bindType = 'toWebView';
+              element.name = "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/feedback.html";
+            }
             images.push(element)
           }
         }

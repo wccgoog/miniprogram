@@ -8,7 +8,7 @@ Page({
   data: {
     userInfoShow: false,
     authShow: true,
-    mobileShow: true,
+    mobileShow: false,
     url: ''
   },
 
@@ -214,9 +214,11 @@ Page({
             console.log(result);
             app.globalData.realname = result.data.data.realname;
             app.globalData.credential_id = result.data.data.credential_id;
-            that.setData({
-              authShow: false
-            })
+            if (result.data.data.mobile.length < 10){
+              that.setData({
+                authShow: false
+              })
+            }
             if (result.data.data.mobile.length > 10) {
               app.globalData.mobile = result.data.data.mobile;
               wx.getUserInfo({

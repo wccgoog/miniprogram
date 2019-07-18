@@ -63,9 +63,9 @@ page {
 .recommend-service-container .service-list .service-item .service-name {
   color: #333;
   font-size: 24rpx;
-  text-overflow:ellipsis;
-  white-space:nowrap; 
-  overflow:hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   width: 100%;
   text-align: center;
 }
@@ -237,6 +237,7 @@ movable-view {
 .headerImg {
   width: 100%;
   vertical-align: bottom;
+  height: 100px;
 }
 
 .swiper-tab {
@@ -418,6 +419,8 @@ movable-view {
 
 .swiperHeight2 {
   height: 175rpx;
+  width: 90%;
+  margin: auto;
 }
 
 .apply {

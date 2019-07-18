@@ -16,17 +16,28 @@ Page({
     //企业服务
     business_topic: '',
     business_department: '',
-    background: [
-      "https://jbxqalipay.nanjingdata.cn/image/tb1.jpg",
-      // "https://jbxqalipay.nanjingdata.cn/image/tb2.jpg",
-      "https://jbxqalipay.nanjingdata.cn/image/tb3.jpg",
-      "https://jbxqalipay.nanjingdata.cn/image/tb4.jpg",
-      // "https://jbxqalipay.nanjingdata.cn/image/tb5.jpg",
-      // "https://jbxqalipay.nanjingdata.cn/image/tb6.jpg"
-    ],
+    background: [],
   },
   onLoad() {
     var _this = this;
+    //轮播图
+    my.request({
+      url: 'https://jbzwnew.qimixi.net/api/banner/bannerList',
+      success: function (res) {
+        let images = [];
+        let callback = function (element) {
+          if (element.name.indexOf('/') == -1) {
+            element.name = '/pages' + element.name + element.name
+            images.push(element)
+          }
+        }
+        res.data.data.list.forEach(callback);
+        console.log("images", images)
+        _this.setData({
+          background: images
+        })
+      }
+    })
     my.request({
       url: 'https://jbzwnew.qimixi.net/api/index/index',
       method: "GET",

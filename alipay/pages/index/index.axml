@@ -33,13 +33,13 @@
   </view>
 </view>
 
-<!-- <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight2">
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight2">
   <block a:for="{{background}}" a:key="*this">
     <swiper-item>
-      <image  mode="widthFix" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" onTap='navigateTo'></image>
+      <image  mode="scaleToFill" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" onTap='navigateTo'></image>
     </swiper-item>
   </block>
-</swiper> -->
+</swiper>
 
 <view class='title3'>
   <view data-id='0' class='{{dataId==0?"isChosen":"unChosen"}}' onTap='choose'>新区通办  

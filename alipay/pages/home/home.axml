@@ -9,7 +9,7 @@
     <swiper class="head" indicator-dots=true autoplay=true interval="5000">
       <block a:for="{{background}}">
         <swiper-item >
-          <image class="simage" src={{item}} mode="aspectFill"/>
+          <image class="simage" src={{'https://jbzwnew.qimixi.net'+item.image}} mode="aspectFill"/>
         </swiper-item>
       </block>
     </swiper>
