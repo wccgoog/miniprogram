@@ -198,6 +198,7 @@ Page({
       wx.navigateBack({
         delta: 2
       })
+      return
     }
     var that = this;
     wx.getStorage({

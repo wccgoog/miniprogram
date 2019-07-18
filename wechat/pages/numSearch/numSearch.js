@@ -24,7 +24,7 @@ Page({
           },
           {
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/newOffice.html?workType=O",
-            src: "https://jbxqalipay.nanjingdata.cn/image/done.png",
+            src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
             name: "办结件",
             bindType: 'toWebView'
           }
@@ -47,7 +47,7 @@ Page({
         ]
       },
       {
-        title: '帮助与反馈',
+        title: '建议与反馈',
         items: [{
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/feedback.html",
             src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
