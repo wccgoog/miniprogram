@@ -26,36 +26,43 @@ Page(store.register({
         },
         {
           dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/newOffice.html?workType=O",
-          src: "https://jbxqalipay.nanjingdata.cn/image/done.png",
+          src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
           name: "办结件",
           bindType: 'toWebView'
         }
         ]
       },
       {
-        title: '我的二维码',
+        title: '云柜二维码',
         items: [{
           dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/pickup.html",
-          src: "https://jbxqalipay.nanjingdata.cn/image/suggestion.png",
+          src: "https://jbxqalipay.nanjingdata.cn/image/pickup.png",
           name: "取件码",
           bindType: 'toWebView'
         },
         {
           dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/saveup.html",
-          src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
+          src: "https://jbxqalipay.nanjingdata.cn/image/saveup.png",
           name: "存件码",
           bindType: 'toWebView'
         }
         ]
       },
       {
-        title: '帮助与反馈',
+        title: '建议与反馈',
         items: [{
-          dataId: "/pages/suggestion/suggestion?a=123&b=321",
-          src: "https://jbxqalipay.nanjingdata.cn/image/suggestion.png",
-          name: "意见反馈",
-          bindType: 'navTo'
-        },]
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/feedback.html",
+          src: "https://jbxqalipay.nanjingdata.cn/image/feedback.png",
+            name: "我要反馈",
+            bindType: 'toWebView'
+          },
+          {
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/historyRecord.html",
+            src: "https://jbxqalipay.nanjingdata.cn/image/historyRecord.png",
+            name: "反馈历史",
+            bindType: 'toWebView'
+          }
+        ]
       }
     ],
   },

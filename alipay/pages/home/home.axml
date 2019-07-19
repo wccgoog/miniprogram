@@ -1,112 +1,104 @@
-  
-<movable-area>
-    <!-- 办事一张图 -->
-  <movable-view x="{{x}}" y="{{y}}" direction="all" onTap='onePic'>
-    <view class="pic" onTap='onePic'>办事</view>
-    <view class="pic" onTap='onePic'>一张图</view>
-  </movable-view>
-  <view class="page-container">
-    <swiper class="head" indicator-dots=true autoplay=true interval="5000">
-      <block a:for="{{background}}">
-        <swiper-item >
-          <image class="simage" src={{'https://jbzwnew.qimixi.net'+item.image}} mode="aspectFill"/>
-        </swiper-item>
-      </block>
-    </swiper>
-    <view class="swiper-tab">
-      <view class="swiper-tab-list" data-current="0" data-id='0' onTap="swichNav" style="border-right:1px solid #eee;box-sizing:border-box">
-        <text data-id='0' class="b-border {{currentTab==0 ? 'on' : ''}}" data-current="0">个人服务                                                                      
+<view class="page-container">
+  <swiper class="head" indicator-dots=true autoplay=true interval="5000">
+    <block a:for="{{background}}">
+      <swiper-item >
+        <image class="simage" src={{'https://jbzwnew.qimixi.net'+item.image}} mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swiper-tab">
+    <view class="swiper-tab-list" data-current="0" data-id='0' onTap="swichNav" style="border-right:1px solid #eee;box-sizing:border-box">
+      <text data-id='0' class="b-border {{currentTab==0 ? 'on' : ''}}" data-current="0">个人服务                                                                              
+      </text>
+    </view>
+    <view class="swiper-tab-list" data-current="1" data-id='1' onTap="swichNav">
+      <text data-id='1' class="b-border {{currentTab==1 ? 'on' : ''}}" data-current="1">企业服务                                                                              
+      </text>
+    </view>
+  </view>
+  <!-- 个人 -->
+  <view a:if="{{dataId == 0}}" class="themeWrap">
+    <view class="themeTitle">
+      <text class="themeTitleWords">主题                                                                        
+      </text>
+      <view class="more" onTap="goMore" data-type="0" data-first="1">
+        <text>更多                                                                                                
         </text>
-      </view>
-      <view class="swiper-tab-list" data-current="1" data-id='1' onTap="swichNav">
-        <text data-id='1' class="b-border {{currentTab==1 ? 'on' : ''}}" data-current="1">企业服务                                                                      
-        </text>
+        <image src="../../images/rightArrow.png" class="rightArrow">
+        </image>
       </view>
     </view>
-    <!-- 个人 -->
-    <view a:if="{{dataId == 0}}" class="themeWrap">
-      <view class="themeTitle">
-        <text class="themeTitleWords">主题                                                                
-        </text>
-        <view class="more" onTap="goMore" data-type="0" data-first="1">
-          <text>更多                                                                                      
-          </text>
-          <image src="../../images/rightArrow.png" class="rightArrow">
-          </image>
-        </view>
-      </view>
-      <view class="themeClassify">
-        <view class="themeSingle" a:for="{{personal_topic}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">
-          <view class="left">
-            <view class="leftTitle">{{item.name}}                                                                                                            
-            </view>
-            <view class="leftDetail">{{item.intro}}                                                                                                            
-            </view>
+    <view class="themeClassify">
+      <view class="themeSingle" a:for="{{personal_topic}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">
+        <view class="left">
+          <view class="leftTitle">{{item.name}}                                                                                                                        
           </view>
-          <image src="https://jbzwnew.qimixi.net{{item.logo}}" class="right" mode="widthFix">
-          </image>
-        </view>
-      </view>
-    </view>
-    <!-- 法人 -->
-    <view a:if="{{dataId == 1}}" class="themeWrap">
-      <view class="themeTitle">
-        <text class="themeTitleWords">主题                                                                  
-        </text>
-        <view class="more" onTap="goMore" data-type="0" data-first="2">
-          <text>更多                                                                                        
-          </text>
-          <image src="../../images/rightArrow.png" class="rightArrow">
-          </image>
-        </view>
-      </view>
-      <view class="themeClassify">
-        <view class="themeSingle" a:for="{{business_topic}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">
-          <view class="left">
-            <view class="leftTitle">{{item.name}}                                                                                                              
-            </view>
-            <view class="leftDetail">{{item.intro}}                                                                                                              
-            </view>
+          <view class="leftDetail">{{item.intro}}                                                                                                                        
           </view>
-          <image src="https://jbzwnew.qimixi.net{{item.logo}}" class="right" mode="widthFix">
-          </image>
         </view>
+        <image src="https://jbzwnew.qimixi.net{{item.logo}}" class="right" mode="widthFix">
+        </image>
       </view>
     </view>
-    <view a:if="{{dataId == 0}}" class="departmentWrap">
-      <view class="departmentTitle">
-        <text class="departmentTitleWords">部门                                                      
+  </view>
+  <!-- 法人 -->
+  <view a:if="{{dataId == 1}}" class="themeWrap">
+    <view class="themeTitle">
+      <text class="themeTitleWords">主题                                                                          
+      </text>
+      <view class="more" onTap="goMore" data-type="0" data-first="2">
+        <text>更多                                                                                                  
         </text>
-        <view class="more" onTap="goDepartment" data-type="1" data-first="2">
-          <text>更多                                                                        
-          </text>
-          <image src="../../images/rightArrow.png" class="rightArrow">
-          </image>
-        </view>
+        <image src="../../images/rightArrow.png" class="rightArrow">
+        </image>
       </view>
-      <view class="departmentClassify">
-        <view class="departmentSingle" a:for="{{personal_department}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">{{item.name}}                                                      
+    </view>
+    <view class="themeClassify">
+      <view class="themeSingle" a:for="{{business_topic}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">
+        <view class="left">
+          <view class="leftTitle">{{item.name}}                                                                                                                          
+          </view>
+          <view class="leftDetail">{{item.intro}}                                                                                                                          
+          </view>
         </view>
+        <image src="https://jbzwnew.qimixi.net{{item.logo}}" class="right" mode="widthFix">
+        </image>
       </view>
     </view>
   </view>
-    <view a:if="{{dataId == 1}}" class="departmentWrap">
-      <view class="departmentTitle">
-        <text class="departmentTitleWords">部门                                                      
+  <view a:if="{{dataId == 0}}" class="departmentWrap">
+    <view class="departmentTitle">
+      <text class="departmentTitleWords">部门                                                              
+      </text>
+      <view class="more" onTap="goDepartment" data-type="1" data-first="2">
+        <text>更多                                                                                  
         </text>
-        <view class="more" onTap="goDepartment" data-type="1" data-first="2">
-          <text>更多                                                                        
-          </text>
-          <image src="../../images/rightArrow.png" class="rightArrow">
-          </image>
-        </view>
+        <image src="../../images/rightArrow.png" class="rightArrow">
+        </image>
       </view>
-      <view class="departmentClassify">
-        <view class="departmentSingle" a:for="{{business_department}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">{{item.name}}                                                      
-        </view>
+    </view>
+    <view class="departmentClassify">
+      <view class="departmentSingle" a:for="{{personal_department}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">{{item.name}}                                                              
       </view>
     </view>
   </view>
-  <view class='x'>南京市江北新区管理委员会行政审批局主办
+</view>
+<view a:if="{{dataId == 1}}" class="departmentWrap">
+  <view class="departmentTitle">
+    <text class="departmentTitleWords">部门                                                              
+    </text>
+    <view class="more" onTap="goDepartment" data-type="1" data-first="2">
+      <text>更多                                                                                  
+      </text>
+      <image src="../../images/rightArrow.png" class="rightArrow">
+      </image>
+    </view>
   </view>
-</movable-area>
+  <view class="departmentClassify">
+    <view class="departmentSingle" a:for="{{business_department}}" a:key="{{index}}" onTap="goListDetail" data-id="{{item.sid}}">{{item.name}}                                                              
+    </view>
+  </view>
+</view>
+</view>
+<view class='x'>南京市江北新区管理委员会行政审批局主办  
+</view>

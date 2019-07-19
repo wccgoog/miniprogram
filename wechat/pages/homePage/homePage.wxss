@@ -115,6 +115,7 @@ page {
   font-size: 14px;
   /* font-weight: 600; */
   color: #aaa;
+  background: rgb(248,248,248);
 }
 
 .service-item2 {

@@ -120,6 +120,7 @@ page {
   font-size: 14px;
   /* font-weight: 600; */
   color: #aaa;
+  background: rgb(248,248,248);
 }
 
 .service-item2 {
@@ -420,7 +421,7 @@ movable-view {
 .swiperHeight2 {
   height: 175rpx;
   width: 90%;
-  margin: auto;
+  margin: 20px auto;
 }
 
 .apply {

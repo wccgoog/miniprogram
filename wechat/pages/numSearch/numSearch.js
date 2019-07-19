@@ -31,16 +31,16 @@ Page({
         ]
       },
       {
-        title: '我的二维码',
+        title: '云柜二维码',
         items: [{
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/pickup.html",
-            src: "https://jbxqalipay.nanjingdata.cn/image/suggestion.png",
+          src: "https://jbxqalipay.nanjingdata.cn/image/pickup.png",
             name: "取件码",
             bindType: 'toWebView'
           },
           {
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/saveup.html",
-            src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
+            src: "https://jbxqalipay.nanjingdata.cn/image/saveup.png",
             name: "存件码",
             bindType: 'toWebView'
           }
@@ -50,13 +50,13 @@ Page({
         title: '建议与反馈',
         items: [{
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/feedback.html",
-            src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
+          src: "https://jbxqalipay.nanjingdata.cn/image/feedback.png",
             name: "我要反馈",
             bindType: 'toWebView'
           },
           {
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/historyRecord.html",
-            src: "https://jbxqalipay.nanjingdata.cn/image/QrCode.png",
+            src: "https://jbxqalipay.nanjingdata.cn/image/historyRecord.png",
             name: "反馈历史",
             bindType: 'toWebView'
           }

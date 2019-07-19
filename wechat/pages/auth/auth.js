@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function(options) {
     let _this = this;
-    //消耗掉isJump状态
+    //消耗掉isJump状态,用户未登录时从其他页面跳转到'我的'页面,isJump为1,这时会自动跳转auth授权页面
     app.globalData.isJump = 0;
     if (options) {
       console.log("auth.js.options", options);
@@ -132,7 +132,7 @@ Page({
 
   },
 
-  //获取用户手机号码
+  //'获取手机号码'按钮
   getPhoneNumber(res) {
     var that = this;
     console.log("getPhoneNumber:", res);
@@ -187,7 +187,7 @@ Page({
     })
   },
 
-  //用户微信支付实名认证
+  //'实名认证'按钮
   authinfo(res) {
     console.log("支付密码", res)
     if (res.detail.errMsg == "openRealnameAuth:cancel") {
@@ -225,7 +225,7 @@ Page({
               wx.getUserInfo({
                 success(resuserinfo) {
                   let userInfo = JSON.parse(resuserinfo.rawData)
-                  // 获取用户昵称和头像,如果
+                  // 获取用户昵称和头像,获取到后,全局变量isLogin就为true,如果没有获取到,全局变量isLogin就为false
                   app.globalData.nickName = userInfo.nickName;
                   app.globalData.avatar = userInfo.avatarUrl;
                   if (app.globalData.nickName == app.globalData.constNickName && app.globalData.avatar == app.globalData.constAvatar) {
@@ -248,7 +248,7 @@ Page({
     })
   },
 
-  //用户授权
+  //'授权'按钮
   userInfo(resuserinfo) {
     var that = this;
     console.log(resuserinfo.detail.userInfo);
@@ -267,7 +267,7 @@ Page({
           },
           success: function(result) {
             var res = result.data;
-            console.log(res);
+            // 本地存储
             wx.setStorage({
               key: 'session3rd',
               data: res.data.session3rd,

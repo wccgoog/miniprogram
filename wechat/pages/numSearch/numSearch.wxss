@@ -145,4 +145,6 @@ page {
   padding: 10px 0;
   font-size: 40rpx;
   font-weight: 300;
+  margin-top:20px;
+  /* background: rgb(248, 248, 248); */
 }
