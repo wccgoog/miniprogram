@@ -38,7 +38,8 @@ Page({
     // banner图
     background: [],
     // banner图相关配置
-    indicatorDots: true,
+    indicatorDots: false,
+    swiperCurrent :0,
     vertical: false,
     autoplay: true,
     circular: true,
@@ -152,11 +153,18 @@ Page({
         dataId: 'https://www.jlwater.com/bizHandInfo',
         src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg',
         bindType: 'toWebViewUnlogin'
+      },
+      {
+        title: '婚姻',
+        dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+        bindType: 'toWebView'
       }
     ]
   },
   // loading显示方法
   loading: function() {},
+
   onLoad: function(options) {
     var _this = this;
     wx.request({
@@ -229,6 +237,7 @@ Page({
     app.globalData.latestUsed.forEach(
       (value, index) => {
         latestUsedItems[index] = _this.data.itemList[value[0]].items[value[1]];
+       
       }
     )
     this.setData({
@@ -301,6 +310,16 @@ Page({
     }, 2000)
 
   },
+
+  swiperChange(e) {
+    let current = e.detail.current;
+    // console.log(current, '轮播图')
+    let that = this;
+    that.setData({
+      swiperCurrent: current,
+    })
+  },
+
   login() {
     app.globalData.isJump = 1;
     wx.switchTab({

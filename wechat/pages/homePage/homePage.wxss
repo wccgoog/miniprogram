@@ -2,6 +2,33 @@ page {
   background: white;
 }
 
+
+.swiper-box{
+  position: relative;
+  width: 100%;
+}
+
+.dots{ 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  display: flex; 
+  justify-content: center; 
+} 
+.dots .dot{ 
+  margin: 0 8rpx; 
+  width: 14rpx; 
+  height: 14rpx; 
+  background: #eee; 
+  border-radius: 8rpx; 
+  transition: all .6s; 
+} 
+.dots .dot.active{ 
+  width: 24rpx; 
+  background: rgb(102, 245, 166); 
+}
+
 .recommend-service-container {
   padding: 20rpx 32rpx 10rpx;
   background: white;
@@ -418,7 +445,7 @@ movable-view {
 
 .swiperHeight2 {
   height: 175rpx;
-  margin: 20px;
+  margin: 0 20px 20px;
 }
 
 .apply {

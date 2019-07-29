@@ -36,13 +36,23 @@
   </view>
 </view>
 
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight2">
+<!-- 轮播图 -->
+
+<view class='swiper-box'>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight2" bindchange="swiperChange">
   <block wx:for="{{background}}" wx:key="*this">
     <swiper-item>
       <image  mode="scaleToFill" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" bindtap='{{item.bindType}}'></image>
     </swiper-item>
   </block>
+
 </swiper>
+      <view class="dots"> 
+      <block wx:for="{{background}}" wx:key="unique"> 
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view> 
+      </block> 
+    </view>
+</view>
 
 <!-- 服务 -->
 <view class='title3'>

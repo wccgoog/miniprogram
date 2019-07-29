@@ -128,7 +128,7 @@ export function latestUsed(e) {
       globalLatestUsed.pop();
     }
   }
-
+  // 判断，如果在最近使用下点击事项
   if (e.currentTarget.dataset.latest != undefined) {
     let index = e.currentTarget.dataset.latest;
     globalLatestUsed.unshift(globalLatestUsed[index]);
