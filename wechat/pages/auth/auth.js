@@ -215,10 +215,13 @@ Page({
             console.log(result);
             app.globalData.realname = result.data.data.realname;
             app.globalData.credential_id = result.data.data.credential_id;
-            if (result.data.data.mobile.length < 10){
+            if (result.data.data.mobile.length < 10) {
               that.setData({
                 authShow: false
-              })
+              });
+              wx.navigateBack({
+                delta: 1
+              });
             }
             if (result.data.data.mobile.length > 10) {
               app.globalData.mobile = result.data.data.mobile;
@@ -233,9 +236,9 @@ Page({
                   } else {
                     app.globalData.isLogin = true;
                   }
-                  wx.navigateBack({
-                    delta: 1
-                  });
+                  wx.switchTab({
+                    url: '/pages/homePage/homePage',
+                  })
                 }
               })
             }
