@@ -75,6 +75,8 @@ page {
   justify-content: flex-start;
   background: rgb(248, 248, 248);
   padding: 5px 10px;
+  margin: 0 10px;
+  border-left: 4px solid #079a41;
 }
 
 .recommend-service-container .title .right-title {
@@ -90,27 +92,34 @@ page {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .recommend-service-container .service-list .service-item {
-  margin: 10px;
-  width: 25%;
+  padding: 4px 0px 4px 8px;
+  width: 33%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
+  border: solid 1px #eee;
+  margin: 10px;
 }
 
 .recommend-service-container .service-list .service-item .service-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 14rpx;
+  width: 35px;
+  height: 35px;
+  /* margin-bottom: 14rpx; */
 }
 
 .recommend-service-container .service-list .service-item .service-name {
   color: #333;
-  font-size: 24rpx;
+  font-size: 35rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
 }
 
 .avatar {
@@ -121,9 +130,10 @@ page {
 }
 
 .user {
-  margin: auto;
   text-align: center;
-  width: 50%;
+  background: #3dccb4;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .nickName {
@@ -143,4 +153,5 @@ page {
   font-size: 40rpx;
   font-weight: 300;
   margin-top:20px;
+  color: #3dccb4;
 }

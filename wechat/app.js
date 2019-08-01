@@ -82,6 +82,7 @@ App({
     isJump:0,
     //最近使用
     latestUsed:[[1,0],[1,1],[1,2],[3,0]],
-    thirdDomain:'jbzwnew.qimixi.net'
+    thirdDomain:'jbzwnew.qimixi.net',
+    toUrl:''
   }
 })

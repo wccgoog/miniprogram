@@ -23,6 +23,8 @@ App({
     constAvatar: 'https://gw.alipayobjects.com/zos/rmsportal/OEpRddJBTljCwxpcwDXQ.png',
     //是否从homePage跳转登录
     isJump: 0,
+    toUrl:'',
+    url:'',
   },
   uid: '',
   faceVerifyUrl: '',

@@ -27,6 +27,7 @@ Page({
     }
     wx.getSetting({
       success(res) {
+        console.log('-------------------------------')
         console.log(res)
         if (!res.authSetting['scope.userInfo']) {
           _this.setData({
@@ -222,8 +223,7 @@ Page({
               wx.navigateBack({
                 delta: 1
               });
-            }
-            if (result.data.data.mobile.length > 10) {
+            } else if (result.data.data.mobile.length > 10) {
               app.globalData.mobile = result.data.data.mobile;
               wx.getUserInfo({
                 success(resuserinfo) {
@@ -236,9 +236,27 @@ Page({
                   } else {
                     app.globalData.isLogin = true;
                   }
+                  var url = that.data.url;
+                  if (url == 'homePage') {
                   wx.switchTab({
                     url: '/pages/homePage/homePage',
                   })
+                  }else{
+                    var toUrl = '';
+                    if (url.indexOf("?") == -1) {
+                      toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
+                    } else {
+                      toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
+                    }
+                    if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {
+                      console.log(toUrl)
+                      app.globalData.toUrl = toUrl;
+                      wx.switchTab({
+                        url: '/pages/homePage/homePage',
+                      })
+                    }
+                  }
+     
                 }
               })
             }

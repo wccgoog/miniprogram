@@ -1,8 +1,9 @@
 const app = getApp()
 
-export function webView(e,isNumSearch) {
+export function webView(e, isNumSearch) {
   // 如果是从numSearch页面点击, isNumSearch为true
   console.log("webview=====", app.globalData.isLogin);
+  var url = e.currentTarget.dataset.id;
   if (app.globalData.isLogin == false) {
     //未登录状态
     wx.showModal({
@@ -10,24 +11,15 @@ export function webView(e,isNumSearch) {
       content: '登录后即可网上申报和查询办件',
       confirmText: '登录',
       success: (res) => {
+        console.log("res=", res)
         if (res.confirm) {
-          if(isNumSearch){
-            if (app.globalData.isLogin == false) {
-              wx.navigateTo({
-                url: '/pages/auth/auth?url=homePage'
-              })
-            }
-          }else{
-            app.globalData.isJump = 1;
-            wx.switchTab({
-              url: '/pages/numSearch/numSearch'
-            })
-          }
+          wx.navigateTo({
+            url: '/pages/auth/auth?url=' + escape(url)
+          })
         }
       }
     })
   } else {
-    var url = e.currentTarget.dataset.id;
     wx.request({
       url: 'https://' + app.globalData.thirdDomain + '/api/user/getUserInfo',
       data: {
@@ -136,7 +128,7 @@ export function latestUsed(e) {
   }
 }
 
-export function navTo(e,isNumSearch){
+export function navTo(e, isNumSearch) {
   console.log("webview=====", app.globalData.isLogin);
   if (app.globalData.isLogin == false) {
     //未登录状态

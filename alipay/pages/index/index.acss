@@ -120,7 +120,7 @@ page {
   font-size: 14px;
   /* font-weight: 600; */
   color: #aaa;
-  background: rgb(248,248,248);
+  background: rgb(248, 248, 248);
 }
 
 .service-item2 {
@@ -514,4 +514,34 @@ movable-view {
 .temperature {
   font-size: 11px;
   font-weight: 900;
+}
+
+/* 轮播图的点 */
+
+.swiper-box {
+  position: relative;
+  width: 100%;
+}
+
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dots .dot {
+  margin: 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #eee;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+
+.dots .dot.active {
+  width: 24rpx;
+  background: rgb(102, 245, 166);
 }

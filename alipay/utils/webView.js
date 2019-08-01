@@ -4,10 +4,12 @@ const app = getApp();
 
 export function webView(e) {
   latestUsed(e);
+  let url = e.currentTarget.dataset.id;
+  app.globalData.url=url;
   if (app.globalData.isLogin) {
     let uid = getUid();
     let toUrl = '';
-    let url = e.currentTarget.dataset.id;
+    // let url = e.currentTarget.dataset.id;
     if (url.indexOf("?") == -1) {
       toUrl = escape(url + '?code=A&uid=' + uid)
     } else {

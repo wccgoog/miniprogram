@@ -32,7 +32,7 @@ Page(store.register({
     //企业服务
     business_topic: '',
     business_department: '',
-    indicatorDots: true,
+    indicatorDots: false,
     vertical: false,
     autoplay: true,
     circular: true,
@@ -126,7 +126,13 @@ Page(store.register({
         ]
       },
     ],
-    specificZone: [{
+    specificZone: [
+      {
+      title: '婚姻',
+      dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
+      src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png'
+    },
+      {
       title: '残联',
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/handicapped/index.html',
       src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png'
@@ -136,11 +142,7 @@ Page(store.register({
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/lowSecurity/templates/index.html',
       src: 'https://jbxqalipay.nanjingdata.cn/image/live.png'
     },
-    {
-      title: '婚姻',
-      dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
-      src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png'
-    },
+    
     ]
   },
   onShow() {
@@ -215,7 +217,6 @@ Page(store.register({
         });
       }
     });
-
 
     // this.dispatch('updateCityTabs');
     this.dispatch('updateLocalAuthCode');
@@ -307,6 +308,15 @@ Page(store.register({
   navigateTo(e){
     my.navigateTo({
       url:e.target.dataset.id
+    })
+  },
+  // 轮播图效果
+    swiperChange(e) {
+    let current = e.detail.current;
+    // console.log(current, '轮播图')
+    let that = this;
+    that.setData({
+      swiperCurrent: current
     })
   }
 }));

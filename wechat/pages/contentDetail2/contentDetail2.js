@@ -24,8 +24,8 @@ Page({
   priviewImg() {
     var _this = this;
     wx.previewImage({
-      current: _this.data.treeImg, // 当前显示图片的http链接
-      urls: [_this.data.treeImg] // 需要预览的图片http链接列表
+      current: 'https://jbzwnew.qimixi.net' + _this.data.treeImg, // 当前显示图片的http链接
+      urls: ['https://jbzwnew.qimixi.net' +_this.data.treeImg] // 需要预览的图片http链接列表
     })
   },
   //点击下载文件

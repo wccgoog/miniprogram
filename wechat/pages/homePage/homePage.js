@@ -39,7 +39,7 @@ Page({
     background: [],
     // banner图相关配置
     indicatorDots: false,
-    swiperCurrent :0,
+    swiperCurrent: 0,
     vertical: false,
     autoplay: true,
     circular: true,
@@ -130,7 +130,14 @@ Page({
       },
 
     ],
-    specificZone: [{
+    specificZone: [
+      {
+        title: '婚姻',
+        dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+        bindType: 'toWebView'
+      },
+      {
         title: '残联',
         dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/handicapped/index.html',
         src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png',
@@ -152,14 +159,15 @@ Page({
         title: '水务',
         dataId: 'https://www.jlwater.com/bizHandInfo',
         src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg',
-        bindType: 'toWebViewUnlogin'
-      },
-      {
-        title: '婚姻',
-        dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
         bindType: 'toWebView'
-      }
+      },
+      
+      // {
+      //   title: '变更登记',
+      //   dataId: 'https://bdcwsbz.njgt.gov.cn:8003/LAND/index_new.html',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+      //   bindType: 'toWebView'
+      // }
     ]
   },
   // loading显示方法
@@ -237,7 +245,7 @@ Page({
     app.globalData.latestUsed.forEach(
       (value, index) => {
         latestUsedItems[index] = _this.data.itemList[value[0]].items[value[1]];
-       
+
       }
     )
     this.setData({
@@ -271,6 +279,14 @@ Page({
         }
       });
     }
+
+    if (app.globalData.toUrl != '') {
+      wx.navigateTo({
+        url: '/pages/webview/webview?url=' + app.globalData.toUrl
+      });
+      app.globalData.toUrl='';
+      console.log('11111111111111111111',app.globalData.toUrl)
+    }
   },
   onHide() {
     // clearInterval(this.data.intervalNum);
@@ -293,6 +309,7 @@ Page({
   },
   toWebView(e) {
     var _this = this;
+    console.log("12312312312", _this)
     //最近使用
 
     latestUsed(e);

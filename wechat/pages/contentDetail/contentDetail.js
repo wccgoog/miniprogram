@@ -32,9 +32,10 @@ Page({
   //点击查看流程图
   priviewImg() {
     var _this = this;
+    console.log(_this.data.treeImg.file_path)
     wx.previewImage({
-      current: _this.data.treeImg.file_path, // 当前显示图片的http链接
-      urls: [_this.data.treeImg.file_path] // 需要预览的图片http链接列表
+      current: 'https://jbzwnew.qimixi.net' +_this.data.treeImg.file_path, // 当前显示图片的http链接
+      urls: ['https://jbzwnew.qimixi.net' +_this.data.treeImg.file_path] // 需要预览的图片http链接列表
     })
   },
   //点击下载文件
