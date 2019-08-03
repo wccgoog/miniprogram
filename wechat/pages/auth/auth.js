@@ -50,7 +50,7 @@ Page({
                     },
                     success: function(result) {
                       var res = result.data;
-                      console.log(res);
+                      console.log("auth.load.getuserinfo--",res);
                       wx.setStorage({
                         key: 'session3rd',
                         data: res.data.session3rd,
@@ -216,12 +216,9 @@ Page({
             console.log(result);
             app.globalData.realname = result.data.data.realname;
             app.globalData.credential_id = result.data.data.credential_id;
-            if (result.data.data.mobile.length < 10) {
+            if (result.data.data.mobile.length <= 10) {
               that.setData({
                 authShow: false
-              });
-              wx.navigateBack({
-                delta: 1
               });
             } else if (result.data.data.mobile.length > 10) {
               app.globalData.mobile = result.data.data.mobile;
