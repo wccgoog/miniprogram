@@ -216,11 +216,48 @@ Page({
             console.log(result);
             app.globalData.realname = result.data.data.realname;
             app.globalData.credential_id = result.data.data.credential_id;
-            if (result.data.data.mobile.length <= 10) {
-              that.setData({
-                authShow: false
-              });
-            } else if (result.data.data.mobile.length > 10) {
+            // if (result.data.data.mobile.length <= 10) {
+            //   that.setData({
+            //     authShow: false
+            //   });
+            // } else if (result.data.data.mobile.length > 10) {
+            //   app.globalData.mobile = result.data.data.mobile;
+            //   wx.getUserInfo({
+            //     success(resuserinfo) {
+            //       let userInfo = JSON.parse(resuserinfo.rawData)
+            //       // 获取用户昵称和头像,获取到后,全局变量isLogin就为true,如果没有获取到,全局变量isLogin就为false
+            //       app.globalData.nickName = userInfo.nickName;
+            //       app.globalData.avatar = userInfo.avatarUrl;
+            //       if (app.globalData.nickName == app.globalData.constNickName && app.globalData.avatar == app.globalData.constAvatar) {
+            //         app.globalData.isLogin = false;
+            //       } else {
+            //         app.globalData.isLogin = true;
+            //       }
+            //       var url = that.data.url;
+            //       if (url == 'homePage') {
+            //       wx.switchTab({
+            //         url: '/pages/homePage/homePage',
+            //       })
+            //       }else{
+            //         var toUrl = '';
+            //         if (url.indexOf("?") == -1) {
+            //           toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
+            //         } else {
+            //           toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
+            //         }
+            //         if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {
+            //           console.log(toUrl)
+            //           app.globalData.toUrl = toUrl;
+            //           wx.switchTab({
+            //             url: '/pages/homePage/homePage',
+            //           })
+            //         }
+            //       }
+     
+            //     }
+            //   })
+            // }
+            if (result.data.data.mobile && result.data.data.mobile.length > 10) {
               app.globalData.mobile = result.data.data.mobile;
               wx.getUserInfo({
                 success(resuserinfo) {
@@ -235,10 +272,10 @@ Page({
                   }
                   var url = that.data.url;
                   if (url == 'homePage') {
-                  wx.switchTab({
-                    url: '/pages/homePage/homePage',
-                  })
-                  }else{
+                    wx.switchTab({
+                      url: '/pages/homePage/homePage',
+                    })
+                  } else {
                     var toUrl = '';
                     if (url.indexOf("?") == -1) {
                       toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
@@ -253,9 +290,13 @@ Page({
                       })
                     }
                   }
-     
+
                 }
               })
+            } else {
+              that.setData({
+                authShow: false
+              });
             }
           }
         })
