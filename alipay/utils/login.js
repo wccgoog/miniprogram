@@ -1,5 +1,5 @@
-import { getAuthUserInfo } from '../services/my';
-import { getUid } from './uid';
+import { getAuthUserInfo } from '../services/my'
+import { getUid } from './uid'
 
 const app = getApp();
 
@@ -8,6 +8,7 @@ export function authLogin(callback) {
   my.getAuthCode({
     scopes: 'auth_user',
     success: (resAuth) => {
+      console.log("授权成功")
       my.getAuthUserInfo({
         success: (res) => {
           app.globalData.nickName = res.nickName;
@@ -23,7 +24,7 @@ export function authLogin(callback) {
             if (app.globalData.url != '') {
               let url = app.globalData.url;
               let toUrl;
-              let uid = getUid();
+              let uid = app.globalData.url;
               if (url.indexOf("?") == -1) {
                 toUrl = escape(url + '?code=A&uid=' + uid)
               } else {
@@ -44,6 +45,7 @@ export function authLogin(callback) {
           console.log(e)
         }
       });
+
     },
     fail: (e) => {
       console.log(e)

@@ -8,6 +8,7 @@ export function webView(e) {
   app.globalData.url=url;
   if (app.globalData.isLogin) {
     let uid = getUid();
+    app.globalData.uid = uid;
     let toUrl = '';
     // let url = e.currentTarget.dataset.id;
     if (url.indexOf("?") == -1) {
@@ -19,12 +20,14 @@ export function webView(e) {
       url: '/pages/web-view/index?requestUrl=' + toUrl,
     });
   } else {
+    console.log("未登录");
     my.confirm({
       title: "请登录",
       content: "登录后即可网上申报和查询办件",
       confirmButtonText: "登录",
       success: (res) => {
         if (res.confirm) {
+          console.log(res.confirm);
           authLogin();
         }
       },

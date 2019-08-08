@@ -25,6 +25,7 @@ App({
     isJump: 0,
     toUrl:'',
     url:'',
+    uid:'',
   },
   uid: '',
   faceVerifyUrl: '',
