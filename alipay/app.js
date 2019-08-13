@@ -1,6 +1,7 @@
 import getCityTabs from './services/city-service';
 import getPageInstanceBlocks from './services/page-service';
 import { getUid } from './utils/index';
+// import uma from './node_modules/umtrack-alipay/lib/uma.min.js';
 
 App({
   qrCode: '',
@@ -53,4 +54,16 @@ App({
   onError(msg) {
     console.log('app OnError: ', msg);
   },
+  // onLaunch() {
+  //  uma.init('5d4a5bb94ca35715bf000092', my);      // 务必填入已注册的appKey，不然将无法统计
+  // },
+  // onShow() {
+  //    uma.resume();                    // 请务必引入
+  // },
+  //   onHide() {
+  //       uma.pause();                  // 请务必引入
+  //   },
+  //     globalData: {
+  //       uma                           // 请将uma模块绑定在gloabalData下，以便后续使
+  //     },
 });

@@ -161,7 +161,12 @@ Page({
         src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg',
         bindType: 'toWebView'
       },
-      
+      {
+        title: '预约叫号',
+        dataId: 'https://queuing.nanjingdata.cn/booking/index',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+        bindType: 'toWebView'
+      },
       // {
       //   title: '变更登记',
       //   dataId: 'https://bdcwsbz.njgt.gov.cn:8003/LAND/index_new.html',
@@ -310,9 +315,10 @@ Page({
   toWebView(e) {
     var _this = this;
     console.log("12312312312", _this)
-    //最近使用
 
+    //最近使用
     latestUsed(e);
+    
     webView(e);
     setTimeout(() => {
       var latestUsedItems = [];

@@ -1,5 +1,8 @@
 // pages/auth/auth.js
+// import encode from '../../utils/base64.js'
 var app = getApp()
+var secret = require('../../utils/secret.js');
+var base = require('../../utils/base64.js');
 Page({
 
   /**
@@ -50,10 +53,12 @@ Page({
                     },
                     success: function(result) {
                       var res = result.data;
+                      app.globalData.userInfo = res.data.user_info;
                       console.log("auth.load.getuserinfo--",res);
+                      console.log("app.globalData.userInfo", app.globalData.userInfo);
                       wx.setStorage({
                         key: 'session3rd',
-                        data: res.data.session3rd,
+                        data: res.data.session3rd
                       })
                       _this.setData({
                         userInfoShow: false
@@ -149,6 +154,7 @@ Page({
           },
           success: function(result) {
             app.globalData.mobile = result.data.data.mobile;
+            app.globalData.userInfo = res.data.user_info;
             var url = that.data.url;
             console.log("---------------", url)
             if (url == 'homePage') {
@@ -171,12 +177,18 @@ Page({
             } else {
               var toUrl = '';
               if (url.indexOf("?") == -1) {
-                toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
-              } else {
-                toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
+                if (url == 'https://queuing.nanjingdata.cn/booking/index'){
+                  var base = new Base64(); 
+                  toUrl = escape(url + '-systemid-10003-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(app.globalData.userInfo.openid) + '.html')
+                } else {
+                  toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
+                } 
+              }
+               else {
+                  toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
               }
               if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {
-                console.log(toUrl)
+                console.log('toUrl--------------',toUrl)
                 wx.navigateTo({
                   url: '/pages/webview/webview?url=' + toUrl
                 })
@@ -205,7 +217,7 @@ Page({
     wx.getStorage({
       key: 'session3rd',
       success: function(storageres) {
-        console.log(storageres);
+        console.log('storageres',storageres);
         wx.request({
           url: 'https://' + app.globalData.thirdDomain + '/api/wechat_pay/getCredentialInfo',
           data: {
@@ -278,7 +290,13 @@ Page({
                   } else {
                     var toUrl = '';
                     if (url.indexOf("?") == -1) {
-                      toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
+                      if (url == 'https://queuing.nanjingdata.cn/booking/index') {
+                        var openid = app.globalData.userInfo.openid
+                        console.log(openid);
+                        toUrl = escape(url + '-systemid-10003-userid-' + base.base64.encode(openid) + '-myToken-' + secret.md5Test(openid) + '.html')
+                      } else {
+                        toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
+                      } 
                     } else {
                       toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
                     }

@@ -1,3 +1,6 @@
+// import encode from './base64.js'
+var secret = require('./secret.js');
+var base = require('./base64.js');
 const app = getApp()
 
 export function webView(e, isNumSearch) {
@@ -20,59 +23,59 @@ export function webView(e, isNumSearch) {
       }
     })
   } else {
-    wx.request({
-      url: 'https://' + app.globalData.thirdDomain + '/api/user/getUserInfo',
-      data: {
-        session3rd: app.globalData.session3rd
-      },
-      success: (res) => {
-        if (res.data.code == 1) {
-          console.log("状态未过期===========================", res)
-          goToWebView(url)
-        } else if (res.data.code == 0) {
-          console.log("状态过期,重新登录===========================", res)
-          wx.login({
-            success(res) {
-              app.globalData.code = res.code;
-              wx.getUserInfo({
-                success(resuserinfo) {
-                  //登录第三方系统返回用户已留存的信息
-                  wx.request({
-                    url: 'https://' + app.globalData.thirdDomain + '/api/wechat',
-                    data: {
-                      code: res.code,
-                      encryptedData: resuserinfo.encryptedData,
-                      rawData: resuserinfo.rawData,
-                      iv: resuserinfo.iv,
-                      signature: resuserinfo.signature,
-                    },
-                    success: function(result) {
-                      console.log(result);
-                      //记录session3rd到app.globalData
-                      app.globalData.session3rd = result.data.data.session3rd;
-                      app.globalData.realname = result.data.data.user_info.realname;
-                      app.globalData.mobile = result.data.data.user_info.mobile;
-                      app.globalData.credential_id = result.data.data.user_info.credential_id;
-                      wx.setStorage({
-                        key: 'session3rd',
-                        data: result.data.data.session3rd,
-                      })
-                      console.log(app.globalData.session3rd);
-                      goToWebView(url)
-                    }
-                  })
-                },
-                fail(e) {
-                  console.log(e);
-                  wx.navigateTo({
-                    url: '/pages/auth/auth?url=' + escape(url)
-                  })
-                }
-              })
-            }
-          });
+      wx.request({
+        url: 'https://' + app.globalData.thirdDomain + '/api/user/getUserInfo',
+        data: {
+          session3rd: app.globalData.session3rd
+        },
+        success: (res) => {
+          if (res.data.code == 1) {
+            console.log("状态未过期===========================", res)
+            goToWebView(url)
+          } else if (res.data.code == 0) {
+            console.log("状态过期,重新登录===========================", res)
+            wx.login({
+              success(res) {
+                app.globalData.code = res.code;
+                wx.getUserInfo({
+                  success(resuserinfo) {
+                    //登录第三方系统返回用户已留存的信息
+                    wx.request({
+                      url: 'https://' + app.globalData.thirdDomain + '/api/wechat',
+                      data: {
+                        code: res.code,
+                        encryptedData: resuserinfo.encryptedData,
+                        rawData: resuserinfo.rawData,
+                        iv: resuserinfo.iv,
+                        signature: resuserinfo.signature,
+                      },
+                      success: function (result) {
+                        console.log('result', result);
+                        //记录session3rd到app.globalData
+                        app.globalData.session3rd = result.data.data.session3rd;
+                        app.globalData.realname = result.data.data.user_info.realname;
+                        app.globalData.mobile = result.data.data.user_info.mobile;
+                        app.globalData.credential_id = result.data.data.user_info.credential_id;
+                        wx.setStorage({
+                          key: 'session3rd',
+                          data: result.data.data.session3rd,
+                        })
+                        console.log(app.globalData.session3rd);
+                        goToWebView(url)
+                      }
+                    })
+                  },
+                  fail(e) {
+                    console.log(e);
+                    wx.navigateTo({
+                      url: '/pages/auth/auth?url=' + escape(url)
+                    })
+                  }
+                })
+              }
+            });
+          }
         }
-      }
     })
   }
 }
@@ -80,7 +83,11 @@ export function webView(e, isNumSearch) {
 function goToWebView(url) {
   let toUrl = '';
   if (url.indexOf("?") == -1) {
-    toUrl = escape(url + '?code=B&wechatArgs=' + app.globalData.session3rd)
+    if (url == 'https://queuing.nanjingdata.cn/booking/index') {
+      toUrl = escape(url + '-systemid-10003-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(app.globalData.userInfo.openid) + '.html')
+    } else {
+      toUrl = escape(url + '?code=B&wechatArgs=' + app.globalData.session3rd)
+    } 
   } else {
     toUrl = escape(url + '&code=B&wechatArgs=' + app.globalData.session3rd)
   }
@@ -97,6 +104,7 @@ function goToWebView(url) {
   }
 }
 
+//最近使用
 export function latestUsed(e) {
   let globalLatestUsed = app.globalData.latestUsed;
   if (e.currentTarget.dataset.index != undefined && e.currentTarget.dataset.itemsindex != undefined) {

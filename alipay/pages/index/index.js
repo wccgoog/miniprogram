@@ -153,6 +153,10 @@ Page(store.register({
       avatar: app.globalData.avatar,
       isLogin: app.globalData.isLogin
     })
+
+    // if(!app.globalData.latestUse){
+    //   return;
+    // }
     var latestUsedItems = [];
     app.globalData.latestUsed.forEach(
       (value, index) => {
