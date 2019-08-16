@@ -65,6 +65,16 @@ Page({
           },
         ]
       },
+      // {
+      //   title:'投资建设',
+      //   bOrC: 1,
+      //   items: [{
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=ZHXZZF001&types=c&isOne=A",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+      //     name: "城市道路绿化",
+      //     detail: "建设单位占道挖掘、修复补偿征收"
+      //   }]
+      // },
       {
         title: "城市环保",
         bOrC: 1,
@@ -157,14 +167,14 @@ Page({
       },
       {
         title: '水务',
-        dataId: 'https://www.jlwater.com/bizHandInfo',
+        dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
         src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg',
         bindType: 'toWebView'
       },
       {
         title: '预约叫号',
         dataId: 'https://queuing.nanjingdata.cn/booking/index',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/banner.png',
         bindType: 'toWebView'
       },
       // {
@@ -231,6 +241,22 @@ Page({
         });
       }
     });
+
+    // 获取地址经纬度
+    // wx.getLocation({
+    //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    //   success(res) {
+    //     const latitude = res.latitude
+    //     const longitude = res.longitude
+    //     wx.openLocation({
+    //       latitude,
+    //       longitude,
+    //       scale: 18
+    //     })
+    //   }
+    // })
+
+
     /** 
      * 获取系统信息 
      */

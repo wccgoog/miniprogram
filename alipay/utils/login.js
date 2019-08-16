@@ -24,7 +24,7 @@ export function authLogin(callback) {
             if (app.globalData.url != '') {
               let url = app.globalData.url;
               let toUrl;
-              let uid = app.globalData.url;
+              let uid = app.globalData.uid;
               if (url.indexOf("?") == -1) {
                 toUrl = escape(url + '?code=A&uid=' + uid)
               } else {

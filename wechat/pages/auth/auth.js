@@ -179,7 +179,8 @@ Page({
               if (url.indexOf("?") == -1) {
                 if (url == 'https://queuing.nanjingdata.cn/booking/index'){
                   var base = new Base64(); 
-                  toUrl = escape(url + '-systemid-10003-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(app.globalData.userInfo.openid) + '.html')
+                  toUrl = escape(url + '-systemid-10001-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(app.globalData.userInfo.openid) + '.html')
+                  // toUrl = escape(url)
                 } else {
                   toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
                 } 
@@ -293,7 +294,8 @@ Page({
                       if (url == 'https://queuing.nanjingdata.cn/booking/index') {
                         var openid = app.globalData.userInfo.openid
                         console.log(openid);
-                        toUrl = escape(url + '-systemid-10003-userid-' + base.base64.encode(openid) + '-myToken-' + secret.md5Test(openid) + '.html')
+                        toUrl = escape(url + '-systemid-10001-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(openid) + '.html')
+                        // toUrl = escape(url)
                       } else {
                         toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
                       } 
@@ -344,6 +346,7 @@ Page({
           },
           success: function(result) {
             var res = result.data;
+            app.globalData.userInfo = res.data.user_info;
             // 本地存储
             wx.setStorage({
               key: 'session3rd',

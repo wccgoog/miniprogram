@@ -1,7 +1,7 @@
 import getCityTabs from './services/city-service';
 import getPageInstanceBlocks from './services/page-service';
 import { getUid } from './utils/index';
-// import uma from './node_modules/umtrack-alipay/lib/uma.min.js';
+import uma from './node_modules/umtrack-alipay/lib/uma.min.js';
 
 App({
   qrCode: '',
@@ -27,6 +27,7 @@ App({
     toUrl:'',
     url:'',
     uid:'',
+    uma:'',
   },
   uid: '',
   faceVerifyUrl: '',
@@ -54,16 +55,39 @@ App({
   onError(msg) {
     console.log('app OnError: ', msg);
   },
-  // onLaunch() {
-  //  uma.init('5d4a5bb94ca35715bf000092', my);      // 务必填入已注册的appKey，不然将无法统计
-  // },
-  // onShow() {
-  //    uma.resume();                    // 请务必引入
-  // },
-  //   onHide() {
-  //       uma.pause();                  // 请务必引入
-  //   },
-  //     globalData: {
-  //       uma                           // 请将uma模块绑定在gloabalData下，以便后续使
-  //     },
+  onLaunch() {
+   uma.init('5d4a5bb94ca35715bf000092', my);      // 务必填入已注册的appKey，不然将无法统计
+  },
+  onShow() {
+     uma.resume();                    // 请务必引入
+  },
+    onHide() {
+        uma.pause();                  // 请务必引入
+    },
+ 
+  
+  // const updateManager = my.getUpdateManager()
+
+  // updateManager.onCheckForUpdate(function (res) {
+  // // 请求完新版本信息的回调
+  // console.log(res.hasUpdate)
+  // })
+
+  // updateManager.onUpdateReady(function () {
+  // my.confirm({
+  //   title: '更新提示',
+  //   content: '新版本已经准备好，是否重启应用？',
+  //   success: function (res) {
+  //     if (res.confirm) {
+  //       // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+  //       updateManager.applyUpdate()
+  //     }
+  //   }
+  // })
+  // })
+
+  // updateManager.onUpdateFailed(function () {
+  // // 新版本下载失败
+  // })
+
 });

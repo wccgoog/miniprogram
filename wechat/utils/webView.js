@@ -84,7 +84,8 @@ function goToWebView(url) {
   let toUrl = '';
   if (url.indexOf("?") == -1) {
     if (url == 'https://queuing.nanjingdata.cn/booking/index') {
-      toUrl = escape(url + '-systemid-10003-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(app.globalData.userInfo.openid) + '.html')
+      toUrl = escape(url + '-systemid-10001-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(app.globalData.userInfo.openid) + '.html')
+      // toUrl = escape(url)
     } else {
       toUrl = escape(url + '?code=B&wechatArgs=' + app.globalData.session3rd)
     } 

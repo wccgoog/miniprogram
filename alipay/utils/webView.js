@@ -5,10 +5,11 @@ const app = getApp();
 export function webView(e) {
   latestUsed(e);
   let url = e.currentTarget.dataset.id;
+  let uid = getUid();
+  app.globalData.uid = uid;
   app.globalData.url=url;
   if (app.globalData.isLogin) {
-    let uid = getUid();
-    app.globalData.uid = uid;
+   
     let toUrl = '';
     // let url = e.currentTarget.dataset.id;
     if (url.indexOf("?") == -1) {
@@ -28,6 +29,7 @@ export function webView(e) {
       success: (res) => {
         if (res.confirm) {
           console.log(res.confirm);
+
           authLogin();
         }
       },
