@@ -14,6 +14,8 @@ self.my = AFAppX.bridge || AFAppX.abridge;
 self.abridge = self.my;
 self.Component = AFAppX.WorkerComponent || function(){};
 self.$global = AFAppX.$global;
+self.requirePlugin = AFAppX.requirePlugin;
+
 
 
 function success() {

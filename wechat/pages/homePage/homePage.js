@@ -129,16 +129,42 @@ Page({
             src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
             name: "电影放映",
             detail: "电影单位设立、变更及注销审批"
-          },
-          // {
-          //   dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=F",
-          //   src: "https://jbxqalipay.nanjingdata.cn/appCenter/upload/image/1558009274987.JPG",
-          //   name: "文化演艺",
-          //   detail: "文化演艺相关事项"
-          // }
+          }
         ]
       },
-
+      {
+        title: "投资建设",
+        bOrC: 1,
+        items: [{
+           dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP001&types=c&isOne=A",
+           src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+           name: "固定资产投资项目节能承诺表",
+           detail: "固定资产投资项目节能评估和审查"
+         },
+          {
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP002&types=c&isOne=A",
+            src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+            name: "不宜公开招标项目的批准",
+            detail: "不宜公开招标项目的批准"
+          }, {
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP003&types=c&isOne=A",
+            src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+            name: "应招标工程不招标的审批",
+            detail: "应招标工程不招标的审批"
+          }
+        ]
+      },
+      {
+        title: "“双创”企业",
+        bOrC: 1,
+        items: [{
+          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=P",
+          src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
+          name: "“双创”企业刻章费用减免",
+          detail: "“双创”企业刻章费用减免申请"
+        }
+        ]
+      },
     ],
     specificZone: [
       {
@@ -159,12 +185,12 @@ Page({
         src: 'https://jbxqalipay.nanjingdata.cn/image/live.png',
         bindType: 'toWebView'
       },
-      {
-        title: '信用申领',
-        dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/creditApply/templates/index.html',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/credit.png',
-        bindType: 'toWebView'
-      },
+      // {
+      //   title: '信用申领',
+      //   dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/creditApply/templates/index.html',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/credit.png',
+      //   bindType: 'toWebView'
+      // },
       {
         title: '水务',
         dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
@@ -214,7 +240,7 @@ Page({
           }
         }
         res.data.data.list.forEach(callback);
-        console.log(res)
+        console.log('image12121',res)
         _this.setData({
           background: images
         })

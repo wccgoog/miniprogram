@@ -32,22 +32,22 @@ Page(store.register({
         }
         ]
       },
-      {
-        title: '云柜二维码',
-        items: [{
-          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/pickup.html",
-          src: "https://jbxqalipay.nanjingdata.cn/image/pickup.png",
-          name: "取件码",
-          bindType: 'toWebView'
-        },
-        {
-          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/saveup.html",
-          src: "https://jbxqalipay.nanjingdata.cn/image/saveup.png",
-          name: "存件码",
-          bindType: 'toWebView'
-        }
-        ]
-      },
+      // {
+      //   title: '云柜二维码',
+      //   items: [{
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/pickup.html",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/pickup.png",
+      //     name: "取件码",
+      //     bindType: 'toWebView'
+      //   },
+      //   {
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/fileCabinet/templates/saveup.html",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/saveup.png",
+      //     name: "存件码",
+      //     bindType: 'toWebView'
+      //   }
+      //   ]
+      // },
       {
         title: '建议与反馈',
         items: [{

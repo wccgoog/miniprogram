@@ -11,6 +11,7 @@ export function authLogin(callback) {
       console.log("授权成功")
       my.getAuthUserInfo({
         success: (res) => {
+          console.log(res)
           app.globalData.nickName = res.nickName;
           app.globalData.avatar = res.avatar;
           app.globalData.isLogin = true;

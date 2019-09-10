@@ -125,6 +125,39 @@ Page(store.register({
           // }
         ]
       },
+      {
+        title: "投资建设",
+        bOrC: 1,
+        items: [{
+           dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP001&types=c&isOne=A",
+           src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+           name: "固定资产投资项目节能承诺表",
+           detail: "固定资产投资项目节能评估和审查"
+         },
+          {
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP002&types=c&isOne=A",
+            src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+            name: "不宜公开招标项目的批准",
+            detail: "不宜公开招标项目的批准"
+          }, {
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP003&types=c&isOne=A",
+            src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+            name: "应招标工程不招标的审批",
+            detail: "应招标工程不招标的审批"
+          }
+        ]
+      },
+      // {
+      //   title: "“双创”企业",
+      //   bOrC: 1,
+      //   items: [{
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=P",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
+      //     name: "“双创”企业申报",
+      //     detail: "电影单位设立、变更及注销审批"
+      //   }
+      //   ]
+      // },
     ],
     specificZone: [
       {
@@ -171,6 +204,28 @@ Page(store.register({
    * 页面加载时，初始化请求
    */
   async onLoad(options) {
+    //更新最新的小程序
+    const updateManager = my.getUpdateManager()
+    updateManager.onCheckForUpdate(function (res) {
+      // 请求完新版本信息的回调
+      console.log(res.hasUpdate)
+    })
+    updateManager.onUpdateReady(function () {
+      my.showModal({
+        title: '更新提示',
+        content: '新版本已经准备好，是否重启应用？',
+        success(res) {
+          if (res.confirm) {
+            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+            updateManager.applyUpdate()
+          }
+        }
+      })
+    })
+    updateManager.onUpdateFailed(function () {
+      // 新版本下载失败
+    })
+
     var _this = this;
     my.request({
       url: 'https://jbzwnew.qimixi.net/api/banner/bannerList',
