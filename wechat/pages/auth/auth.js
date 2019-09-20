@@ -22,6 +22,7 @@ Page({
     let _this = this;
     //消耗掉isJump状态,用户未登录时从其他页面跳转到'我的'页面,isJump为1,这时会自动跳转auth授权页面
     app.globalData.isJump = 0;
+    console.log('options',options)
     if (options) {
       console.log("auth.js.options", options);
       this.setData({
@@ -32,6 +33,7 @@ Page({
       success(res) {
         console.log('-------------------------------')
         console.log(res)
+        // console.log(res.authSetting.scope.userInfo)
         if (!res.authSetting['scope.userInfo']) {
           _this.setData({
             userInfoShow: true
@@ -39,6 +41,7 @@ Page({
         } else {
           wx.getUserInfo({
             success: (resuserinfo) => {
+              console.log('resuserinfo', resuserinfo)
               wx.login({
                 success: (res) => {
                   wx.request({
@@ -53,6 +56,21 @@ Page({
                     },
                     success: function(result) {
                       var res = result.data;
+                      //实名信息入库
+                      wx.request({
+                        url:'http://59.83.223.62:18099/dispatch_test/restport/euser/euserLogin',
+                        method: 'POST',
+                        data: {
+                          'userName': res.data.user_info.realname,
+                          'idCard': res.data.user_info.credential_id,
+                          'gender': res.data.user_info.sex,
+                          'mobile': res.data.user_info.mobile,
+                          'source':'B'
+                        },
+                        success:function(result) {
+                          console.log(result)
+                        }
+                      })
                       app.globalData.userInfo = res.data.user_info;
                       console.log("auth.load.getuserinfo--",res);
                       console.log("app.globalData.userInfo", app.globalData.userInfo);
@@ -154,7 +172,7 @@ Page({
           },
           success: function(result) {
             app.globalData.mobile = result.data.data.mobile;
-            app.globalData.userInfo = res.data.user_info;
+            // app.globalData.userInfo = res.data.user_info;
             var url = that.data.url;
             console.log("---------------", url)
             if (url == 'homePage') {
@@ -330,7 +348,7 @@ Page({
   //'授权'按钮
   userInfo(resuserinfo) {
     var that = this;
-    console.log(resuserinfo.detail.userInfo);
+    console.log('resuserinfo.detail.userInfo',resuserinfo.detail.userInfo);
     console.log(app.globalData)
     wx.login({
       success: (res) => {

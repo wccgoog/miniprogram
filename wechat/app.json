@@ -40,7 +40,10 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3dccb4",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "navigateToMiniProgramAppIdList": [
+      "wxe4c6deb2da3535b2"
+    ]
   },
   "tabBar": {
     "list": [
@@ -70,5 +73,8 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wxe4c6deb2da3535b2"
+  ]
 }

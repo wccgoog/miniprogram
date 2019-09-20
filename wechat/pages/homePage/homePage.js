@@ -175,7 +175,7 @@ Page({
       },
       {
         title: '残联',
-        dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/handicapped/index.html',
+        dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/handicapped/indexguide.html',
         src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png',
         bindType: 'toWebView'
       },
@@ -204,11 +204,17 @@ Page({
         bindType: 'toWebView'
       },
       // {
-      //   title: '变更登记',
-      //   dataId: 'https://bdcwsbz.njgt.gov.cn:8003/LAND/index_new.html',
+      //   title: '公安微警务',
+      //   dataId: 'https://jbxqalipay.nanjingdata.cn/wjw.html',
       //   src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
       //   bindType: 'toWebView'
-      // }
+      // },
+      {
+        title: '中燃智慧',
+        dataId: 'wxe4c6deb2da3535b2',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+        bindType: 'navigateToMiniProgram'
+      }
     ]
   },
   // loading显示方法
@@ -416,6 +422,19 @@ Page({
     toUrl = escape(toUrl);
     wx.navigateTo({
       url: '/pages/webview/webview?url=' + toUrl,
+    })
+  },
+  navigateToMiniProgram(e) {
+    wx.navigateToMiniProgram({
+      appId: e.currentTarget.dataset.id,
+      path: '',
+      envVersion: 'develop',
+      success(res) {
+        // 打开其他小程序成功同步触发
+        wx.showToast({
+          title: '跳转成功'
+        })
+      }
     })
   }
 })
