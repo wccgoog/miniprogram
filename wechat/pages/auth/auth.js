@@ -202,8 +202,13 @@ Page({
                 } else {
                   toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
                 } 
-              }
-               else {
+              } 
+              // else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+              //   var cardId = app.globalData.userInfo.credential_id
+              //   console.log('cardId', cardId);
+              //   toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
+              // } 
+              else {
                   toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
               }
               if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {
@@ -317,7 +322,13 @@ Page({
                       } else {
                         toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
                       } 
-                    } else {
+                    } 
+                    // else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+                    //   var cardId = app.globalData.userInfo.credential_id
+                    //   console.log('cardId',cardId);
+                    //   toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
+                    // } 
+                    else {
                       toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
                     }
                     if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {

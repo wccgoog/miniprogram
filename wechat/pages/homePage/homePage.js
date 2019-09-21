@@ -428,12 +428,9 @@ Page({
     wx.navigateToMiniProgram({
       appId: e.currentTarget.dataset.id,
       path: '',
-      envVersion: 'develop',
+      // envVersion: 'trial',
       success(res) {
         // 打开其他小程序成功同步触发
-        wx.showToast({
-          title: '跳转成功'
-        })
       }
     })
   }

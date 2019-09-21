@@ -14,7 +14,13 @@ export function webView(e) {
     // let url = e.currentTarget.dataset.id;
     if (url.indexOf("?") == -1) {
       toUrl = escape(url + '?code=A&uid=' + uid)
-    } else {
+    } 
+    // else if(url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+    //   var cardId = app.globalData.userInfo.credential_id
+    //   console.log('cardId',cardId)
+    //   toUrl = escape(url + '?code=B&wechatArgs=' + base.base64.encode(cardId))
+    // } 
+    else {
       toUrl = escape(url + '&code=A&uid=' + uid)
     }
     my.navigateTo({
