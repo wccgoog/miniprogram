@@ -61,7 +61,23 @@ Page({
             bindType: 'toWebView'
           }
         ]
-      }
+      },
+      // {
+      //   title: '问卷调查',
+      //   items: [{
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/questionnaire/templates/questionnaireList.html",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/feedback.png",
+      //     name: "填写问卷",
+      //     bindType: 'toWebView'
+      //   },
+      //     {
+      //       dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/questionnaire/templates/questionnairehistoryList.html",
+      //       src: "https://jbxqalipay.nanjingdata.cn/image/feedback.png",
+      //       name: "历史问卷",
+      //       bindType: 'toWebView'
+      //     },
+      //   ]
+      // }
     ],
   },
   goOfficeList() {
@@ -74,7 +90,19 @@ Page({
    */
   onLoad: function(options) {
     console.log("onLoad", app.globalData)
-
+    // var qq = decodeURIComponent(options.q)
+    // console.log(qq)
+    // wx.showModal({
+    //   title: '提示',
+    //   content: qq,
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -86,7 +114,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function(options) {
     console.log("numSearch,onShow", app.globalData);
     if (app.globalData.isLogin == false && app.globalData.isJump == 1) {
       wx.navigateTo({

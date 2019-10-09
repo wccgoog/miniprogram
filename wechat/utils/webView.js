@@ -90,11 +90,11 @@ function goToWebView(url) {
       toUrl = escape(url + '?code=B&wechatArgs=' + app.globalData.session3rd)
     } 
   } 
-  // else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
-  //   var cardId = app.globalData.userInfo.credential_id
-  //   console.log('cardId', cardId);
-  //   toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
-  // } 
+  else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+    var cardId = app.globalData.userInfo.credential_id
+    console.log('cardId', cardId);
+    toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
+  } 
   else {
     toUrl = escape(url + '&code=B&wechatArgs=' + app.globalData.session3rd)
   }

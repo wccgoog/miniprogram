@@ -16,21 +16,6 @@ export async function getAuthUserInfo() {
   };
   const userInfo = await Http.post('/proxy-user/userauth/info', data);
   console.log('!!!!!!!!!!!!!!!',userInfo)
-  //实名信息入库
-  my.request({
-    url:'http://59.83.223.62:18099/dispatch_test/restport/euser/euserLogin',
-    method: 'POST',
-    data: {
-      'userName': userInfo.name,
-      'idCard': userInfo.idCardNo,
-      'gender': userInfo.gender,
-      'mobile': userInfo.phone,
-      'source':'A'
-    },
-    success:function(result) {
-      console.log(result)
-    }
-  })
   // 获取消息列表参数
   // const requestData = {
   //   channelType: 'OWNER_MSG',

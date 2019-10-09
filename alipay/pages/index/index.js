@@ -175,11 +175,11 @@ Page(store.register({
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/lowSecurity/templates/index.html',
       src: 'https://jbxqalipay.nanjingdata.cn/image/live.png'
     },
-    {
-      title: '水务集团',
-      dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
-      src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg'
-    }
+    // {
+    //   title: '水务集团',
+    //   dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
+    //   src: 'https://jbxqalipay.nanjingdata.cn/image/shuiwu.png'
+    // }
     ]
   },
   onShow() {

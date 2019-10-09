@@ -44,6 +44,7 @@ Page({
               console.log('resuserinfo', resuserinfo)
               wx.login({
                 success: (res) => {
+                  console.log('login'),
                   wx.request({
                     url: 'https://' + app.globalData.thirdDomain + '/api/wechat',
                     method: 'GET',
@@ -58,7 +59,7 @@ Page({
                       var res = result.data;
                       //实名信息入库
                       wx.request({
-                        url:'http://59.83.223.62:18099/dispatch_test/restport/euser/euserLogin',
+                        url:'https://jbxqalipay.nanjingdata.cn/test/dispatch_test/restport/euser/euserLogin',
                         method: 'POST',
                         data: {
                           'userName': res.data.user_info.realname,
@@ -68,7 +69,7 @@ Page({
                           'source':'B'
                         },
                         success:function(result) {
-                          console.log(result)
+                          console.log('success',result)
                         }
                       })
                       app.globalData.userInfo = res.data.user_info;
@@ -203,11 +204,11 @@ Page({
                   toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
                 } 
               } 
-              // else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
-              //   var cardId = app.globalData.userInfo.credential_id
-              //   console.log('cardId', cardId);
-              //   toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
-              // } 
+              else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+                var cardId = app.globalData.userInfo.credential_id
+                console.log('cardId', cardId);
+                toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
+              } 
               else {
                   toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
               }
@@ -323,11 +324,11 @@ Page({
                         toUrl = escape(url + '?code=B&wechatArgs=' + storageres.data)
                       } 
                     } 
-                    // else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
-                    //   var cardId = app.globalData.userInfo.credential_id
-                    //   console.log('cardId',cardId);
-                    //   toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
-                    // } 
+                    else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+                      var cardId = app.globalData.userInfo.credential_id
+                      console.log('cardId',cardId);
+                      toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
+                    } 
                     else {
                       toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
                     }
@@ -376,6 +377,21 @@ Page({
           success: function(result) {
             var res = result.data;
             app.globalData.userInfo = res.data.user_info;
+            //实名信息入库
+            wx.request({
+              url: 'https://jbxqalipay.nanjingdata.cn/test/dispatch_test/restport/euser/euserLogin',
+              method: 'POST',
+              data: {
+                'userName': res.data.user_info.realname,
+                'idCard': res.data.user_info.credential_id,
+                'gender': res.data.user_info.sex,
+                'mobile': res.data.user_info.mobile,
+                'source': 'B'
+              },
+              success: function (result) {
+                console.log('success', result)
+              }
+            })
             // 本地存储
             wx.setStorage({
               key: 'session3rd',

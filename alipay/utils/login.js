@@ -15,6 +15,35 @@ export function authLogin(callback) {
           app.globalData.nickName = res.nickName;
           app.globalData.avatar = res.avatar;
           app.globalData.isLogin = true;
+        //   let uid = getUid();
+        //   app.globalData.uid = uid;
+
+        //   my.request({
+        //   url: 'http://jbxqalipay.nanjingdata.cn/userCenter/api/userauth/getUserInfoForH5',
+        //   method:'GET',
+        //   data: {
+        //     'uid' : app.globalData.uid
+        //   },
+        //   success: (res) => {
+        //     console.log(app.globalData.uid)
+        //     console.log('123214123',res)
+        //     //实名信息入库
+        //     my.request({
+        //     url:'http://59.83.223.62:18099/dispatch_test/restport/euser/euserLogin',
+        //     method: 'POST',
+        //     data: {
+        //       'userName': res.data.rtnData.name,
+        //       'idCard': res.data.rtnData.idCardNo,
+        //       'gender': res.data.rtnData.gender,
+        //       'mobile': res.data.rtnData.phone,
+        //       'source':'A'
+        //     },
+        //     success:function(result) {
+        //       console.log(result)
+        //     }
+        //     })
+        //   },
+        // });
           // my.navigateTo({
           //   url: '/pages/personal-center/index'
           // })

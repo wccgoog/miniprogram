@@ -6,6 +6,7 @@ import uma from './node_modules/umtrack-alipay/lib/uma.min.js';
 App({
   qrCode: '',
   globalData: {
+    userInfo: null,
     // 域名加18081端口是因为服务器端nginx做了这个端口的监听,会跳转到测试环境,发布正式版前,需要把这个test字段改为空字符串
     test: ':18081',
     //首页的最近使用功能,使用到的初始数组

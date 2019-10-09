@@ -2,6 +2,7 @@ import { getUid } from './uid'
 import { authLogin } from './login'
 const app = getApp();
 
+
 export function webView(e) {
   latestUsed(e);
   let url = e.currentTarget.dataset.id;
@@ -9,7 +10,6 @@ export function webView(e) {
   app.globalData.uid = uid;
   app.globalData.url=url;
   if (app.globalData.isLogin) {
-   
     let toUrl = '';
     // let url = e.currentTarget.dataset.id;
     if (url.indexOf("?") == -1) {

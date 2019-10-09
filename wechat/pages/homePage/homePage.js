@@ -137,31 +137,42 @@ Page({
         bOrC: 1,
         items: [{
            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP001&types=c&isOne=A",
-           src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+           src: "https://jbxqalipay.nanjingdata.cn/image/jieneng.png",
            name: "固定资产投资项目节能承诺表",
            detail: "固定资产投资项目节能评估和审查"
          },
           {
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP002&types=c&isOne=A",
-            src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+            src: "https://jbxqalipay.nanjingdata.cn/image/zhaobiao.png",
             name: "不宜公开招标项目的批准",
             detail: "不宜公开招标项目的批准"
           }, {
             dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=TZXMSP003&types=c&isOne=A",
-            src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
+            src: "https://jbxqalipay.nanjingdata.cn/image/zhaobiao.png",
             name: "应招标工程不招标的审批",
             detail: "应招标工程不招标的审批"
           }
         ]
       },
+      // {
+      //   title: "“双创”企业",
+      //   bOrC: 1,
+      //   items: [{
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=P",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
+      //     name: "“双创”企业刻章费用减免",
+      //     detail: "“双创”企业刻章费用减免申请"
+      //   }
+      //   ]
+      // },
       {
-        title: "“双创”企业",
+        title: "卫生健康",
         bOrC: 1,
         items: [{
-          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=P",
-          src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
-          name: "“双创”企业刻章费用减免",
-          detail: "“双创”企业刻章费用减免申请"
+          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=WJWZYZSBA&types=c&isOne=A",
+          src: "https://jbxqalipay.nanjingdata.cn/image/zhongyi.png",
+          name: "中医诊所备案",
+          detail: "中医诊所备案"
         }
         ]
       },
@@ -194,13 +205,13 @@ Page({
       {
         title: '水务',
         dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/water.jpg',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/shuiwu.png',
         bindType: 'toWebView'
       },
       {
         title: '预约叫号',
         dataId: 'https://queuing.nanjingdata.cn/booking/index',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/banner.png',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/jiaohao.png',
         bindType: 'toWebView'
       },
       // {
@@ -212,9 +223,21 @@ Page({
       {
         title: '中燃智慧',
         dataId: 'wxe4c6deb2da3535b2',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
         bindType: 'navigateToMiniProgram'
-      }
+      },
+      // {
+      //   title: '网格服务',
+      //   dataId: 'https://szjb.nanjingdata.cn',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
+      //   bindType: 'toWebView'
+      // },
+      // {
+      //   title: '主题办事',
+      //   dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/theme/templates/index.html',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
+      //   bindType: 'toWebView'
+      // },
     ]
   },
   // loading显示方法
@@ -222,6 +245,21 @@ Page({
 
   onLoad: function(options) {
     var _this = this;
+
+    // var qq = decodeURIComponent(options.q)
+    // console.log(qq)
+    // wx.showModal({
+    //   title: '提示',
+    //   content: qq,
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+
     wx.request({
       url: 'https://jbzwnew.qimixi.net/api/banner/bannerList',
       data: "",
