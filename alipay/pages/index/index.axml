@@ -71,7 +71,7 @@
   </view>
 </view>
 <view class='imageContainer3'>
-  <image a:for="{{specificZone}}" a:key="{{index}}" onTap='toWebView' data-id="{{item.dataId}}" a:if="{{dataId==1}}" class='goTo3' mode="widthFix" src='{{item.src}}'>
+  <image a:for="{{specificZone}}" a:key="{{index}}" onTap="{{item.onTap}}" data-id="{{item.dataId}}" a:if="{{dataId==1}}" class='goTo3' mode="widthFix" src='{{item.src}}'>
   </image>
 </view>
 <view class='x'>南京市江北新区管理委员会行政审批局主办

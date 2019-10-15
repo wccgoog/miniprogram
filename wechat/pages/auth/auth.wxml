@@ -1,9 +1,10 @@
 <view class='auth'>
   <view wx:if="{{userInfoShow}}" class='title'>将获取您的微信昵称和头像</view>
   <view wx:if="{{authShow && !userInfoShow}}" class='title'>请进行微信支付密码登录验证</view>
-  <view wx:if="{{!authShow}}" class='title'>将获取您的手机号码</view>
-  <view>为了能更好地给您提供服务,请先点击下方按钮允许我们获取您的信息</view>
+  <view wx:if="{{mobileShow}}" class='title'>将获取您的手机号码</view>
+  <view wx:if="{{!authShow && !userInfoShow && !mobileShow}}" class='title'>身份识别中，请稍等……</view>
+  <view wx:if="{{authShow || userInfoShow || mobileShow}}">为了能更好地给您提供服务,请先点击下方按钮允许我们获取您的信息</view>
 </view>
 <button wx:if="{{userInfoShow}}" class='userInfo' open-type="getUserInfo" bindgetuserinfo="userInfo" type='primary'>授权</button>
 <button wx:if="{{authShow}}" open-type="getRealnameAuthInfo" bindgetrealnameauthinfo="authinfo" category-id="{{[52, 770]}}" type='primary'>实名认证</button>
-<button wx:if="{{!authShow}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type='primary' class='phone'>获取手机号码</button>
+<button wx:if="{{mobileShow}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type='primary' class='phone'>获取手机号码</button>

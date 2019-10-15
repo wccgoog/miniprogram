@@ -1,0 +1,9 @@
+.goTo3 {
+  display: block;
+  width: 90%;
+  margin: 20px auto 20px auto;
+  height: 100px;
+}
+page {
+  background: white;
+}

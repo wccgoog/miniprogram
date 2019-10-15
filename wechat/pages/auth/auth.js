@@ -10,7 +10,7 @@ Page({
    */
   data: {
     userInfoShow: false,
-    authShow: true,
+    authShow: false,
     mobileShow: false,
     url: ''
   },
@@ -69,7 +69,7 @@ Page({
                           'source':'B'
                         },
                         success:function(result) {
-                          console.log('success',result)
+                          console.log('success123',result)
                         }
                       })
                       app.globalData.userInfo = res.data.user_info;
@@ -79,9 +79,92 @@ Page({
                         key: 'session3rd',
                         data: res.data.session3rd
                       })
+                      
                       _this.setData({
                         userInfoShow: false
                       })
+
+                      //判断是否已登录过
+                      var that = _this;
+                      console.log('this123123', _this)
+                      wx.request({
+                        url: 'https://' + app.globalData.thirdDomain + '/api/wechat_pay/getCredentialInfo',
+                        data: {
+                          session3rd: res.data.session3rd
+                        },
+                        success: function (result) {
+                          console.log('查看是否已登录过',result);
+                          app.globalData.realname = result.data.data.realname;
+                          app.globalData.credential_id = result.data.data.credential_id;
+                          // that.setData({
+                          //   authShow: false
+                          // });
+                          if (result.data.data.mobile && result.data.data.mobile.length > 10) {
+                            app.globalData.mobile = result.data.data.mobile;
+                            wx.getUserInfo({
+                              success(resuserinfo) {
+                                let userInfo = JSON.parse(resuserinfo.rawData)
+                                // 获取用户昵称和头像,获取到后,全局变量isLogin就为true,如果没有获取到,全局变量isLogin就为false
+                                app.globalData.nickName = userInfo.nickName;
+                                app.globalData.avatar = userInfo.avatarUrl;
+                                if (app.globalData.nickName == app.globalData.constNickName && app.globalData.avatar == app.globalData.constAvatar) {
+                                  app.globalData.isLogin = false;
+                                } else {
+                                  app.globalData.isLogin = true;
+                                }
+                                var url = that.data.url;
+                                if (url == 'homePage') {
+                                  wx.switchTab({
+                                    url: '/pages/homePage/homePage',
+                                  })
+                                } else {
+                                  var toUrl = '';
+                                  if (url.indexOf("?") == -1) {
+                                    if (url == 'https://queuing.nanjingdata.cn/booking/index') {
+                                      var openid = app.globalData.userInfo.openid
+                                      console.log(openid);
+                                      toUrl = escape(url + '-systemid-10001-userid-' + base.base64.encode(app.globalData.userInfo.openid) + '-myToken-' + secret.md5Test(openid) + '.html')
+                                      // toUrl = escape(url)
+                                    } else {
+                                      toUrl = escape(url + '?code=B&wechatArgs=' + res.data.session3rd)
+                                    }
+                                  }
+                                  else if (url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
+                                    var cardId = app.globalData.userInfo.credential_id
+                                    console.log('cardId', cardId);
+                                    toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
+                                  }
+                                  else {
+                                    toUrl = escape(url + '&code=B&wechatArgs=' + res.data.session3rd)
+                                  }
+                                  if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {
+                                    console.log(toUrl)
+                                    app.globalData.toUrl = toUrl;
+                                    wx.switchTab({
+                                      url: '/pages/homePage/homePage',
+                                    })
+                                  }
+                                }
+
+                              }
+                            })
+                          } else {
+                            that.setData({
+                              mobileShow: true
+                            });
+                          }
+
+                        },
+
+                        fail:(e) => {
+                          that.setData({
+                            authShow: true
+                          })
+                        }
+                      })
+
+
+
                     }
                   })
                 },
@@ -183,7 +266,8 @@ Page({
                   // 获取用户昵称和头像,如果
                   app.globalData.nickName = userInfo.nickName;
                   app.globalData.avatar = userInfo.avatarUrl;
-                  if (app.globalData.nickName == app.globalData.constNickName && app.globalData.avatar == app.globalData.constAvatar) {
+                  if (app.globalData.nickName == app.globalData.constNickName && app.globalData.avatar == app.globalData.constAvatar) 
+                  {
                     app.globalData.isLogin = false;
                   } else {
                     app.globalData.isLogin = true;
@@ -211,6 +295,10 @@ Page({
               } 
               else {
                   toUrl = escape(url + '&code=B&wechatArgs=' + storageres.data)
+                  console.log('tourl',toUrl)
+                console.log(app.globalData.realname)
+                console.log(app.globalData.mobile)
+                console.log(app.globalData.credential_id)
               }
               if (app.globalData.realname && app.globalData.mobile && app.globalData.credential_id) {
                 console.log('toUrl--------------',toUrl)
@@ -253,6 +341,7 @@ Page({
             console.log(result);
             app.globalData.realname = result.data.data.realname;
             app.globalData.credential_id = result.data.data.credential_id;
+          
             // if (result.data.data.mobile.length <= 10) {
             //   that.setData({
             //     authShow: false
@@ -345,7 +434,7 @@ Page({
               })
             } else {
               that.setData({
-                authShow: false
+                mobileShow: true
               });
             }
           }
@@ -398,7 +487,8 @@ Page({
               data: res.data.session3rd,
             })
             that.setData({
-              userInfoShow: false
+              userInfoShow: false,
+              authShow: true
             })
           }
         })

@@ -1,0 +1,4 @@
+<view wx:if="{{dataId==1}}" class='imageContainer3'>
+  <image wx:for="{{specificZone}}" wx:key="{{index}}" bindtap='{{item.bindType}}' data-id="{{item.dataId}}" wx:if="{{dataId==1}}" class='goTo3' mode="scaleToFill" src='{{item.src}}'></image>
+</view>
+

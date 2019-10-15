@@ -29,7 +29,8 @@
     "pages/numSearch2/numSearch2",
     "pages/suggestion/suggestion",
     "pages/showPic/showPic",
-    "pages/picList/picList"
+    "pages/picList/picList",
+    "pages/jianHang/jianHang"
   ],
   "permission": {
     "scope.userLocation": {
@@ -72,6 +73,10 @@
   },
   "sitemapLocation": "sitemap.json",
   "navigateToMiniProgramAppIdList": [
-    "wxe4c6deb2da3535b2"
+    "wxe4c6deb2da3535b2",
+    "wx91e39a17fe9f1a92",
+    "wx1d98dac1939c9cdd",
+    "wxd891a4441b4fff2d",
+    "wx307e11636e7679c6"
   ]
 }

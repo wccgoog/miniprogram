@@ -163,23 +163,32 @@ Page(store.register({
       {
       title: '婚姻',
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
-      src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png'
+      src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
+      onTap: 'toWebView'
     },
       {
       title: '残联',
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/handicapped/index.html',
-      src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png'
+      src: 'https://jbxqalipay.nanjingdata.cn/image/disabled.png',
+      onTap: 'toWebView'
     },
     {
       title: '低保',
       dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/lowSecurity/templates/index.html',
-      src: 'https://jbxqalipay.nanjingdata.cn/image/live.png'
+      src: 'https://jbxqalipay.nanjingdata.cn/image/live.png',
+      onTap: 'toWebView'
     },
+    // {
+    //   title: 'ETC',
+    //   dataId: 'wx91e39a17fe9f1a92',
+    //   src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
+    //   onTap: 'navigateToMiniProgram'
+    // }
     // {
     //   title: '水务集团',
     //   dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
     //   src: 'https://jbxqalipay.nanjingdata.cn/image/shuiwu.png'
-    // }
+    // },
     ]
   },
   onShow() {
@@ -380,6 +389,19 @@ Page(store.register({
     let that = this;
     that.setData({
       swiperCurrent: current
+    })
+  },
+
+  //跳转小程序
+  navigateToMiniProgram(e) {
+    my.navigateToMiniProgram({
+      appId: e.currentTarget.dataset.id,
+      path: '',
+      // envVersion: 'trial',
+      success(res) {
+        // 打开其他小程序成功同步触发
+        console.log('success')
+      }
     })
   }
 }));

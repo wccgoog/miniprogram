@@ -176,6 +176,17 @@ Page({
         }
         ]
       },
+      // {
+      //   title: "档案查询",
+      //   bOrC: 1,
+      //   items: [{
+      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=Q",
+      //     src: "https://jbxqalipay.nanjingdata.cn/image/animal.png",
+      //     name: "档案查询",
+      //     detail: "企业、律师、公检法档案查询"
+      //   }
+      //   ]
+      // },
     ],
     specificZone: [
       {
@@ -196,12 +207,6 @@ Page({
         src: 'https://jbxqalipay.nanjingdata.cn/image/live.png',
         bindType: 'toWebView'
       },
-      // {
-      //   title: '信用申领',
-      //   dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/creditApply/templates/index.html',
-      //   src: 'https://jbxqalipay.nanjingdata.cn/image/credit.png',
-      //   bindType: 'toWebView'
-      // },
       {
         title: '水务',
         dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
@@ -214,12 +219,6 @@ Page({
         src: 'https://jbxqalipay.nanjingdata.cn/image/jiaohao.png',
         bindType: 'toWebView'
       },
-      // {
-      //   title: '公安微警务',
-      //   dataId: 'https://jbxqalipay.nanjingdata.cn/wjw.html',
-      //   src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
-      //   bindType: 'toWebView'
-      // },
       {
         title: '中燃智慧',
         dataId: 'wxe4c6deb2da3535b2',
@@ -227,17 +226,16 @@ Page({
         bindType: 'navigateToMiniProgram'
       },
       // {
-      //   title: '网格服务',
-      //   dataId: 'https://szjb.nanjingdata.cn',
-      //   src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
-      //   bindType: 'toWebView'
-      // },
-      // {
       //   title: '主题办事',
       //   dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/theme/templates/index.html',
-      //   src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/marriage.png',
       //   bindType: 'toWebView'
       // },
+      {
+        title: '建行',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/jianhang.png',
+        bindType: 'jumpTo'
+      },
     ]
   },
   // loading显示方法
@@ -468,8 +466,15 @@ Page({
       path: '',
       // envVersion: 'trial',
       success(res) {
+        console.log('success')
         // 打开其他小程序成功同步触发
       }
     })
+  },
+  jumpTo(e) {
+    wx.navigateTo({
+      url: '/pages/jianHang/jianHang'
+    })
+    console.log('跳转成功')
   }
 })

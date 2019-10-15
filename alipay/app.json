@@ -60,5 +60,8 @@
       }
     ]
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx91e39a17fe9f1a92"
+  ],
   "debug": false
 }
