@@ -63,6 +63,22 @@ Page(store.register({
             bindType: 'toWebView'
           }
         ]
+      },
+      {
+        title: '问卷调查',
+        items: [{
+          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/questionnaire/templates/questionnaireList.html",
+          src: "https://jbxqalipay.nanjingdata.cn/image/questionnair.png",
+          name: "填写问卷",
+          bindType: 'toWebView'
+        },
+          {
+            dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/questionnaire/templates/questionnairehistoryList.html",
+            src: "https://jbxqalipay.nanjingdata.cn/image/questionlist.png",
+            name: "历史问卷",
+            bindType: 'toWebView'
+          },
+        ]
       }
     ],
   },

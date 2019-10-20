@@ -30,7 +30,8 @@
     "pages/suggestion/suggestion",
     "pages/showPic/showPic",
     "pages/picList/picList",
-    "pages/jianHang/jianHang"
+    "pages/jianHang/jianHang",
+    "pages/LaborHarbor/LaborHarbor"
   ],
   "permission": {
     "scope.userLocation": {

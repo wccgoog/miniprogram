@@ -178,17 +178,18 @@ Page(store.register({
       src: 'https://jbxqalipay.nanjingdata.cn/image/live.png',
       onTap: 'toWebView'
     },
-    // {
-    //   title: 'ETC',
-    //   dataId: 'wx91e39a17fe9f1a92',
-    //   src: 'https://jbxqalipay.nanjingdata.cn/image/ranqi.png',
-    //   onTap: 'navigateToMiniProgram'
-    // }
-    // {
-    //   title: '水务集团',
-    //   dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
-    //   src: 'https://jbxqalipay.nanjingdata.cn/image/shuiwu.png'
-    // },
+    {
+      title: '水务集团',
+      dataId: 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo',
+      src: 'https://jbxqalipay.nanjingdata.cn/image/shuiwu.png',
+      onTap: 'toWebView'
+    },
+    {
+      title: '虚拟养老院',
+      dataId: 'https://api.jbxqyl.com/szjb/',
+      src: 'https://jbxqalipay.nanjingdata.cn/image/yanglao.png',
+      onTap: 'toWebView'
+      }
     ]
   },
   onShow() {

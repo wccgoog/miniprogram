@@ -176,19 +176,25 @@ Page({
         }
         ]
       },
-      // {
-      //   title: "档案查询",
-      //   bOrC: 1,
-      //   items: [{
-      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=Q",
-      //     src: "https://jbxqalipay.nanjingdata.cn/image/animal.png",
-      //     name: "档案查询",
-      //     detail: "企业、律师、公检法档案查询"
-      //   }
-      //   ]
-      // },
+      {
+        title: "档案查询",
+        bOrC: 1,
+        items: [{
+          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=Q",
+          src: "https://jbxqalipay.nanjingdata.cn/image/animal.png",
+          name: "档案查询",
+          detail: "企业、律师、公检法档案查询"
+        }
+        ]
+      },
     ],
     specificZone: [
+      {
+        title: '劳动者港湾',
+        dataId: '/pages/LaborHarbor/LaborHarbor',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/yuyuequhao.png',
+        bindType: 'navigateTo'
+      },
       {
         title: '婚姻',
         dataId: 'https://jbxqalipay.nanjingdata.cn' + app.globalData.test + '/web/wechat/modules/married/templates/marriedIndex.html',
@@ -233,8 +239,15 @@ Page({
       // },
       {
         title: '建行',
+        dataId: '/pages/jianHang/jianHang',
         src: 'https://jbxqalipay.nanjingdata.cn/image/jianhang.png',
-        bindType: 'jumpTo'
+        bindType: 'navigateTo'
+      },
+      {
+        title: '虚拟养老院',
+        dataId: 'https://api.jbxqyl.com/szjb/',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/yanglao.png',
+        bindType: 'toWebView'
       },
     ]
   },
@@ -449,6 +462,7 @@ Page({
     })
   },
   navigateTo(e) {
+    console.log('e',e)
     wx.navigateTo({
       url: e.target.dataset.id,
     })
@@ -470,11 +484,5 @@ Page({
         // 打开其他小程序成功同步触发
       }
     })
-  },
-  jumpTo(e) {
-    wx.navigateTo({
-      url: '/pages/jianHang/jianHang'
-    })
-    console.log('跳转成功')
   }
 })
