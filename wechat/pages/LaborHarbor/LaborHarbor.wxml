@@ -4,7 +4,8 @@
 “劳动者港湾”配备了卫生间、饮水机、休息桌椅、图书、Wi-Fi、手机充电器、点验钞机、老花镜等基础惠民服务设施，以及雨具、急救箱等应急使用的服务设施。为广大辛勤户外劳动者提供一个舒适的休息环境，让他们累了能歇脚，渴了有水喝，热了可避暑，冷了可避寒,让他们深切体会到建行真挚的问候。
 </view>
 </view>
-<view wx:for="{{specificZone}}" wx:key="jianhang" bindtap='{{item.bindType}}' data-id="{{item.dataId}}" class="service-item">
+<!-- <view wx:for="{{specificZone}}" wx:key="jianhang" bindtap='{{item.bindType}}' data-id="{{item.dataId}}" class="service-item">
 <image class="service-icon" mode="aspectFit" src="https://jbxqalipay.nanjingdata.cn/image/jhtb.png" role="img"></image>
-<view class="service-name">点击进入</view>
-</view>
+<view class="service-name">点击进入></view>
+</view> -->
+<button wx:for="{{specificZone}}" wx:key="jianhang" bindtap='{{item.bindType}}' data-id="{{item.dataId}}" class='btn'>点击进入</button>

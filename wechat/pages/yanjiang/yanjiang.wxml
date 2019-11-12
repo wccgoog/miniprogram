@@ -1,0 +1,19 @@
+<view class='page-bg'>
+  <view class='page-title'>
+    <image class='image' src='https://jbxqalipay.nanjingdata.cn/image/yanjianghead.png'/>
+  </view>
+  <view>
+    <view class='page-hd'>
+      <view class='page-hd-tl'>暂供江北新区沿江街道居民使用</view>
+      <view class='page-hd-zs'>温馨提示</view>
+      <view class='page-hd-cont'>
+        <view>1、为了确保您在线申报顺利审批，请手持相机拍摄申办材料的正面，尽量避免拍摄照片存在倾斜、遮挡等模糊不清情况。</view>
+        <view>2、您在线申报的办件可在个人中心跟踪办理进度，办理结果物可免费快递寄送。</view>
+        <view>3、如您在申报过程中有疑问可联系咨询电话，人社：58557123 民政：58557145 妇联：58557034</view>
+      </view>
+    </view>
+    <view wx:for="{{itemList}}" wx:key="yanjiang" >
+      <button wx:for="{{item.items}}" wx:key="{{itemsIndex}}" class='btn' bindtap="{{item.bindType}}" data-id="{{item.dataId}}">在线申报</button>
+    </view>
+  </view>
+</view>

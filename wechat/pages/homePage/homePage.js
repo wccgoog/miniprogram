@@ -49,6 +49,17 @@ Page({
     intervalNum: 0,
     items: [],
     itemList: [{
+      title: "档案查询",
+      bOrC: 1,
+      items: [{
+        dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=R",
+        src: "https://jbxqalipay.nanjingdata.cn/image/dangan.png",
+        name: "档案查询",
+        detail: "企业、律师、公检法档案查询"
+      }
+      ]
+    },
+      {
         title: "综合执法",
         bOrC: 1,
         items: [{
@@ -65,16 +76,6 @@ Page({
           },
         ]
       },
-      // {
-      //   title:'投资建设',
-      //   bOrC: 1,
-      //   items: [{
-      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/movehandleItem.html?siteId=1&id=ZHXZZF001&types=c&isOne=A",
-      //     src: "https://jbxqalipay.nanjingdata.cn/image/city.png",
-      //     name: "城市道路绿化",
-      //     detail: "建设单位占道挖掘、修复补偿征收"
-      //   }]
-      // },
       {
         title: "城市环保",
         bOrC: 1,
@@ -154,17 +155,17 @@ Page({
           }
         ]
       },
-      // {
-      //   title: "“双创”企业",
-      //   bOrC: 1,
-      //   items: [{
-      //     dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=P",
-      //     src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
-      //     name: "“双创”企业刻章费用减免",
-      //     detail: "“双创”企业刻章费用减免申请"
-      //   }
-      //   ]
-      // },
+      {
+        title: "“双创”企业",
+        bOrC: 1,
+        items: [{
+          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=P",
+          src: "https://jbxqalipay.nanjingdata.cn/image/film.png",
+          name: "“双创”企业刻章费用减免",
+          detail: "“双创”企业刻章费用减免申请"
+        }
+        ]
+      },
       {
         title: "卫生健康",
         bOrC: 1,
@@ -176,23 +177,19 @@ Page({
         }
         ]
       },
-      {
-        title: "档案查询",
-        bOrC: 1,
-        items: [{
-          dataId: "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/workGuide/templates/alipayItemList.html?siteId=1&types=c&alipay=1&itemKey=2&itemSource=A&showTerrace=Q",
-          src: "https://jbxqalipay.nanjingdata.cn/image/animal.png",
-          name: "档案查询",
-          detail: "企业、律师、公检法档案查询"
-        }
-        ]
-      },
+      
     ],
     specificZone: [
       {
         title: '劳动者港湾',
         dataId: '/pages/LaborHarbor/LaborHarbor',
         src: 'https://jbxqalipay.nanjingdata.cn/image/yuyuequhao.png',
+        bindType: 'navigateTo'
+      },
+      {
+        title: '沿江街道便民服务',
+        dataId: '/pages/yanjiang/yanjiang',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/yanjiang.png',
         bindType: 'navigateTo'
       },
       {
@@ -249,6 +246,18 @@ Page({
         src: 'https://jbxqalipay.nanjingdata.cn/image/yanglao.png',
         bindType: 'toWebView'
       },
+      // {
+      //   title: '金梅花普惠之家',
+      //   dataId: 'https://bank.xinmeihua.com.cn/phzj/index?code=15JBNJCB',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/yanglao.png',
+      //   bindType: 'toWebView'
+      // },
+      {
+        title: '你好e贷',
+        dataId: 'https://mp.weixin.qq.com/s/PywBXfUqDDKim5x-LwINiw',
+        src: 'https://jbxqalipay.nanjingdata.cn/image/yanglao.png',
+        bindType: 'toWebView'
+      }
     ]
   },
   // loading显示方法
@@ -277,15 +286,16 @@ Page({
       method: 'POST',
       success: function(res) {
         let images = [];
+        console.log('lunbotu',res)
         let callback = function(element) {
           if (element.name.indexOf('/') > -1) {
             if (element.name[0] == 1) {
               element.bindType = 'navigateTo';
               element.name = '/pages' + element.name.slice(1) + element.name.slice(1);
             } else if (element.name[0] == 2) {
-              //历史反馈
+              //主题办事
               element.bindType = 'toWebView';
-              element.name = "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/feedback/templates/historyRecord.html";
+              element.name = "https://jbxqalipay.nanjingdata.cn" + app.globalData.test + "/web/wechat/modules/theme/templates/index.html";
             } else if (element.name[0] == 3) {
               //我要反馈
               element.bindType = 'toWebView';
@@ -307,13 +317,13 @@ Page({
       success: (res) => {
         nowLocation = res.latitude + ',' + res.longitude;
         wx.request({
-          url: 'https://free-api.heweather.net/s6/weather',
+          url: 'https://free-api.heweather.net/s6/weather/now',
           data: {
             location: nowLocation,
             key: 'a02cd8e3c22e4ea489b79d6c80b27b9e'
           },
           success: (res) => {
-            console.log(res);
+            console.log('tianqi',res);
             _this.setData({
               weatherData: res.data.HeWeather6[0],
               weatherShow: true

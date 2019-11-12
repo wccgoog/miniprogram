@@ -7,10 +7,11 @@ const app = getApp();
 export function webView(e) {
   latestUsed(e);
   let url = e.currentTarget.dataset.id;
-  // let uid = getUid();
-  // app.globalData.uid = uid;
+  let uid = getUid();
+  app.globalData.uid = uid;
   app.globalData.url=url;
   if (app.globalData.isLogin) {
+    let uid = app.globalData.uid;
     let toUrl = '';
     if (url.indexOf("?") == -1) {
       toUrl = escape(url + '?code=A&uid=' + uid)
@@ -18,7 +19,7 @@ export function webView(e) {
     else if(url == 'https://www.jlwater.com/sso/externalEnter?viewUrl=/bizHandInfo') {
       var cardId = app.globalData.rtnData.idCardNo
       console.log('cardId',cardId)
-      toUrl = escape(url + '?code=B&wechatArgs=' + base.base64.encode(cardId))
+      toUrl = escape(url + '&code=B&wechatArgs=' + base.base64.encode(cardId))
     } 
     else {
       toUrl = escape(url + '&code=A&uid=' + uid)

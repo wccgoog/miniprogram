@@ -85,7 +85,7 @@ Page(store.register({
   onReady() { },
   onShow() {
     console.log("personal-center,onShow")
-    this.dispatch('onLoginSetUserInfo');
+    // this.dispatch('onLoginSetUserInfo');
     this.setData({
       nickName: app.globalData.nickName,
       avatar: app.globalData.avatar,

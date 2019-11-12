@@ -1,9 +1,10 @@
 import { config } from '../config';
 import { Http } from './base';
 import mockUserInfo from './my.mock';
-import { setUid } from '../utils/uid';
+import { setUid,getUid } from '../utils/uid';
 import { getMessageList, getReadMessageList } from './message-list';
 
+const app = getApp();
 export async function getAuthUserInfo() {
   const authObj = await getAuthCode('auth_user');
   my.setStorageSync({
@@ -16,17 +17,41 @@ export async function getAuthUserInfo() {
   };
   const userInfo = await Http.post('/proxy-user/userauth/info', data);
   console.log('!!!!!!!!!!!!!!!',userInfo)
-  // 获取消息列表参数
-  // const requestData = {
-  //   channelType: 'OWNER_MSG',
-  //   readFlag: 'N',
-  //   receiverAccount: userInfo.uid,
-  // };
+
   // 将uid存到本地内存中
   setUid(userInfo.uid);
-  // my.setStorageSync()
-  // 获取消息列表接口
-  // const msgList = await getReadMessageList(requestData);
+
+  let uid = getUid();
+  app.globalData.uid = uid;
+  
+  my.request({
+  url: 'https://jbxqalipay.nanjingdata.cn/userCenter/api/userauth/getUserInfoForH5',
+  method:'GET',
+  data: {
+    'uid' : app.globalData.uid
+  },
+  success: (res) => {
+    app.globalData.rtnData = res.data.rtnData;
+    console.log(app.globalData.uid)
+    console.log('123214123',res)
+    //实名信息入库
+    my.request({
+    url:'https://jbxqalipay.nanjingdata.cn/test/dispatch_test/restport/euser/euserLogin',
+    method: 'POST',
+    data: {
+      'userName': res.data.rtnData.name,
+      'idCard': res.data.rtnData.idCardNo,
+      'gender': res.data.rtnData.gender,
+      'mobile': res.data.rtnData.phone,
+      'source':'A'
+    },
+    success:function(result) {
+      console.log(result)
+    }
+    })
+  },
+  });
+
   return {
     authCode: authObj.authCode,
     userInfo: {

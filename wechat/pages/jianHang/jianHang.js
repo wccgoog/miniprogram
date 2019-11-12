@@ -16,12 +16,12 @@ Page({
         src: 'https://jbxqalipay.nanjingdata.cn/image/huidongni.png',
         bindType: 'navigateToMiniProgram'
       },
-      {
-        title: '建行——预约取号',
-        dataId: 'wx307e11636e7679c6',
-        src: 'https://jbxqalipay.nanjingdata.cn/image/yuyuequhao.png',
-        bindType: 'navigateToMiniProgram'
-      }
+      // {
+      //   title: '建行——预约取号',
+      //   dataId: 'wx307e11636e7679c6',
+      //   src: 'https://jbxqalipay.nanjingdata.cn/image/yuyuequhao.png',
+      //   bindType: 'navigateToMiniProgram'
+      // }
     ]
   },
   

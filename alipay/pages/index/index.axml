@@ -36,7 +36,7 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" class="swiperHeight2" onChange="swiperChange">
     <block a:for="{{background}}" a:key="*this">
       <swiper-item>
-        <image mode="scaleToFill" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" onTap='navigateTo'>
+        <image mode="scaleToFill" src="{{'https://jbzwnew.qimixi.net'+item.image}}" class="headerImg" data-id="{{item.name}}" onTap="{{item.bindType}}">
         </image>
       </swiper-item>
     </block>

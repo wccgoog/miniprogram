@@ -195,6 +195,7 @@ Page(store.register({
   onShow() {
     console.log("onShow")
     var _this = this;
+    _this.dispatch('onLoginSetUserInfo');
     _this.setData({
       nickName: app.globalData.nickName,
       avatar: app.globalData.avatar,

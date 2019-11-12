@@ -31,7 +31,8 @@
     "pages/showPic/showPic",
     "pages/picList/picList",
     "pages/jianHang/jianHang",
-    "pages/LaborHarbor/LaborHarbor"
+    "pages/LaborHarbor/LaborHarbor",
+    "pages/yanjiang/yanjiang"
   ],
   "permission": {
     "scope.userLocation": {

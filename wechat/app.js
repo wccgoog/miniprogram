@@ -81,7 +81,7 @@ App({
     //是否从homePage跳转登录
     isJump:0,
     //最近使用
-    latestUsed:[[1,0],[1,1],[1,2],[3,0]],
+    latestUsed:[[0,0],[1,0],[1,1],[2,0]],
     thirdDomain:'jbzwnew.qimixi.net',
     toUrl:''
   }

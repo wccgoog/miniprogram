@@ -1,0 +1,39 @@
+.image {
+  width: 100%;
+  height: 200px;
+}
+
+.page-hd-tl {
+  text-align: center;
+  font-size: 18px;
+}
+.page-bg {
+ background: white;
+}
+
+.page-hd {
+  padding:20px;
+}
+
+.page-hd-zs {
+  color: #CCCCCC;
+  font-size: 16px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.page-hd-cont {
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+  color: #CCCCCC;
+  line-height:180%;
+}
+
+.btn {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(24, 180, 237);
+  color: white;
+}
